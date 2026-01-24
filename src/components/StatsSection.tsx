@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { Package, Globe, Award, Users } from 'lucide-react';
 
 const stats = [
-  { icon: Package, value: 62, suffix: '+', label: 'Natural Products', color: 'from-emerald-500 to-teal-500' },
+  { icon: Package, value: 100, suffix: '+', label: 'Natural Products', color: 'from-emerald-500 to-teal-500' },
   { icon: Globe, value: 8, suffix: '', label: 'Product Categories', color: 'from-amber-500 to-orange-500' },
   { icon: Award, value: 5, suffix: '+', label: 'Certifications', color: 'from-violet-500 to-purple-500' },
   { icon: Users, value: 3, suffix: '+', label: 'Markets Served', color: 'from-rose-500 to-pink-500' },
