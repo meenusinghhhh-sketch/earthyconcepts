@@ -12,6 +12,11 @@ import { IngredientsShowcase } from '@/components/IngredientsShowcase';
 import { ProductShowcase } from '@/components/ProductShowcase';
 import { ProcessSteps } from '@/components/ProcessSteps';
 import { VisualBanner } from '@/components/VisualBanner';
+import { StatsSection } from '@/components/StatsSection';
+import { ProductGrid } from '@/components/ProductGrid';
+import { WhyChooseUs } from '@/components/WhyChooseUs';
+import { ParallaxBanner } from '@/components/ParallaxBanner';
+import { BenefitsStrip } from '@/components/BenefitsStrip';
 import { CategoryCard } from '@/components/CategoryCard';
 import { ProductCard } from '@/components/ProductCard';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
@@ -208,6 +213,9 @@ const Index = () => {
       {/* Ingredients Showcase */}
       <IngredientsShowcase />
 
+      {/* Stats Section */}
+      <StatsSection />
+
       {/* Lifestyle Gallery */}
       <LifestyleGallery />
 
@@ -279,6 +287,9 @@ const Index = () => {
 
       {/* Testimonials */}
       <TestimonialCarousel />
+
+      {/* Benefits Strip */}
+      <BenefitsStrip />
 
       {/* Process Steps */}
       <ProcessSteps />
@@ -379,6 +390,15 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us */}
+      <WhyChooseUs />
+
+      {/* Parallax Banner */}
+      <ParallaxBanner />
+
+      {/* Product Grid Animation */}
+      <ProductGrid />
 
       {/* Product Showcase */}
       <ProductShowcase />
