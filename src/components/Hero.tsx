@@ -60,18 +60,19 @@ export const Hero = () => {
               Handcrafted with Nature's Finest
             </motion.div>
 
-            {/* Logo */}
+            {/* Logo - Prominent Display */}
             <motion.div 
               className="relative inline-block"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/20 to-emerald-400/30 rounded-3xl blur-2xl scale-125" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-accent/30 to-emerald-400/40 rounded-[2rem] blur-3xl scale-150" />
+              <div className="absolute inset-0 bg-white/60 rounded-3xl blur-xl scale-110" />
               <img 
                 src={logo} 
                 alt="Earthy Concepts" 
-                className="relative h-32 md:h-40 lg:h-48 w-auto object-contain drop-shadow-xl"
+                className="relative h-44 md:h-56 lg:h-64 w-auto object-contain drop-shadow-2xl"
               />
             </motion.div>
 
