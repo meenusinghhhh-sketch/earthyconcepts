@@ -93,7 +93,12 @@ export const Hero = () => {
               <img 
                 src={logo} 
                 alt="Earthy Concepts" 
-                className="relative w-full h-auto min-h-[300px] md:min-h-[380px] lg:min-h-[450px] object-contain drop-shadow-2xl mix-blend-multiply"
+                className="relative w-full h-auto min-h-[300px] md:min-h-[380px] lg:min-h-[450px] object-contain drop-shadow-2xl"
+                style={{ 
+                  filter: 'drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))',
+                  mixBlendMode: 'multiply',
+                  backgroundColor: 'transparent'
+                }}
               />
             </motion.div>
 
