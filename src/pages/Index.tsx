@@ -1,17 +1,21 @@
 import { Link } from 'react-router-dom';
-import { Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby, MessageCircle } from 'lucide-react';
+import { Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby, MessageCircle, Star, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Hero } from '@/components/Hero';
 import { LifestyleGallery } from '@/components/LifestyleGallery';
 import { TestimonialCarousel } from '@/components/TestimonialCarousel';
 import { VideoHeroBanner } from '@/components/VideoHeroBanner';
-import { ProductCard } from '@/components/ProductCard';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { products } from '@/data/products';
 
+// Lifestyle images for visual richness
+import botanicalsHands from '@/assets/lifestyle/botanicals-hands.jpg';
+import herbalTeaMoment from '@/assets/lifestyle/herbal-tea-moment.jpg';
+import naturalBeauty from '@/assets/lifestyle/natural-beauty.jpg';
 const coreCategories = [
   {
     icon: Leaf,
@@ -67,16 +71,16 @@ const trustBadges = [
 ];
 
 const Index = () => {
-  // Get best sellers for the product showcase
+  // Get best sellers for the product showcase - using correct product IDs from data
   const bestSellers = [
-    products.find(p => p.id === 'golden-curcumin'),
-    products.find(p => p.id === 'rejuve-daily'),
-    products.find(p => p.id === 'serene-tea'),
-    products.find(p => p.id === 'hydra-mist'),
-    products.find(p => p.id === 'root-luxe'),
-    products.find(p => p.id === 'saffron-rituals'),
-    products.find(p => p.id === 'pure-glow'),
-    products.find(p => p.id === 'amla-shield'),
+    products.find(p => p.id === 'serenetea'),
+    products.find(p => p.id === 'illumamask'),
+    products.find(p => p.id === 'rootluxe'),
+    products.find(p => p.id === 'rosebliss'),
+    products.find(p => p.id === 'lavendercalm'),
+    products.find(p => p.id === 'dailyimmunity'),
+    products.find(p => p.id === 'mindboost'),
+    products.find(p => p.id === 'amlashield'),
   ].filter(Boolean);
 
   return (
@@ -161,16 +165,21 @@ const Index = () => {
       </section>
 
       {/* 6. BESTSELLERS - Products with CTA */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#f8f5f0' }}>
+      <section className="py-20 relative overflow-hidden bg-gradient-to-b from-amber-50/50 via-background to-emerald-50/30">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent" />
+        <div className="absolute top-1/4 right-0 w-80 h-80 bg-emerald-100/40 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl" />
+        
         <div className="container px-4 md:px-6 relative">
           <motion.div 
-            className="text-center max-w-2xl mx-auto mb-12"
+            className="text-center max-w-2xl mx-auto mb-14"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              <Leaf className="h-4 w-4" />
+              <Star className="h-4 w-4 fill-primary" />
               Nature's Bestsellers
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -181,30 +190,148 @@ const Index = () => {
             </p>
           </motion.div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {bestSellers.slice(0, 8).map((product, index) => product && (
+          {/* Bento-style Product Grid with Lifestyle Images */}
+          <div className="grid md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-[200px]">
+            {/* Featured lifestyle image - large */}
+            <motion.div
+              className="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden shadow-xl group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              <img 
+                src={botanicalsHands}
+                alt="Botanical wellness"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 mb-3">Pure & Natural</Badge>
+                <h3 className="text-xl font-bold mb-2">Crafted with Intention</h3>
+                <p className="text-white/80 text-sm">Every product tells a story of wellness</p>
+              </div>
+            </motion.div>
+
+            {/* Product cards */}
+            {bestSellers.slice(0, 4).map((product, index) => product && (
               <motion.div
                 key={product.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.05 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="md:col-span-2 lg:col-span-1"
               >
-                <ProductCard product={product} />
+                <Link to={`/products/${product.id}`} className="block h-full">
+                  <Card className="group h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden">
+                    <div className="h-full flex flex-col">
+                      <div className="flex-1 relative overflow-hidden bg-gradient-to-br from-muted/50 to-muted p-4">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/placeholder.svg';
+                          }}
+                        />
+                        <Badge className="absolute top-2 right-2 bg-primary/90 text-primary-foreground border-0 text-xs">
+                          Bestseller
+                        </Badge>
+                      </div>
+                      <div className="p-3 bg-white">
+                        <h4 className="font-semibold text-sm line-clamp-1 group-hover:text-primary transition-colors">{product.name}</h4>
+                        <p className="text-xs text-muted-foreground line-clamp-1">{product.tagline}</p>
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
               </motion.div>
             ))}
+
+            {/* Second lifestyle image */}
+            <motion.div
+              className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-xl group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <img 
+                src={herbalTeaMoment}
+                alt="Herbal tea ritual"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <p className="text-sm font-medium">Daily Rituals</p>
+              </div>
+            </motion.div>
+
+            {/* More product cards */}
+            {bestSellers.slice(4, 8).map((product, index) => product && (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + index * 0.08 }}
+                className="md:col-span-2 lg:col-span-1"
+              >
+                <Link to={`/products/${product.id}`} className="block h-full">
+                  <Card className="group h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden">
+                    <div className="h-full flex flex-col">
+                      <div className="flex-1 relative overflow-hidden bg-gradient-to-br from-muted/50 to-muted p-4">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/placeholder.svg';
+                          }}
+                        />
+                      </div>
+                      <div className="p-3 bg-white">
+                        <h4 className="font-semibold text-sm line-clamp-1 group-hover:text-primary transition-colors">{product.name}</h4>
+                        <p className="text-xs text-muted-foreground line-clamp-1">{product.tagline}</p>
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              </motion.div>
+            ))}
+
+            {/* Third lifestyle image */}
+            <motion.div
+              className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-xl group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <img 
+                src={naturalBeauty}
+                alt="Natural beauty"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <p className="text-sm font-medium">Beauty from Nature</p>
+              </div>
+            </motion.div>
           </div>
 
           <motion.div 
-            className="text-center mt-12"
+            className="text-center mt-14"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <Button asChild size="lg" className="bg-gradient-to-r from-primary to-emerald-600 hover:from-primary/90 hover:to-emerald-600/90 text-primary-foreground gap-2 shadow-lg px-8">
               <Link to="/products">
-                <Leaf className="h-5 w-5" />
                 Explore All Products
+                <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>
           </motion.div>
