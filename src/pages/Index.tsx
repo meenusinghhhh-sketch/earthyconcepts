@@ -137,12 +137,8 @@ const Index = () => {
                 <Leaf className="h-4 w-4" />
                 Our Story
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                Born in Dubai,
-                <br />
-                <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
-                  Rooted in Nature
-                </span>
+              <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-foreground">
+                Born in Dubai, Rooted in Nature
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Created from a deep need to be responsible—to ourselves, to our communities, 
