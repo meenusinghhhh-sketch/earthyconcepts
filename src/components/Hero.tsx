@@ -67,7 +67,6 @@ export const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/50 via-accent/40 to-emerald-400/50 rounded-[4rem] blur-[100px] scale-[1.4]" />
               <img 
                 src={logo} 
                 alt="Earthy Concepts" 
