@@ -338,7 +338,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 7. WHO WE SERVE - Audience Segments */}
+      {/* 7. CRAFTED FOR - Audience Segments */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/30">
         <div className="container px-4 md:px-6">
           <motion.div 
@@ -348,7 +348,7 @@ const Index = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold">
-              Who We <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Serve</span>
+              Crafted <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">For</span>
             </h2>
           </motion.div>
           
