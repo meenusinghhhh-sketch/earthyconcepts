@@ -81,8 +81,8 @@ const Index = () => {
     products.find(p => p.id === 'dailyimmunity'),
     products.find(p => p.id === 'mindboost'),
     products.find(p => p.id === 'amlashield'),
-    products.find(p => p.id === 'goldencurcumin'),
-    products.find(p => p.id === 'immunetea'),
+    products.find(p => p.id === 'imunetea'),
+    products.find(p => p.id === 'skin-glow'),
   ].filter(Boolean);
 
   return (
