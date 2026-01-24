@@ -14,7 +14,7 @@ import { products } from '@/data/products';
 
 // Lifestyle images for visual richness
 import botanicalsHands from '@/assets/lifestyle/botanicals-hands.jpg';
-import herbalTeaMoment from '@/assets/lifestyle/herbal-tea-moment.jpg';
+import dailyRitualMoment from '@/assets/lifestyle/daily-ritual-moment.jpg';
 import naturalBeauty from '@/assets/lifestyle/natural-beauty.jpg';
 const coreCategories = [
   {
@@ -258,8 +258,8 @@ const Index = () => {
               transition={{ delay: 0.2 }}
             >
               <img 
-                src={herbalTeaMoment}
-                alt="Herbal tea ritual"
+                src={dailyRitualMoment}
+                alt="Daily wellness ritual"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
