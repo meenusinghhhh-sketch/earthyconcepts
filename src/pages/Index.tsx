@@ -81,6 +81,8 @@ const Index = () => {
     products.find(p => p.id === 'dailyimmunity'),
     products.find(p => p.id === 'mindboost'),
     products.find(p => p.id === 'amlashield'),
+    products.find(p => p.id === 'goldencurcumin'),
+    products.find(p => p.id === 'immunetea'),
   ].filter(Boolean);
 
   return (
@@ -320,6 +322,40 @@ const Index = () => {
                 <p className="text-sm font-medium">Beauty from Nature</p>
               </div>
             </motion.div>
+
+            {/* Additional product cards after the girl image */}
+            {bestSellers.slice(8, 10).map((product, index) => product && (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 + index * 0.08 }}
+                className="md:col-span-2 lg:col-span-1"
+              >
+                <Link to={`/products/${product.id}`} className="block h-full">
+                  <Card className="group h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden">
+                    <div className="h-full flex flex-col">
+                      <div className="flex-1 relative overflow-hidden bg-gradient-to-br from-muted/50 to-muted p-4">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/placeholder.svg';
+                          }}
+                        />
+                      </div>
+                      <div className="p-3 bg-white">
+                        <h4 className="font-semibold text-sm line-clamp-1 group-hover:text-primary transition-colors">{product.name}</h4>
+                        <p className="text-xs text-muted-foreground line-clamp-1">{product.tagline}</p>
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              </motion.div>
+            ))}
           </div>
 
           <motion.div 
