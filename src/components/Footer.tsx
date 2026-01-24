@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook } from 'lucide-react';
 import logo from '@/assets/logo.jpeg';
-import { NewsletterSignup } from './NewsletterSignup';
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg 
     className={className} 
@@ -125,8 +124,6 @@ export const Footer = () => {
             </nav>
           </div>
 
-          {/* Newsletter */}
-          <NewsletterSignup />
         </div>
 
         <div className="mt-12 pt-8 border-t border-background/10">
