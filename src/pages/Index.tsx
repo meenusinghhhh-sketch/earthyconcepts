@@ -7,6 +7,7 @@ import { LifestyleGallery } from '@/components/LifestyleGallery';
 import { TestimonialCarousel } from '@/components/TestimonialCarousel';
 import { VideoHeroBanner } from '@/components/VideoHeroBanner';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { NatureWatermark } from '@/components/NatureWatermark';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -91,7 +92,8 @@ const Index = () => {
       <Hero />
 
       {/* 2. TRUST STRIP - Immediate Credibility */}
-      <section className="py-6 bg-gradient-to-r from-emerald-50 via-white to-amber-50 border-y border-primary/10">
+      <section className="py-6 bg-gradient-to-r from-emerald-50 via-white to-amber-50 border-y border-primary/10 relative overflow-hidden">
+        <NatureWatermark opacity={0.05} size="sm" />
         <div className="container px-4 md:px-6">
           <motion.div 
             className="flex flex-wrap justify-center items-center gap-6 md:gap-10"
@@ -124,6 +126,7 @@ const Index = () => {
 
       {/* 5. CORE CATEGORIES - What We Offer */}
       <section className="py-20 bg-gradient-to-b from-background via-muted/30 to-background relative overflow-hidden">
+        <NatureWatermark opacity={0.06} />
         <div className="absolute top-1/4 left-0 w-72 h-72 bg-emerald-100/50 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-amber-100/50 rounded-full blur-3xl" />
         
@@ -168,8 +171,9 @@ const Index = () => {
 
       {/* 6. BESTSELLERS - Products with CTA */}
       <section className="py-20 relative overflow-hidden bg-gradient-to-b from-amber-50/50 via-background to-emerald-50/30">
+        <NatureWatermark opacity={0.07} size="lg" />
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent z-[1]" />
         <div className="absolute top-1/4 right-0 w-80 h-80 bg-emerald-100/40 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-amber-100/40 rounded-full blur-3xl" />
         
@@ -375,7 +379,8 @@ const Index = () => {
       </section>
 
       {/* 7. CRAFTED FOR - Audience Segments */}
-      <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+      <section className="py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
+        <NatureWatermark opacity={0.06} />
         <div className="container px-4 md:px-6">
           <motion.div 
             className="text-center mb-12"
@@ -419,6 +424,7 @@ const Index = () => {
 
       {/* 9. FINAL CTA - Conversion */}
       <section className="py-24 bg-gradient-to-br from-primary via-emerald-600 to-teal-600 text-primary-foreground relative overflow-hidden">
+        <NatureWatermark opacity={0.1} size="lg" />
         <div className="absolute top-0 left-0 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
         

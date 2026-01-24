@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
+import { NatureWatermark } from '@/components/NatureWatermark';
 import familyWellnessVideo from '@/assets/videos/family-wellness.mp4';
 
 export const VideoHeroBanner = () => {
@@ -41,12 +42,15 @@ export const VideoHeroBanner = () => {
         <source src={familyWellnessVideo} type="video/mp4" />
       </video>
 
+      {/* Nature Watermark */}
+      <NatureWatermark opacity={0.06} size="lg" />
+
       {/* Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30 z-[1]" />
 
       {/* Content */}
-      <div className="relative h-full container px-4 md:px-6 flex items-center">
+      <div className="relative h-full container px-4 md:px-6 flex items-center z-[2]">
         <motion.div
           className="max-w-2xl space-y-6"
           initial={{ opacity: 0, y: 30 }}

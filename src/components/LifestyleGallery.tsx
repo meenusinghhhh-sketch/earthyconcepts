@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { NatureWatermark } from '@/components/NatureWatermark';
 import herbalPreparation from '@/assets/lifestyle/herbal-preparation.jpg';
 import morningMeditation from '@/assets/lifestyle/morning-meditation.jpg';
 import aromatherapyRitual from '@/assets/lifestyle/aromatherapy-ritual.jpg';
@@ -22,6 +23,9 @@ const galleryImages = [
 export const LifestyleGallery = () => {
   return (
     <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#c9b99a' }}>
+      {/* Nature Watermark */}
+      <NatureWatermark opacity={0.08} size="lg" />
+      
       {/* Background decoration */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#a68f5d]/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#8b7355]/15 rounded-full blur-3xl" />
