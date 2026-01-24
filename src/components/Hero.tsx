@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Leaf, Sparkles, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo-transparent.png';
 import heroWellness from '@/assets/lifestyle/hero-wellness.jpg';
 import skincareRitual from '@/assets/lifestyle/skincare-ritual.jpg';
 import herbalTea from '@/assets/lifestyle/herbal-tea-moment.jpg';
@@ -94,11 +94,6 @@ export const Hero = () => {
                 src={logo} 
                 alt="Earthy Concepts" 
                 className="relative w-full h-auto min-h-[300px] md:min-h-[380px] lg:min-h-[450px] object-contain drop-shadow-2xl"
-                style={{ 
-                  filter: 'drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))',
-                  mixBlendMode: 'multiply',
-                  backgroundColor: 'transparent'
-                }}
               />
             </motion.div>
 
