@@ -67,11 +67,11 @@ export const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/15 to-emerald-400/20 rounded-2xl blur-xl scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/20 to-emerald-400/30 rounded-3xl blur-2xl scale-125" />
               <img 
                 src={logo} 
                 alt="Earthy Concepts" 
-                className="relative h-24 md:h-28 w-auto object-contain"
+                className="relative h-32 md:h-40 lg:h-48 w-auto object-contain drop-shadow-xl"
               />
             </motion.div>
 
@@ -193,30 +193,32 @@ export const Hero = () => {
 
               {/* Floating badge */}
               <motion.div 
-                className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-primary/10"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                className="absolute -bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-5 border border-primary/20"
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 1.2 }}
+                whileHover={{ scale: 1.05 }}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-emerald-500/20 flex items-center justify-center">
-                    <Leaf className="h-6 w-6 text-primary" />
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-emerald-500 flex items-center justify-center shadow-lg">
+                    <Leaf className="h-7 w-7 text-white" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-foreground">100% Natural</p>
-                    <p className="text-xs text-muted-foreground">Pure Ingredients</p>
+                    <p className="font-bold text-xl text-foreground">100% Natural</p>
+                    <p className="text-sm text-muted-foreground">Pure Ingredients</p>
                   </div>
                 </div>
               </motion.div>
 
               {/* Floating certification badge */}
               <motion.div 
-                className="absolute -top-4 -right-4 bg-gradient-to-br from-amber-500 to-orange-500 text-white rounded-xl shadow-xl px-4 py-2"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                className="absolute -top-2 right-4 bg-gradient-to-br from-amber-500 to-orange-500 text-white rounded-2xl shadow-2xl px-5 py-3"
+                initial={{ opacity: 0, scale: 0.8, y: -20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 1.4 }}
+                whileHover={{ scale: 1.05 }}
               >
-                <p className="text-xs font-medium">GMP & ISO Certified</p>
+                <p className="text-sm font-semibold">GMP & ISO Certified</p>
               </motion.div>
             </div>
           </motion.div>
