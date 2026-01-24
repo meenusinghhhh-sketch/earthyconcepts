@@ -3,14 +3,20 @@ import herbalPreparation from '@/assets/lifestyle/herbal-preparation.jpg';
 import morningMeditation from '@/assets/lifestyle/morning-meditation.jpg';
 import aromatherapyRitual from '@/assets/lifestyle/aromatherapy-ritual.jpg';
 import wellnessBreakfast from '@/assets/lifestyle/wellness-breakfast.jpg';
-import bodyCareRitual from '@/assets/lifestyle/body-care-ritual.jpg';
+import holisticSpa from '@/assets/lifestyle/holistic-spa.jpg';
+import ayurvedicSpices from '@/assets/lifestyle/ayurvedic-spices.jpg';
+import outdoorYoga from '@/assets/lifestyle/outdoor-yoga.jpg';
+import freshHerbs from '@/assets/lifestyle/fresh-herbs.jpg';
 
 const galleryImages = [
   { src: herbalPreparation, alt: 'Herbal preparation', label: 'Pure Botanicals' },
   { src: morningMeditation, alt: 'Morning meditation', label: 'Mindful Living' },
   { src: aromatherapyRitual, alt: 'Aromatherapy ritual', label: 'Herbal Wellness' },
   { src: wellnessBreakfast, alt: 'Wellness breakfast', label: 'Nourishing Rituals' },
-  { src: bodyCareRitual, alt: 'Body care ritual', label: 'Holistic Care' },
+  { src: holisticSpa, alt: 'Holistic spa', label: 'Holistic Care' },
+  { src: ayurvedicSpices, alt: 'Ayurvedic spices', label: 'Ancient Wisdom' },
+  { src: outdoorYoga, alt: 'Outdoor yoga', label: 'Mind & Body' },
+  { src: freshHerbs, alt: 'Fresh herbs', label: 'Natural Purity' },
 ];
 
 export const LifestyleGallery = () => {
@@ -35,21 +41,41 @@ export const LifestyleGallery = () => {
           </p>
         </motion.div>
 
-        {/* Masonry-style gallery */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {galleryImages.map((image, index) => (
+        {/* Masonry-style gallery - 8 images */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
+          {/* Large featured image */}
+          <motion.div
+            className="group relative overflow-hidden rounded-2xl col-span-2 row-span-2"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.02 }}
+          >
+            <div className="aspect-square relative">
+              <img 
+                src={galleryImages[0].src} 
+                alt={galleryImages[0].alt}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p className="text-white font-medium text-lg">{galleryImages[0].label}</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Regular images */}
+          {galleryImages.slice(1).map((image, index) => (
             <motion.div
               key={image.label}
-              className={`group relative overflow-hidden rounded-2xl ${
-                index === 0 ? 'md:col-span-2 md:row-span-2' : ''
-              }`}
+              className="group relative overflow-hidden rounded-2xl"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: (index + 1) * 0.08 }}
               whileHover={{ scale: 1.02 }}
             >
-              <div className={`${index === 0 ? 'aspect-square md:aspect-auto md:h-full' : 'aspect-square'} relative`}>
+              <div className="aspect-square relative">
                 <img 
                   src={image.src} 
                   alt={image.alt}
