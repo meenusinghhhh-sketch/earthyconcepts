@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroWellness from '@/assets/lifestyle/hero-wellness.jpg';
+import botanicalsHands from '@/assets/lifestyle/botanicals-hands.jpg';
 
 export const ParallaxBanner = () => {
   return (
@@ -16,8 +16,8 @@ export const ParallaxBanner = () => {
         viewport={{ once: true }}
       >
         <img 
-          src={heroWellness}
-          alt="Wellness journey"
+          src={botanicalsHands}
+          alt="Botanical wellness journey"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />

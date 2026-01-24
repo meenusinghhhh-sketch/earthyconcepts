@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
-import heroWellness from '@/assets/lifestyle/hero-wellness.jpg';
+import botanicalsHands from '@/assets/lifestyle/botanicals-hands.jpg';
 import naturalBeauty from '@/assets/lifestyle/natural-beauty.jpg';
 
 export const VisualBanner = () => {
@@ -18,8 +18,8 @@ export const VisualBanner = () => {
           >
             <div className="aspect-[4/3] relative">
               <img 
-                src={heroWellness} 
-                alt="Wellness lifestyle" 
+                src={botanicalsHands} 
+                alt="Botanical wellness ritual" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
