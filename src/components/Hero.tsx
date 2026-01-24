@@ -60,18 +60,18 @@ export const Hero = () => {
               Handcrafted with Nature's Finest
             </motion.div>
 
-            {/* Logo - BOLD & PROMINENT - Positioned at top to fill space */}
+            {/* Logo - MAXIMUM SIZE & BOLD */}
             <motion.div 
-              className="relative w-full max-w-xl -mt-2"
+              className="relative w-full max-w-3xl -mt-4"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-accent/30 to-emerald-400/40 rounded-[3rem] blur-[60px] scale-[1.3]" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/50 via-accent/40 to-emerald-400/50 rounded-[4rem] blur-[100px] scale-[1.4]" />
               <img 
                 src={logo} 
                 alt="Earthy Concepts" 
-                className="relative w-full h-auto max-h-[220px] md:max-h-[280px] lg:max-h-[320px] object-contain drop-shadow-2xl"
+                className="relative w-full h-auto min-h-[300px] md:min-h-[380px] lg:min-h-[450px] object-contain drop-shadow-2xl"
                 style={{ backgroundColor: 'transparent' }}
               />
             </motion.div>
