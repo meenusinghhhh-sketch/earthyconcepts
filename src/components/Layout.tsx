@@ -22,11 +22,11 @@ export const Layout = ({ children }: LayoutProps) => {
         <div className="absolute top-[60%] left-[10%] w-72 h-72 bg-gradient-to-tr from-emerald-200/8 to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-[20%] right-[15%] w-64 h-64 bg-gradient-to-tl from-primary/8 to-transparent rounded-full blur-3xl" />
         
-        {/* Very subtle leaf pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" 
+        {/* Subtle green leaf pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.08]" 
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2316a34a'%3E%3Cpath d='M60 5 Q75 30 60 55 Q45 30 60 5 Z'/%3E%3Cpath d='M25 40 Q35 55 25 75 Q15 55 25 40 Z' opacity='0.7'/%3E%3Cpath d='M95 40 Q105 55 95 75 Q85 55 95 40 Z' opacity='0.7'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '120px 120px',
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2322c55e'%3E%3Cpath d='M60 5 Q75 30 60 55 Q45 30 60 5 Z'/%3E%3Cpath d='M25 40 Q35 55 25 75 Q15 55 25 40 Z' opacity='0.8'/%3E%3Cpath d='M95 40 Q105 55 95 75 Q85 55 95 40 Z' opacity='0.8'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '150px 150px',
           }}
         />
       </div>
