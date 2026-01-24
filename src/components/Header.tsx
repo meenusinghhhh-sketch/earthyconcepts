@@ -9,10 +9,6 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
   { name: 'Find Your Concept', href: '/learn' },
-  { name: 'Global Presence', href: '/global-presence' },
-  { name: 'Corporate', href: '/corporate-wellness' },
-  { name: 'Subscriptions', href: '/subscription' },
-  { name: 'Gifting', href: '/gifting' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ];
