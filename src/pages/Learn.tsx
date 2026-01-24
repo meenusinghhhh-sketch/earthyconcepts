@@ -31,7 +31,7 @@ const Learn = () => {
             <img
               src={logo}
               alt="Earthy Concepts"
-              className="h-16 w-auto object-contain"
+              className="h-28 md:h-36 w-auto object-contain"
             />
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">Learn & Discover</h1>
