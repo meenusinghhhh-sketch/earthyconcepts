@@ -20,13 +20,13 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-24 items-center justify-between px-4 md:px-6">
+      <div className="container flex h-36 items-center justify-between px-4 md:px-6">
         {/* Logo - Bigger */}
         <Link to="/" className="flex items-center gap-3">
           <img 
             src={logo} 
             alt="Earthy Concepts" 
-            className="h-20 w-auto object-contain drop-shadow-md mix-blend-multiply"
+            className="h-28 md:h-32 w-auto object-contain drop-shadow-md"
           />
         </Link>
 
@@ -78,7 +78,7 @@ export const Header = () => {
                 <img 
                   src={logo} 
                   alt="Earthy Concepts" 
-                  className="h-16 w-auto object-contain mix-blend-multiply"
+                  className="h-24 w-auto object-contain"
                 />
               </Link>
               <nav className="flex flex-col gap-4">

@@ -15,7 +15,7 @@ const About = () => {
             <img 
               src={logo} 
               alt="Earthy Concepts" 
-              className="h-24 w-auto object-contain mx-auto mb-8"
+              className="h-36 md:h-48 w-auto object-contain mx-auto mb-8"
             />
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Our Story
