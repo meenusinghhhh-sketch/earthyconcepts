@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { AnnouncementBanner } from './AnnouncementBanner';
+import { NewsletterBanner } from './NewsletterBanner';
 
 interface LayoutProps {
   children: ReactNode;
@@ -116,6 +117,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <main className="flex-1">
           {children}
         </main>
+        <NewsletterBanner />
         <Footer />
       </div>
     </div>
