@@ -8,7 +8,7 @@ import logo from '@/assets/logo.jpeg';
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
-  { name: 'Learn', href: '/learn' },
+  { name: 'Find Your Concept', href: '/learn' },
   { name: 'Corporate', href: '/corporate-wellness' },
   { name: 'Subscriptions', href: '/subscription' },
   { name: 'Gifting', href: '/gifting' },
