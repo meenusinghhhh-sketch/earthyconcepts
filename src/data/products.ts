@@ -252,7 +252,7 @@ export const products: Product[] = [
     ingredients: ['Pterocarpus santalinus', 'Rubia cordifolia', 'Boerhavia diffusa', 'Ginger Oil', 'Cinnamon Oil', 'Black Pepper Oil', 'Juniper Berry Bark Oil'],
     size: '30 ML',
     shelfLife: '24 months',
-    image: '/placeholder.svg',
+    image: '/products/body-oils/SaffronRituals-30ml.png',
   },
 
   // ========== HAIR OILS ==========
