@@ -129,11 +129,6 @@ const Products = () => {
 
           {/* Products Grid */}
           <div className="flex-1">
-            <div className="flex items-center justify-between mb-6">
-              <p className="text-sm text-muted-foreground">
-                Showing {filteredProducts.length} products
-              </p>
-            </div>
 
             {filteredProducts.length > 0 ? (
               <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
