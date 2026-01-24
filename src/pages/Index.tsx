@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby, MessageCircle, CheckCircle } from 'lucide-react';
+import { ArrowRight, Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Hero } from '@/components/Hero';
+import { MarqueeStrip } from '@/components/MarqueeStrip';
+import { ValuePropsGrid } from '@/components/ValuePropsGrid';
+import { LifestyleGallery } from '@/components/LifestyleGallery';
+import { TestimonialCarousel } from '@/components/TestimonialCarousel';
+import { BlogSection } from '@/components/BlogSection';
 import { CategoryCard } from '@/components/CategoryCard';
 import { ProductCard } from '@/components/ProductCard';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { categories, products, getProductsByCategory } from '@/data/products';
-import logo from '@/assets/logo.jpeg';
-import botanicalsHands from '@/assets/lifestyle/botanicals-hands.jpg';
-import skincareRitual from '@/assets/lifestyle/skincare-ritual.jpg';
-import herbalTea from '@/assets/lifestyle/herbal-tea-moment.jpg';
-import naturalBeauty from '@/assets/lifestyle/natural-beauty.jpg';
 
 const coreCategories = [
   {
@@ -69,13 +69,6 @@ const trustBadges = [
   { name: 'Eco-Conscious', icon: Leaf },
 ];
 
-const highlights = [
-  "100% Natural Ingredients",
-  "No Synthetic Additives",
-  "Ayurvedic Formulations",
-  "Sustainable Sourcing",
-];
-
 const Index = () => {
   // Get featured products - specific products with verified images
   const featuredProducts = [
@@ -85,9 +78,24 @@ const Index = () => {
     products.find(p => p.id === 'illuma-mask'),
   ].filter(Boolean);
 
+  // Get more best sellers for the product showcase
+  const bestSellers = [
+    products.find(p => p.id === 'rejuve-daily'),
+    products.find(p => p.id === 'serene-tea'),
+    products.find(p => p.id === 'hydra-mist'),
+    products.find(p => p.id === 'root-luxe'),
+    products.find(p => p.id === 'saffron-rituals'),
+    products.find(p => p.id === 'pure-glow'),
+    products.find(p => p.id === 'amla-shield'),
+    products.find(p => p.id === 'golden-curcumin'),
+  ].filter(Boolean);
+
   return (
     <Layout>
       <Hero />
+      
+      {/* Animated Marquee Strip */}
+      <MarqueeStrip />
 
       {/* Trust Badges - Certification Strip */}
       <section className="py-8 bg-gradient-to-r from-emerald-50 via-white to-amber-50 border-y border-primary/10">
@@ -116,6 +124,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Value Props Grid */}
+      <ValuePropsGrid />
 
       {/* Featured Products Section */}
       <section className="py-20 relative overflow-hidden">
@@ -187,6 +198,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Lifestyle Gallery */}
+      <LifestyleGallery />
+
       {/* Core Categories Section */}
       <section className="py-24 bg-gradient-to-b from-muted/50 via-background to-muted/30 relative overflow-hidden">
         <div className="absolute top-1/4 left-0 w-72 h-72 bg-emerald-100/50 rounded-full blur-3xl" />
@@ -252,6 +266,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialCarousel />
 
       {/* Who We Serve */}
       <section className="py-20 bg-gradient-to-r from-emerald-50/80 via-white to-amber-50/80 relative">
@@ -350,7 +367,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Best Sellers Grid */}
       <section className="py-24 bg-gradient-to-b from-amber-50/50 via-white to-rose-50/30 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-rose-200/30 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl" />
@@ -367,21 +384,21 @@ const Index = () => {
               Bestsellers
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Featured <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">Products</span>
+              Customer <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">Favorites</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Handpicked wellness essentials from our collection
+              Handpicked wellness essentials loved by our community
             </p>
           </motion.div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product, index) => product && (
+            {bestSellers.slice(0, 8).map((product, index) => product && (
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
               >
                 <ProductCard product={product} />
               </motion.div>
@@ -403,6 +420,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Blog Section */}
+      <BlogSection />
 
       {/* CTA Section */}
       <section className="py-28 bg-gradient-to-br from-primary via-emerald-600 to-teal-600 text-primary-foreground relative overflow-hidden">
