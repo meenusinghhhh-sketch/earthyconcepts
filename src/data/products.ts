@@ -51,7 +51,7 @@ export const products: Product[] = [
     size: '100 GM | CUT N SIFT TEA',
     shelfLife: '36 months',
     preparation: 'Let one teaspoon of herbal blend simmer for 3-5 minutes or pour 250 ml of boiling water and allow 10 minutes infusion.',
-    image: '/products/herbal-teas/DiabeTea-100gm.png',
+    image: '/products/herbal-teas/DiabTea-100gm.png',
   },
   {
     id: 'serenetea',
@@ -77,7 +77,7 @@ export const products: Product[] = [
     size: '100 GM | CUT N SIFT TEA',
     shelfLife: '36 months',
     preparation: 'Let one teaspoon of herbal blend simmer for 3-5 minutes or pour 250 ml of boiling water and allow 10 minutes infusion.',
-    image: '/products/herbal-teas/ImuneTea-100gm.png',
+    image: '/products/herbal-teas/ImmuneTea-100gm.png',
   },
   {
     id: 'radianttea',
@@ -117,7 +117,7 @@ export const products: Product[] = [
     ingredients: ['Saffron', 'Fuller\'s Earth', 'Rubia cordifolia', 'Symplocos', 'Rose Petals', 'Licorice'],
     size: '100 GM | FACEPACK POWDER',
     shelfLife: '36 months',
-    image: '/products/ubtans/Illumamask-100gm.png',
+    image: '/products/ubtans/RadianceMask-100gm.png',
   },
   {
     id: 'detoxmask',
@@ -129,7 +129,7 @@ export const products: Product[] = [
     ingredients: ['Fuller\'s Earth', 'Neem (Azadirachta indica)', 'Holy Basil', 'Curcuma longa'],
     size: '100 GM | FACEPACK POWDER',
     shelfLife: '36 months',
-    image: '/products/ubtans/Detoxmask-100gm.png',
+    image: '/products/ubtans/RadianceMask-100gm.png',
   },
   {
     id: 'ubtanaamask',
@@ -141,7 +141,7 @@ export const products: Product[] = [
     ingredients: ['Gram Flour', 'Curcuma longa', 'Rose Petals', 'Fennel'],
     size: '100 GM | FACEPACK POWDER',
     shelfLife: '36 months',
-    image: '/products/ubtans/Ubtanaamask-100gm.png',
+    image: '/products/ubtans/RadianceMask-100gm.png',
   },
   {
     id: 'radiancemask',
@@ -166,7 +166,7 @@ export const products: Product[] = [
     ingredients: ['Azadirachta indica', 'Rubia cordifolia', 'Fuller\'s Earth', 'Curcuma longa'],
     size: '100 ML | FACIAL MIST',
     shelfLife: '24 months',
-    image: '/products/face-mists/Hydramist-100ml.png',
+    image: '/placeholder.svg',
   },
   {
     id: 'rosemist',
@@ -177,7 +177,7 @@ export const products: Product[] = [
     benefits: ['Deep Refreshing Hydration', 'Restores Smooth Texture', 'Soothing Floral Aroma'],
     size: '100 ML | FACIAL MIST',
     shelfLife: '24 months',
-    image: '/products/face-mists/Rosemist-100ml.png',
+    image: '/placeholder.svg',
   },
 
   // ========== BODY OILS ==========
@@ -203,7 +203,7 @@ export const products: Product[] = [
     ingredients: ['Vetiver', 'Ashwagandha', 'Jasmine', 'Sweet Almond Oil'],
     size: '100 ML',
     shelfLife: '24 months',
-    image: '/products/body-oils/MorningJasmine-100ml.png',
+    image: '/placeholder.svg',
   },
   {
     id: 'rosebliss',
@@ -252,7 +252,7 @@ export const products: Product[] = [
     ingredients: ['Pterocarpus santalinus', 'Rubia cordifolia', 'Boerhavia diffusa', 'Ginger Oil', 'Cinnamon Oil', 'Black Pepper Oil', 'Juniper Berry Bark Oil'],
     size: '30 ML',
     shelfLife: '24 months',
-    image: '/products/body-oils/SaffronRituals-30ml.png',
+    image: '/placeholder.svg',
   },
 
   // ========== HAIR OILS ==========
@@ -278,7 +278,7 @@ export const products: Product[] = [
     ingredients: ['Coconut Oil', 'Almond Oil', 'Hibiscus', 'Aloe Vera'],
     size: '100 ML',
     shelfLife: '24 months',
-    image: '/products/hair-oils/RootStrong-100ml.png',
+    image: '/products/hair-oils/RootLuxe-100ml.png',
   },
 
   // ========== BODY CLEANSE ==========
@@ -292,7 +292,7 @@ export const products: Product[] = [
     ingredients: ['Sapindus mukorossi', 'Acacia concinna', 'Eclipta alba', 'Hibiscus'],
     size: '100 GM | HAIR PACK POWDER',
     shelfLife: '36 months',
-    image: '/products/body-cleanse/ScalpCleanse-100gm.png',
+    image: '/placeholder.svg',
   },
   {
     id: 'bodycleanse',
@@ -304,7 +304,7 @@ export const products: Product[] = [
     ingredients: ['Azadirachta indica', 'Rubia cordifolia', 'Fuller\'s Earth', 'Curcuma longa'],
     size: '100 GM | BODY CLEANSING POWDER',
     shelfLife: '36 months',
-    image: '/products/body-cleanse/BodyCleanse-100gm.png',
+    image: '/placeholder.svg',
   },
 
   // ========== SINGLE HERB CAPSULES ==========
@@ -318,7 +318,7 @@ export const products: Product[] = [
     botanicalName: 'Anacyclus pyrethrum',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/NaturalStamina-60caps.png',
+    image: '/products/single-herbs/NaturalStamina.png',
   },
   {
     id: 'aloedigest',
@@ -330,7 +330,7 @@ export const products: Product[] = [
     botanicalName: 'Aloe barbadensis miller',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/AloeDigest-60caps.png',
+    image: '/products/single-herbs/AloeDigest.png',
   },
   {
     id: 'amlashield',
@@ -342,7 +342,7 @@ export const products: Product[] = [
     botanicalName: 'Phyllanthus emblica',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/AmlaShield-60caps.png',
+    image: '/products/single-herbs/AmlaShield.png',
   },
   {
     id: 'heartdefense',
@@ -354,7 +354,7 @@ export const products: Product[] = [
     botanicalName: 'Terminalia arjuna',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/HeartDefense-60caps.png',
+    image: '/products/single-herbs/HeartDefense.png',
   },
   {
     id: 'fembalance',
@@ -366,7 +366,7 @@ export const products: Product[] = [
     botanicalName: 'Saraca Indica',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/FemBalance-60caps.png',
+    image: '/products/single-herbs/FemBalance.png',
   },
   {
     id: 'hairsupport',
@@ -378,7 +378,7 @@ export const products: Product[] = [
     botanicalName: 'Eclipta prostrata',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/HairSupport-60caps.png',
+    image: '/products/single-herbs/HairSupport.png',
   },
   {
     id: 'destone',
@@ -390,7 +390,7 @@ export const products: Product[] = [
     botanicalName: 'Phyllanthus niruri',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/DeStone-60caps.png',
+    image: '/products/single-herbs/DeStone.png',
   },
   {
     id: 'jointflex',
@@ -402,7 +402,7 @@ export const products: Product[] = [
     botanicalName: 'Boswellia serrata',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/JointFlex-60caps.png',
+    image: '/products/single-herbs/JointFlex.png',
   },
   {
     id: 'gentlegut',
@@ -414,7 +414,7 @@ export const products: Product[] = [
     botanicalName: 'Ricinus communis & Terminalia chebula',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/GentleGut-60caps.png',
+    image: '/products/single-herbs/GentleGut.png',
   },
   {
     id: 'metatrim',
@@ -426,7 +426,7 @@ export const products: Product[] = [
     botanicalName: 'Garcinia cambogia',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/MetaTrim-60caps.png',
+    image: '/products/single-herbs/MetaTrim.png',
   },
   {
     id: 'dailyimmunity',
@@ -438,7 +438,7 @@ export const products: Product[] = [
     botanicalName: 'Tinospora cordifolia',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/DailyImmunity-60caps.png',
+    image: '/products/single-herbs/DailyImmunity.png',
   },
   {
     id: 'glucosteady',
@@ -450,7 +450,7 @@ export const products: Product[] = [
     botanicalName: 'Gymnema sylvestre',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/GlucoSteady-60caps.png',
+    image: '/products/single-herbs/GlucoSteady.png',
   },
   {
     id: 'glycobalance',
@@ -462,7 +462,7 @@ export const products: Product[] = [
     botanicalName: 'Syzygium cumini',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/GlycoBalance-60caps.png',
+    image: '/products/single-herbs/GlycoBalance.png',
   },
   {
     id: 'bitterguard',
@@ -474,7 +474,7 @@ export const products: Product[] = [
     botanicalName: 'Bitter Gourd (Momordica charantia)',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/BitterGuard-60caps.png',
+    image: '/products/single-herbs/BitterGuard.png',
   },
   {
     id: 'mindboost',
@@ -486,7 +486,7 @@ export const products: Product[] = [
     botanicalName: 'Bacopa monnieri',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/MindBoost-60caps.png',
+    image: '/products/single-herbs/MindBoost.png',
   },
   {
     id: 'manboost',
@@ -498,7 +498,7 @@ export const products: Product[] = [
     botanicalName: 'Mucuna pruriens',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/ManBoost-60caps.png',
+    image: '/products/single-herbs/ManBoost.png',
   },
   {
     id: 'clearderma',
@@ -510,7 +510,7 @@ export const products: Product[] = [
     botanicalName: 'Rubia cordifolia',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/ClearDerma-60caps.png',
+    image: '/products/single-herbs/ClearDerma.png',
   },
   {
     id: 'dailydetox',
@@ -522,7 +522,7 @@ export const products: Product[] = [
     botanicalName: 'Boerhavia diffusa',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/DailyDetox-60caps.png',
+    image: '/products/single-herbs/DailyDetox.png',
   },
 
   // Additional single herbs to complete the 21 count
@@ -536,7 +536,7 @@ export const products: Product[] = [
     botanicalName: 'Picrorhiza kurroa',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/LiverCare-60caps.png',
+    image: '/placeholder.svg',
   },
   {
     id: 'stressease',
@@ -548,7 +548,7 @@ export const products: Product[] = [
     botanicalName: 'Withania somnifera',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/StressEase-60caps.png',
+    image: '/products/formulations/StressBalance.png',
   },
   {
     id: 'respiraclear',
@@ -560,7 +560,7 @@ export const products: Product[] = [
     botanicalName: 'Adhatoda vasica',
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/single-herbs/RespiraClear-60caps.png',
+    image: '/placeholder.svg',
   },
 
   // ========== FORMULATIONS ==========
@@ -574,7 +574,7 @@ export const products: Product[] = [
     ingredients: ['Amalaki', 'Bibhitaki', 'Haritaki'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/TriphalaPure-60caps.png',
+    image: '/placeholder.svg',
   },
   {
     id: 'digest-ease',
@@ -586,7 +586,7 @@ export const products: Product[] = [
     ingredients: ['Ginger', 'Fennel', 'Cumin', 'Coriander', 'Ajwain'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/DigestEase-60caps.png',
+    image: '/products/formulations/DiabEase.png',
   },
   {
     id: 'immuno-shield',
@@ -598,7 +598,7 @@ export const products: Product[] = [
     ingredients: ['Giloy', 'Tulsi', 'Amla', 'Ashwagandha', 'Turmeric'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/ImmunoShield-60caps.png',
+    image: '/products/formulations/ImmuneSafe.png',
   },
   {
     id: 'joint-comfort',
@@ -610,7 +610,7 @@ export const products: Product[] = [
     ingredients: ['Boswellia', 'Guggulu', 'Ashwagandha', 'Turmeric', 'Ginger'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/JointComfort-60caps.png',
+    image: '/products/formulations/OsteoSupport.png',
   },
   {
     id: 'sleep-well',
@@ -622,7 +622,7 @@ export const products: Product[] = [
     ingredients: ['Ashwagandha', 'Brahmi', 'Jatamansi', 'Tagara', 'Shankhpushpi'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/SleepWell-60caps.png',
+    image: '/products/formulations/SleepSupport.png',
   },
   {
     id: 'energy-vitality',
@@ -634,7 +634,7 @@ export const products: Product[] = [
     ingredients: ['Ashwagandha', 'Shilajit', 'Safed Musli', 'Gokshura', 'Amla'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/EnergyVitality-60caps.png',
+    image: '/products/formulations/ShilaPlex.png',
   },
   {
     id: 'womens-balance',
@@ -646,7 +646,7 @@ export const products: Product[] = [
     ingredients: ['Ashoka', 'Shatavari', 'Lodhra', 'Ashwagandha', 'Brahmi'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/WomensBalance-60caps.png',
+    image: '/products/formulations/HerBalance.png',
   },
   {
     id: 'mens-vitality',
@@ -658,7 +658,7 @@ export const products: Product[] = [
     ingredients: ['Ashwagandha', 'Safed Musli', 'Kaunch', 'Gokshura', 'Shilajit'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/MensVitality-60caps.png',
+    image: '/products/formulations/HisVitality.png',
   },
   {
     id: 'skin-glow',
@@ -670,7 +670,7 @@ export const products: Product[] = [
     ingredients: ['Manjistha', 'Neem', 'Turmeric', 'Amla', 'Aloe Vera'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/SkinGlow-60caps.png',
+    image: '/products/formulations/PureGlow.png',
   },
   {
     id: 'hair-vitality',
@@ -682,7 +682,7 @@ export const products: Product[] = [
     ingredients: ['Bhringraj', 'Brahmi', 'Amla', 'Ashwagandha', 'Hibiscus'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/HairVitality-60caps.png',
+    image: '/placeholder.svg',
   },
   {
     id: 'brain-boost',
@@ -694,7 +694,7 @@ export const products: Product[] = [
     ingredients: ['Brahmi', 'Shankhpushpi', 'Ashwagandha', 'Gotu Kola', 'Vacha'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/BrainBoost-60caps.png',
+    image: '/products/formulations/MoringaVital.png',
   },
   {
     id: 'sugar-balance',
@@ -706,7 +706,7 @@ export const products: Product[] = [
     ingredients: ['Gymnema', 'Bitter Melon', 'Jamun', 'Fenugreek', 'Turmeric'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/SugarBalance-60caps.png',
+    image: '/products/formulations/DiabEase.png',
   },
   {
     id: 'heart-care',
@@ -718,7 +718,7 @@ export const products: Product[] = [
     ingredients: ['Arjuna', 'Guggulu', 'Ashwagandha', 'Garlic', 'Turmeric'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/HeartCare-60caps.png',
+    image: '/products/formulations/BPCare.png',
   },
   {
     id: 'liver-detox',
@@ -730,7 +730,7 @@ export const products: Product[] = [
     ingredients: ['Kutki', 'Bhumi Amalaki', 'Punarnava', 'Turmeric', 'Guduchi'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/LiverDetox-60caps.png',
+    image: '/products/formulations/ReFluxa.png',
   },
   {
     id: 'kidney-care',
@@ -742,7 +742,7 @@ export const products: Product[] = [
     ingredients: ['Punarnava', 'Gokshura', 'Varuna', 'Shilajit', 'Pashanbhed'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/KidneyCare-60caps.png',
+    image: '/placeholder.svg',
   },
   {
     id: 'respiratory-support',
@@ -754,7 +754,7 @@ export const products: Product[] = [
     ingredients: ['Vasaka', 'Tulsi', 'Licorice', 'Ginger', 'Pippali'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/RespiratorySupport-60caps.png',
+    image: '/products/formulations/AllergyEase.png',
   },
   {
     id: 'stress-relief',
@@ -766,7 +766,7 @@ export const products: Product[] = [
     ingredients: ['Ashwagandha', 'Brahmi', 'Jatamansi', 'Shankhpushpi', 'Tulsi'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/StressRelief-60caps.png',
+    image: '/products/formulations/StressBalance.png',
   },
   {
     id: 'weight-wellness',
@@ -778,7 +778,7 @@ export const products: Product[] = [
     ingredients: ['Garcinia', 'Triphala', 'Guggulu', 'Ginger', 'Black Pepper'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/WeightWellness-60caps.png',
+    image: '/products/formulations/LeanForm.png',
   },
   {
     id: 'bone-strength',
@@ -790,7 +790,7 @@ export const products: Product[] = [
     ingredients: ['Hadjod', 'Ashwagandha', 'Arjuna', 'Guggulu', 'Amla'],
     size: '650 MG | 60/90 CAPSULES',
     shelfLife: '36 months',
-    image: '/products/formulations/BoneStrength-60caps.png',
+    image: '/products/formulations/OsteoSupport.png',
   },
 ];
 
