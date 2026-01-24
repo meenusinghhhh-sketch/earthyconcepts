@@ -20,7 +20,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       <Link to={`/products/${product.id}`}>
         <div className="aspect-square overflow-hidden bg-muted">
           <img
-            src={product.image}
+            src={`${product.image}?v=1`}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             onError={(e) => {
