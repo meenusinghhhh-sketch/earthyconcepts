@@ -117,6 +117,75 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Featured Products Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+        
+        <div className="container px-4 md:px-6 relative">
+          <motion.div 
+            className="text-center max-w-2xl mx-auto mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              <Package className="h-4 w-4" />
+              Natural Wellness Products
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Herbal Health & Beauty Essentials
+            </h2>
+            <p className="text-muted-foreground">
+              From immunity-boosting capsules to nourishing body oils — discover our range of 100% natural formulations
+            </p>
+          </motion.div>
+
+          {/* Product Showcase Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-10">
+            {featuredProducts.map((product, index) => (
+              product && (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group"
+                >
+                  <Link to={`/products/${product.id}`}>
+                    <div className="relative bg-gradient-to-br from-muted/50 to-muted rounded-2xl p-4 md:p-6 aspect-square flex items-center justify-center overflow-hidden border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="mt-3 text-center">
+                      <p className="font-medium text-sm md:text-base group-hover:text-primary transition-colors line-clamp-1">{product.name}</p>
+                      <p className="text-xs text-muted-foreground capitalize">{product.category.replace('-', ' ')}</p>
+                    </div>
+                  </Link>
+                </motion.div>
+              )
+            ))}
+          </div>
+
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Button asChild className="gap-2">
+              <Link to="/products">
+                Explore All Products
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Core Categories Section */}
       <section className="py-24 bg-gradient-to-b from-muted/50 via-background to-muted/30 relative overflow-hidden">
