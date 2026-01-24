@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby } from 'lucide-react';
+import { ArrowRight, Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby, MessageCircle, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Hero } from '@/components/Hero';
 import { CategoryCard } from '@/components/CategoryCard';
@@ -15,31 +16,43 @@ const coreCategories = [
     icon: Leaf,
     title: 'Retail-Ready Lines',
     description: 'Clean-Label Health Capsules & Teas for Immunity, Digestion, Detox, Heart Health, and Everyday Wellness',
+    color: 'from-emerald-500 to-teal-500',
+    bg: 'from-emerald-500/10 to-teal-500/5',
   },
   {
     icon: Sparkles,
     title: 'Pure Skincare',
     description: 'Face Masks, Glow Powders, Herbal Soaps, Facial Serums, Hair & Body Oils for Everyday Skincare',
+    color: 'from-amber-500 to-orange-500',
+    bg: 'from-amber-500/10 to-orange-500/5',
   },
   {
     icon: Package,
     title: 'Gifting Editions',
     description: 'Healthcare On-The-Go, Chakra Packs, Health Kits & Organic Home Care',
+    color: 'from-rose-500 to-pink-500',
+    bg: 'from-rose-500/10 to-pink-500/5',
   },
   {
     icon: Heart,
     title: 'Herbal Products',
     description: 'Formulated for Mind & Body Rituals - Traditional Health and Wellness',
+    color: 'from-violet-500 to-purple-500',
+    bg: 'from-violet-500/10 to-purple-500/5',
   },
   {
     icon: Home,
     title: 'Spa & Hospitality',
     description: 'Natural & Organic Products for Hotels, Spas, Retreats & Wellness Centers',
+    color: 'from-cyan-500 to-blue-500',
+    bg: 'from-cyan-500/10 to-blue-500/5',
   },
   {
     icon: Baby,
     title: 'Family Wellness',
     description: 'Gentle Products for Kids & Parents, Clean skincare for the whole family',
+    color: 'from-lime-500 to-green-500',
+    bg: 'from-lime-500/10 to-green-500/5',
   },
 ];
 
@@ -52,11 +65,18 @@ const trustBadges = [
   { name: 'Eco-Conscious', icon: Leaf },
 ];
 
+const highlights = [
+  "100% Natural Ingredients",
+  "No Synthetic Additives",
+  "Ayurvedic Formulations",
+  "Sustainable Sourcing",
+];
+
 const Index = () => {
   // Get featured products (first 4 from different categories)
   const featuredProducts = [
+    products.find(p => p.category === 'formulations'),
     products.find(p => p.category === 'herbal-teas'),
-    products.find(p => p.category === 'single-herbs'),
     products.find(p => p.category === 'body-oils'),
     products.find(p => p.category === 'ubtans'),
   ].filter(Boolean).slice(0, 4);
@@ -66,194 +86,330 @@ const Index = () => {
       <Hero />
 
       {/* Trust Badges - Certification Strip */}
-      <section className="py-6 bg-gradient-to-r from-primary/5 via-emerald-50/50 to-accent/5 border-y border-primary/10">
+      <section className="py-8 bg-gradient-to-r from-emerald-50 via-white to-amber-50 border-y border-primary/10">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-            {trustBadges.map((badge) => (
-              <div key={badge.name} className="flex items-center gap-2 text-muted-foreground group">
-                <div className="p-1.5 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <badge.icon className="h-3.5 w-3.5 text-primary" />
+          <motion.div 
+            className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            {trustBadges.map((badge, index) => (
+              <motion.div 
+                key={badge.name} 
+                className="flex items-center gap-2 text-muted-foreground group"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="p-2 rounded-full bg-gradient-to-br from-primary/10 to-emerald-500/10 group-hover:from-primary/20 group-hover:to-emerald-500/20 transition-colors">
+                  <badge.icon className="h-4 w-4 text-primary" />
                 </div>
                 <span className="text-sm font-medium">{badge.name}</span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 text-primary text-sm font-medium">
+      {/* About Section - Enhanced */}
+      <section className="py-24 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+        
+        <div className="container px-4 md:px-6 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              className="space-y-8"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
                 <Leaf className="h-4 w-4" />
                 Our Story
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold">
-                Earthy Concepts was born in Dubai, UAE
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                Born in Dubai,
+                <br />
+                <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
+                  Rooted in Nature
+                </span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 Created from a deep need to be responsible—to ourselves, to our communities, 
                 and to the planet—Earthy Concepts stands for all things natural, intentional, 
                 and conscious.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                At Earthy Concepts, we believe that the choices we make every day shape the 
-                world we live in. Our purpose-driven approach to clean beauty, holistic wellness, 
-                and conscious lifestyle essentials goes beyond products—they are tools for living 
-                with awareness, integrity, and intention.
-              </p>
-              <Button asChild variant="outline" className="gap-2">
+              
+              {/* Highlights */}
+              <div className="grid grid-cols-2 gap-4">
+                {highlights.map((item, index) => (
+                  <motion.div 
+                    key={item}
+                    className="flex items-center gap-2"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-sm font-medium">{item}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <Button asChild variant="outline" className="gap-2 border-2">
                 <Link to="/about">
-                  Learn More
+                  Learn More About Us
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-            </div>
-            <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 via-emerald-100/50 to-accent/20 flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-amber-100/30 to-transparent" />
-                <img 
-                  src={logo} 
-                  alt="Earthy Concepts" 
-                  className="relative w-2/3 h-auto object-contain drop-shadow-lg"
-                />
+            </motion.div>
+
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* Product collage */}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-3xl" />
+                
+                <div className="relative grid grid-cols-2 gap-4">
+                  <motion.div 
+                    className="space-y-4"
+                    initial={{ y: 20 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-emerald-100 to-teal-50">
+                      <img 
+                        src="/products/formulations/PureGlow.png" 
+                        alt="Product" 
+                        className="w-full h-full object-cover"
+                        onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder.svg'; }}
+                      />
+                    </div>
+                    <div className="aspect-square rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-amber-100 to-orange-50">
+                      <img 
+                        src="/products/body-oils/RoseBliss-100ml.png" 
+                        alt="Product" 
+                        className="w-full h-full object-cover"
+                        onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder.svg'; }}
+                      />
+                    </div>
+                  </motion.div>
+                  <motion.div 
+                    className="space-y-4 pt-8"
+                    initial={{ y: -20 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="aspect-square rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-rose-100 to-pink-50">
+                      <img 
+                        src="/products/herbal-teas/RadiantTea-100gm.png" 
+                        alt="Product" 
+                        className="w-full h-full object-cover"
+                        onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder.svg'; }}
+                      />
+                    </div>
+                    <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-violet-100 to-purple-50">
+                      <img 
+                        src="/products/ubtans/IllumaMask-100gm.png" 
+                        alt="Product" 
+                        className="w-full h-full object-cover"
+                        onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder.svg'; }}
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Floating elements */}
+                <motion.div 
+                  className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-primary/10"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <div className="flex items-center gap-3">
+                    <img src={logo} alt="Logo" className="h-10 w-10 object-contain" />
+                    <div>
+                      <p className="font-bold text-foreground">Dubai, UAE</p>
+                      <p className="text-xs text-muted-foreground">Est. 2020</p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
-              {/* Decorative corner accents */}
-              <div className="absolute -top-3 -left-3 w-12 h-12 border-t-4 border-l-4 border-primary/30 rounded-tl-xl" />
-              <div className="absolute -bottom-3 -right-3 w-12 h-12 border-b-4 border-r-4 border-accent/30 rounded-br-xl" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Core Categories Section - From Brochure Pages 4-5 */}
-      <section className="py-20 bg-gradient-to-b from-background to-muted/20">
-        <div className="container px-4 md:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              <Sparkles className="h-3.5 w-3.5" />
+      {/* Core Categories Section */}
+      <section className="py-24 bg-gradient-to-b from-muted/50 via-background to-muted/30 relative overflow-hidden">
+        <div className="absolute top-1/4 left-0 w-72 h-72 bg-emerald-100/50 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-amber-100/50 rounded-full blur-3xl" />
+        
+        <div className="container px-4 md:px-6 relative">
+          <motion.div 
+            className="text-center max-w-2xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-emerald-500/10 text-primary text-sm font-medium mb-6">
+              <Sparkles className="h-4 w-4" />
               What We Offer
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Core Categories
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Core <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Categories</span>
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               A comprehensive range of natural wellness solutions for every aspect of life
             </p>
-          </div>
+          </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreCategories.map((category, index) => {
-              const colors = [
-                'from-emerald-500/10 to-teal-500/5 hover:from-emerald-500/15 hover:to-teal-500/10 border-emerald-200/50',
-                'from-amber-500/10 to-orange-500/5 hover:from-amber-500/15 hover:to-orange-500/10 border-amber-200/50',
-                'from-rose-500/10 to-pink-500/5 hover:from-rose-500/15 hover:to-pink-500/10 border-rose-200/50',
-                'from-violet-500/10 to-purple-500/5 hover:from-violet-500/15 hover:to-purple-500/10 border-violet-200/50',
-                'from-cyan-500/10 to-blue-500/5 hover:from-cyan-500/15 hover:to-blue-500/10 border-cyan-200/50',
-                'from-lime-500/10 to-green-500/5 hover:from-lime-500/15 hover:to-green-500/10 border-lime-200/50',
-              ];
-              const iconColors = [
-                'bg-emerald-500/20 text-emerald-600',
-                'bg-amber-500/20 text-amber-600',
-                'bg-rose-500/20 text-rose-600',
-                'bg-violet-500/20 text-violet-600',
-                'bg-cyan-500/20 text-cyan-600',
-                'bg-lime-500/20 text-lime-600',
-              ];
-              return (
-                <Card key={category.title} className={`border bg-gradient-to-br ${colors[index]} shadow-md hover:shadow-xl transition-all duration-300 group`}>
-                  <CardContent className="p-6">
-                    <div className={`w-12 h-12 rounded-xl ${iconColors[index]} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                      <category.icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="font-semibold text-lg mb-2">{category.title}</h3>
-                    <p className="text-sm text-muted-foreground">{category.description}</p>
+            {coreCategories.map((category, index) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className={`group border-0 bg-gradient-to-br ${category.bg} hover:shadow-xl transition-all duration-500 h-full overflow-hidden relative`}>
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/30 rounded-full blur-2xl transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500" />
+                  <CardContent className="p-6 relative">
+                    <motion.div 
+                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-5 shadow-lg`}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                    >
+                      <category.icon className="h-7 w-7 text-white" />
+                    </motion.div>
+                    <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">{category.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{category.description}</p>
                   </CardContent>
                 </Card>
-              );
-            })}
+              </motion.div>
+            ))}
           </div>
 
-          <div className="text-center mt-10">
-            <Button asChild variant="outline" className="gap-2 border-2">
+          <motion.div 
+            className="text-center mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Button asChild variant="outline" className="gap-2 border-2 px-8">
               <Link to="/global-presence">
                 <Globe className="h-4 w-4" />
                 Explore Global Presence
               </Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Who We Serve - From Brochure Page 8 */}
-      <section className="py-16 bg-gradient-to-r from-emerald-50/50 via-primary/5 to-teal-50/50">
+      {/* Who We Serve */}
+      <section className="py-20 bg-gradient-to-r from-emerald-50/80 via-white to-amber-50/80 relative">
         <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-3 p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-primary/10">
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center">
-                <Users className="h-8 w-8 text-emerald-600" />
-              </div>
-              <h3 className="font-semibold text-lg">For Individuals</h3>
-              <p className="text-sm text-muted-foreground">
-                Pure daily wellness, holistic skin & body health, nature-inspired essentials
-              </p>
-            </div>
-            <div className="space-y-3 p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-accent/10">
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center">
-                <Package className="h-8 w-8 text-amber-600" />
-              </div>
-              <h3 className="font-semibold text-lg">For Businesses</h3>
-              <p className="text-sm text-muted-foreground">
-                Retail, Spa, Clinic partnerships with customised formulations
-              </p>
-            </div>
-            <div className="space-y-3 p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-rose-200/30">
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 flex items-center justify-center">
-                <Heart className="h-8 w-8 text-rose-600" />
-              </div>
-              <h3 className="font-semibold text-lg">For Institutions</h3>
-              <p className="text-sm text-muted-foreground">
-                Wellness campaigns, gifting programs, hospital & clinic kits
-              </p>
-            </div>
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Who We <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Serve</span>
+            </h2>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { icon: Users, title: 'For Individuals', desc: 'Pure daily wellness, holistic skin & body health, nature-inspired essentials', color: 'from-emerald-500 to-teal-500', bg: 'from-emerald-50 to-teal-50' },
+              { icon: Package, title: 'For Businesses', desc: 'Retail, Spa, Clinic partnerships with customised formulations', color: 'from-amber-500 to-orange-500', bg: 'from-amber-50 to-orange-50' },
+              { icon: Heart, title: 'For Institutions', desc: 'Wellness campaigns, gifting programs, hospital & clinic kits', color: 'from-rose-500 to-pink-500', bg: 'from-rose-50 to-pink-50' },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                whileHover={{ y: -8 }}
+                className={`relative p-8 rounded-3xl bg-gradient-to-br ${item.bg} border border-white/50 shadow-lg text-center group`}
+              >
+                <div className="absolute inset-0 rounded-3xl bg-white/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <motion.div 
+                    className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 shadow-xl`}
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <item.icon className="h-10 w-10 text-white" />
+                  </motion.div>
+                  <h3 className="font-bold text-xl mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 bg-gradient-to-b from-muted/30 via-background to-muted/20">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-3">
-                <Package className="h-3.5 w-3.5" />
+      <section className="py-24 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        
+        <div className="container px-4 md:px-6 relative">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+                <Package className="h-4 w-4" />
                 Shop by Category
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">
-                Explore Our Categories
+              <h2 className="text-4xl md:text-5xl font-bold mb-3">
+                Explore Our <span className="bg-gradient-to-r from-accent to-orange-500 bg-clip-text text-transparent">Collections</span>
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-lg text-muted-foreground">
                 Discover wellness solutions crafted for your every need
               </p>
-            </div>
-            <Button asChild variant="outline" className="mt-4 md:mt-0 gap-2 border-2">
-              <Link to="/products">
-                View All Products
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <Button asChild variant="outline" className="mt-6 md:mt-0 gap-2 border-2 px-6">
+                <Link to="/products">
+                  View All Products
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </motion.div>
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.slice(0, 8).map((category) => (
+            {categories.slice(0, 8).map((category, index) => (
               <CategoryCard
                 key={category.id}
                 id={category.id}
                 name={category.name}
                 description={category.description}
                 productCount={getProductsByCategory(category.id).length}
+                index={index}
               />
             ))}
           </div>
@@ -261,81 +417,126 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-20 bg-gradient-to-b from-background to-amber-50/30">
-        <div className="container px-4 md:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-600 text-sm font-medium mb-4">
-              <Heart className="h-3.5 w-3.5" />
+      <section className="py-24 bg-gradient-to-b from-amber-50/50 via-white to-rose-50/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-rose-200/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl" />
+        
+        <div className="container px-4 md:px-6 relative">
+          <motion.div 
+            className="text-center max-w-2xl mx-auto mb-14"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 text-rose-600 text-sm font-medium mb-6">
+              <Heart className="h-4 w-4" />
               Bestsellers
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Featured Products
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Featured <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">Products</span>
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Handpicked wellness essentials from our collection
             </p>
-          </div>
+          </motion.div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => product && (
-              <ProductCard key={product.id} product={product} />
+            {featuredProducts.map((product, index) => product && (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <ProductCard product={product} />
+              </motion.div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-emerald-600 hover:from-primary/90 hover:to-emerald-600/90 text-primary-foreground gap-2 shadow-lg shadow-primary/25 px-8">
+          <motion.div 
+            className="text-center mt-14"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-emerald-600 hover:from-primary/90 hover:to-emerald-600/90 text-primary-foreground gap-2 shadow-xl shadow-primary/25 px-10">
               <Link to="/products">
                 <Leaf className="h-5 w-5" />
                 Explore All Products
               </Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-primary via-emerald-600 to-teal-600 text-primary-foreground relative overflow-hidden">
+      <section className="py-28 bg-gradient-to-br from-primary via-emerald-600 to-teal-600 text-primary-foreground relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-white/3 rounded-full blur-2xl" />
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-white/5 rounded-full blur-2xl" />
+        
+        {/* Pattern overlay */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
         
         <div className="container px-4 md:px-6 relative">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center space-y-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-sm text-sm font-medium"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               <Sparkles className="h-4 w-4" />
               Begin Your Wellness Journey
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Embrace Rituals Rooted in Nature
+            </motion.div>
+            <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+              Embrace Rituals
+              <br />
+              <span className="text-white/90">Rooted in Nature</span>
             </h2>
-            <p className="text-xl opacity-90">
-              Choose a Life of Clarity, Balance, & Purpose.<br />
-              <span className="font-medium">Live Consciously. Live Authentically.</span>
+            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+              Choose a Life of Clarity, Balance, & Purpose.
+              <br />
+              <span className="font-semibold">Live Consciously. Live Authentically.</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center pt-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
               <Button 
                 asChild 
                 size="lg" 
-                variant="secondary"
-                className="gap-2 shadow-lg px-8"
+                className="bg-white text-primary hover:bg-white/90 gap-2 shadow-xl px-10"
               >
                 <a 
                   href="https://wa.me/971XXXXXXXXX?text=Hello%20Earthy%20Concepts%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Leaf className="h-5 w-5" />
+                  <MessageCircle className="h-5 w-5" />
                   Order on WhatsApp
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 px-8">
+              <Button asChild size="lg" variant="outline" className="border-2 border-white/40 text-white hover:bg-white/10 px-10">
                 <Link to="/contact">
                   Contact Us
                 </Link>
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
