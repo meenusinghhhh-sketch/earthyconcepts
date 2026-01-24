@@ -58,17 +58,29 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Categories</h3>
             <nav className="flex flex-col gap-2">
-              <Link to="/products?category=herbal-teas" className="text-sm text-background/70 hover:text-background transition-colors">
-                Herbal Teas
+              <Link to="/products?category=formulations" className="text-sm text-background/70 hover:text-background transition-colors">
+                Formulations
               </Link>
               <Link to="/products?category=single-herbs" className="text-sm text-background/70 hover:text-background transition-colors">
                 Single Herb Capsules
               </Link>
+              <Link to="/products?category=herbal-teas" className="text-sm text-background/70 hover:text-background transition-colors">
+                Herbal Teas
+              </Link>
               <Link to="/products?category=body-oils" className="text-sm text-background/70 hover:text-background transition-colors">
                 Body Oils
               </Link>
+              <Link to="/products?category=hair-oils" className="text-sm text-background/70 hover:text-background transition-colors">
+                Hair Oils
+              </Link>
               <Link to="/products?category=ubtans" className="text-sm text-background/70 hover:text-background transition-colors">
                 Ubtans
+              </Link>
+              <Link to="/products?category=face-mists" className="text-sm text-background/70 hover:text-background transition-colors">
+                Face Mists
+              </Link>
+              <Link to="/products?category=body-cleanse" className="text-sm text-background/70 hover:text-background transition-colors">
+                Body Cleanse
               </Link>
             </nav>
           </div>
