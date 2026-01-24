@@ -10,6 +10,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { categories, products, getProductsByCategory } from '@/data/products';
 import logo from '@/assets/logo.jpeg';
+import botanicalsHands from '@/assets/lifestyle/botanicals-hands.jpg';
+import skincareRitual from '@/assets/lifestyle/skincare-ritual.jpg';
+import herbalTea from '@/assets/lifestyle/herbal-tea-moment.jpg';
+import naturalBeauty from '@/assets/lifestyle/natural-beauty.jpg';
 
 const coreCategories = [
   {
@@ -178,7 +182,7 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              {/* Product collage */}
+              {/* Lifestyle image collage */}
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-3xl" />
                 
@@ -189,20 +193,18 @@ const Index = () => {
                     whileInView={{ y: 0 }}
                     viewport={{ once: true }}
                   >
-                    <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-emerald-100 to-teal-50">
+                    <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
                       <img 
-                        src="/products/formulations/PureGlow.png" 
-                        alt="Product" 
-                        className="w-full h-full object-cover"
-                        onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder.svg'; }}
+                        src={naturalBeauty} 
+                        alt="Natural beauty" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div className="aspect-square rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-amber-100 to-orange-50">
+                    <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
                       <img 
-                        src="/products/body-oils/RoseBliss-100ml.png" 
-                        alt="Product" 
-                        className="w-full h-full object-cover"
-                        onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder.svg'; }}
+                        src={herbalTea} 
+                        alt="Herbal tea ritual" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   </motion.div>
@@ -212,20 +214,18 @@ const Index = () => {
                     whileInView={{ y: 0 }}
                     viewport={{ once: true }}
                   >
-                    <div className="aspect-square rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-rose-100 to-pink-50">
+                    <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
                       <img 
-                        src="/products/herbal-teas/RadiantTea-100gm.png" 
-                        alt="Product" 
-                        className="w-full h-full object-cover"
-                        onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder.svg'; }}
+                        src={botanicalsHands} 
+                        alt="Botanicals" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-violet-100 to-purple-50">
+                    <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
                       <img 
-                        src="/products/ubtans/IllumaMask-100gm.png" 
-                        alt="Product" 
-                        className="w-full h-full object-cover"
-                        onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder.svg'; }}
+                        src={skincareRitual} 
+                        alt="Skincare ritual" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   </motion.div>
