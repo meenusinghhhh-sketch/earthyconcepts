@@ -1,106 +1,52 @@
-import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
 import { 
-  CalendarCheck, 
-  Truck, 
-  Percent, 
+  Leaf, 
+  Moon, 
+  Sun,
+  Sparkles,
+  Heart,
   RefreshCw,
-  CheckCircle,
-  ArrowRight,
-  Gift,
-  Clock,
-  Shield
+  MessageCircle
 } from 'lucide-react';
 
-const subscriptionPlans = [
+const subscriptionTypes = [
   {
-    name: 'Starter',
-    description: 'Perfect for trying out wellness routines',
-    frequency: 'Monthly',
-    discount: '10%',
-    features: [
-      'Choose any 2 products',
-      '10% off retail price',
-      'Free delivery',
-      'Pause or cancel anytime',
-    ],
-    popular: false,
+    icon: Leaf,
+    title: 'Monthly Tea Rituals',
+    description: 'A curated selection of herbal teas delivered monthly, designed to align with seasonal wellness needs and daily rituals.',
   },
   {
-    name: 'Wellness',
-    description: 'Our most popular subscription',
-    frequency: 'Monthly',
-    discount: '15%',
-    features: [
-      'Choose any 4 products',
-      '15% off retail price',
-      'Priority delivery',
-      'Wellness consultation included',
-      'Pause or cancel anytime',
-    ],
-    popular: true,
-  },
-  {
-    name: 'Family',
-    description: 'Complete wellness for the whole family',
-    frequency: 'Monthly',
-    discount: '20%',
-    features: [
-      'Choose any 8 products',
-      '20% off retail price',
-      'Express delivery',
-      'Quarterly wellness review',
-      'Exclusive early access to new products',
-      'Pause or cancel anytime',
-    ],
-    popular: false,
-  },
-];
-
-const benefits = [
-  {
-    icon: Percent,
-    title: 'Save Up to 20%',
-    description: 'Enjoy exclusive discounts on your favorite wellness products.',
-  },
-  {
-    icon: Truck,
-    title: 'Free Delivery',
-    description: 'Your wellness essentials delivered to your door at no extra cost.',
+    icon: Sun,
+    title: 'Seasonal Wellness Boxes',
+    description: 'Thoughtfully assembled wellness collections that change with the seasons, supporting your body\'s natural rhythms throughout the year.',
   },
   {
     icon: RefreshCw,
-    title: 'Flexible Plans',
-    description: 'Modify, pause, or cancel your subscription anytime.',
+    title: 'Repeat Replenishment',
+    description: 'Never run out of your essential wellness staples. Set your preferred products for automatic, scheduled delivery.',
   },
   {
-    icon: Gift,
-    title: 'Surprise Gifts',
-    description: 'Receive exclusive samples and seasonal wellness surprises.',
-  },
-  {
-    icon: Clock,
-    title: 'Never Run Out',
-    description: 'Automatic replenishment ensures you always have your essentials.',
-  },
-  {
-    icon: Shield,
-    title: 'Priority Support',
-    description: 'Dedicated wellness support for all subscribers.',
+    icon: Moon,
+    title: 'Ritual Bundles',
+    description: 'Complete wellness rituals—morning energy, evening calm, or holistic skincare—delivered as integrated practice sets.',
   },
 ];
 
+const idealFor = [
+  'Individuals committed to consistent wellness practices',
+  'Families seeking natural health solutions',
+  'Wellness enthusiasts exploring Ayurvedic traditions',
+  'Those seeking convenience without compromising on quality',
+  'Anyone wanting to build sustainable self-care habits',
+];
+
 const Subscription = () => {
-  const getWhatsAppLink = (planName: string) => {
-    const message = encodeURIComponent(
-      `Hello Earthy Concepts, I'm interested in the ${planName} subscription plan. Please share more details.`
-    );
-    return `https://wa.me/971XXXXXXXXX?text=${message}`;
-  };
+  const whatsappMessage = encodeURIComponent(
+    "Hello Earthy Concepts, I'm interested in your Wellness Subscription options. Please share more details."
+  );
 
   return (
     <Layout>
@@ -109,95 +55,62 @@ const Subscription = () => {
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
-              <CalendarCheck className="h-4 w-4" />
-              <span className="text-sm font-medium">Subscribe & Save</span>
+              <Sparkles className="h-4 w-4" />
+              <span className="text-sm font-medium">Ritual Subscriptions</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              Wellness on Autopilot
+              Wellness as a Ritual
             </h1>
-            <p className="text-lg text-muted-foreground mb-8">
-              Never run out of your favorite Ayurvedic essentials. Subscribe to regular deliveries 
-              of your wellness products and enjoy exclusive discounts, free shipping, and more.
+            <p className="text-lg text-muted-foreground">
+              True wellness is not a destination—it is a daily practice. At Earthy Concepts, 
+              we believe in nurturing health through consistent, mindful rituals that honour 
+              the body's natural rhythms and the wisdom of Ayurveda.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Subscription Plans */}
+      {/* Philosophy Section */}
       <section className="py-16">
         <div className="container px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Choose Your Wellness Plan</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Select the plan that fits your lifestyle. All plans include free delivery and the flexibility to modify anytime.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {subscriptionPlans.map((plan) => (
-              <Card 
-                key={plan.name} 
-                className={`relative ${plan.popular ? 'border-primary shadow-lg scale-105' : 'border-border'}`}
-              >
-                {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    Most Popular
-                  </Badge>
-                )}
-                <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                  <p className="text-muted-foreground text-sm">{plan.description}</p>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold text-primary">{plan.discount}</span>
-                    <span className="text-muted-foreground"> off</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{plan.frequency}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    className="w-full" 
-                    variant={plan.popular ? 'default' : 'outline'}
-                    asChild
-                  >
-                    <a
-                      href={getWhatsAppLink(plan.name)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Subscribe Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+              The Art of Consistent Wellness
+            </h2>
+            <div className="prose prose-lg max-w-none text-muted-foreground">
+              <p className="mb-4">
+                Our subscription programs are designed to support your wellness journey with 
+                regularity and intention. Rather than sporadic purchases, subscriptions allow 
+                you to integrate Ayurvedic practices seamlessly into your daily life.
+              </p>
+              <p>
+                Each delivery is a gentle reminder to pause, nurture yourself, and continue 
+                the practices that bring balance to your body and peace to your mind. Whether 
+                it's a morning cup of herbal tea or an evening skincare ritual, consistency 
+                transforms routine into meaningful self-care.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Grid */}
+      {/* Subscription Types */}
       <section className="py-16 bg-muted/30">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Subscriber Benefits</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ways to Subscribe</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Join our wellness community and enjoy exclusive perks designed to support your health journey.
+              Choose the rhythm that suits your lifestyle. Each subscription is tailored 
+              to support your unique wellness needs.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit) => (
-              <Card key={benefit.title} className="border-none shadow-md">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {subscriptionTypes.map((type) => (
+              <Card key={type.title} className="border-none shadow-md">
                 <CardContent className="p-6">
-                  <benefit.icon className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                  <p className="text-muted-foreground">{benefit.description}</p>
+                  <type.icon className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">{type.title}</h3>
+                  <p className="text-muted-foreground">{type.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -205,40 +118,92 @@ const Subscription = () => {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Who It's For */}
       <section className="py-16">
         <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">How It Works</h2>
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
-              <div className="text-center">
-                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  1
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">Who It's For</h2>
+              <p className="text-muted-foreground mb-8">
+                Our subscription programs are crafted for those who understand that wellness 
+                is a journey, not a quick fix. They're for the mindful, the curious, and 
+                those ready to embrace nature's healing traditions.
+              </p>
+              <ul className="space-y-4">
+                {idealFor.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Heart className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-muted-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 lg:p-10">
+              <h3 className="text-xl font-bold mb-4">How It Works</h3>
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shrink-0">
+                    1
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Share Your Needs</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Tell us about your wellness goals and preferences via WhatsApp.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-semibold mb-2">Choose Your Plan</h3>
-                <p className="text-sm text-muted-foreground">
-                  Select the subscription that fits your wellness needs and budget.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  2
+                <div className="flex gap-4">
+                  <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shrink-0">
+                    2
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Receive Recommendations</h4>
+                    <p className="text-sm text-muted-foreground">
+                      We curate a personalized subscription plan based on your needs.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-semibold mb-2">Pick Your Products</h3>
-                <p className="text-sm text-muted-foreground">
-                  Select your favorite products from our entire wellness range.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  3
+                <div className="flex gap-4">
+                  <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shrink-0">
+                    3
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Enjoy Your Rituals</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Receive your wellness essentials at your chosen frequency.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-semibold mb-2">Enjoy & Repeat</h3>
-                <p className="text-sm text-muted-foreground">
-                  Receive your wellness box monthly. Modify anytime as needed.
-                </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              Begin Your Wellness Ritual
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Ready to embrace consistent wellness? Connect with us to explore 
+              subscription options tailored to your journey.
+            </p>
+            <Button size="lg" className="gap-2" asChild>
+              <a
+                href={`https://wa.me/971XXXXXXXXX?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="h-5 w-5" />
+                Order on WhatsApp
+              </a>
+            </Button>
+            <p className="text-sm text-muted-foreground mt-4">
+              Subscription options are shared via WhatsApp
+            </p>
           </div>
         </div>
       </section>

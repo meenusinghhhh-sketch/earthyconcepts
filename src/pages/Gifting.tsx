@@ -1,83 +1,58 @@
-import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { 
   Gift, 
   Heart, 
   Sparkles, 
-  Package,
-  ArrowRight,
-  CheckCircle,
-  Star,
-  Leaf
+  Leaf,
+  MessageCircle,
+  Sun,
+  Users,
+  Building2
 } from 'lucide-react';
 
-const giftCategories = [
+const giftingOccasions = [
   {
-    name: 'Wellness Essentials',
-    description: 'A curated selection of daily wellness must-haves for any recipient.',
-    priceRange: 'AED 150 - 250',
-    includes: ['Herbal Tea Selection', 'Single Herb Capsules', 'Face Mist'],
-    icon: Leaf,
+    icon: Sun,
+    title: 'Festive Gifting',
+    description: 'Celebrate Diwali, Eid, Christmas, and seasonal festivals with wellness hampers that convey warmth and thoughtfulness.',
   },
   {
-    name: 'Radiance Collection',
-    description: 'Pamper someone special with our beauty and skincare favorites.',
-    priceRange: 'AED 250 - 400',
-    includes: ['Premium Body Oil', 'Face Mist', 'Ubtan Face Mask', 'Herbal Tea'],
-    icon: Sparkles,
+    icon: Building2,
+    title: 'Corporate Gifting',
+    description: 'Express appreciation to clients, partners, and teams with curated wellness boxes that reflect your organisation\'s values.',
   },
   {
-    name: 'Complete Wellness',
-    description: 'Our most comprehensive gift set for the ultimate wellness experience.',
-    priceRange: 'AED 500 - 800',
-    includes: ['Premium Formulations', 'Body & Hair Oils', 'Ubtans', 'Herbal Tea Collection'],
-    icon: Star,
-  },
-  {
-    name: 'Custom Hamper',
-    description: 'Create a personalized gift with your choice of products and packaging.',
-    priceRange: 'Starting AED 200',
-    includes: ['Your choice of products', 'Custom message card', 'Premium gift packaging'],
-    icon: Package,
+    icon: Users,
+    title: 'Personal Gifting',
+    description: 'Mark birthdays, anniversaries, housewarmings, and life\'s special moments with the gift of natural wellness.',
   },
 ];
 
-const occasions = [
-  'Corporate Events & Recognition',
-  'Wedding & Anniversary Gifts',
-  'Birthday Celebrations',
-  'Festive Season (Diwali, Eid, Christmas)',
-  'New Home & Housewarming',
-  'Get Well Soon',
-  'Thank You & Appreciation',
-  'New Year Wellness Resolutions',
-];
-
-const giftFeatures = [
+const ritualBoxExamples = [
   {
-    icon: Gift,
-    title: 'Elegant Packaging',
-    description: 'Each gift is beautifully wrapped in eco-friendly, premium packaging.',
+    title: 'Morning Awakening',
+    description: 'Energising teas, face mists, and vitality formulations to start the day with intention.',
   },
   {
-    icon: Heart,
-    title: 'Personal Touch',
-    description: 'Add a custom message card to make your gift truly special.',
+    title: 'Evening Serenity',
+    description: 'Calming teas, relaxation oils, and sleep-supporting herbs for peaceful nights.',
   },
   {
-    icon: Package,
-    title: 'Direct Delivery',
-    description: 'We deliver directly to your recipient with gift-ready presentation.',
+    title: 'Radiant Beauty',
+    description: 'Ubtans, face mists, and skin-nourishing oils for a complete self-care ritual.',
+  },
+  {
+    title: 'Holistic Wellness',
+    description: 'A balanced selection spanning internal health, external beauty, and emotional balance.',
   },
 ];
 
 const Gifting = () => {
   const whatsappMessage = encodeURIComponent(
-    "Hello Earthy Concepts, I'm interested in your wellness gift options. Please share more details."
+    "Hello Earthy Concepts, I'm interested in your Gifting & Ritual Boxes. Please share more details."
   );
 
   return (
@@ -88,94 +63,44 @@ const Gifting = () => {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
               <Gift className="h-4 w-4" />
-              <span className="text-sm font-medium">Wellness Gifting</span>
+              <span className="text-sm font-medium">Gifting & Ritual Boxes</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              Give the Gift of Wellness
+              The Art of Conscious Gifting
             </h1>
-            <p className="text-lg text-muted-foreground mb-8">
-              Celebrate special moments with thoughtful wellness gifts. Our beautifully curated 
-              gift sets bring the healing power of Ayurveda to your loved ones, wrapped in 
-              eco-friendly elegance.
+            <p className="text-lg text-muted-foreground">
+              A gift from Earthy Concepts is more than a present—it is an invitation 
+              to wellness, a gesture of care wrapped in nature's healing wisdom.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <a
-                  href={`https://wa.me/971XXXXXXXXX?text=${whatsappMessage}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Create Custom Gift
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/products">Browse All Products</Link>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Gift Features */}
-      <section className="py-12 border-b">
-        <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            {giftFeatures.map((feature) => (
-              <div key={feature.title} className="flex items-start gap-4 text-center md:text-left">
-                <feature.icon className="h-8 w-8 text-primary shrink-0 mx-auto md:mx-0" />
-                <div>
-                  <h3 className="font-semibold mb-1">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Gift Categories */}
+      {/* Philosophy Section */}
       <section className="py-16">
         <div className="container px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Curated Gift Sets</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Choose from our thoughtfully curated gift collections or create your own custom hamper.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {giftCategories.map((category) => (
-              <Card key={category.name} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <category.icon className="h-10 w-10 text-primary" />
-                    <Badge variant="secondary">{category.priceRange}</Badge>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{category.name}</h3>
-                  <p className="text-muted-foreground mb-4">{category.description}</p>
-                  <div className="space-y-2 mb-6">
-                    <p className="text-sm font-medium">Includes:</p>
-                    <ul className="space-y-1">
-                      {category.includes.map((item) => (
-                        <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <CheckCircle className="h-3 w-3 text-primary" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <Button className="w-full" variant="outline" asChild>
-                    <a
-                      href={`https://wa.me/971XXXXXXXXX?text=${encodeURIComponent(`Hello, I'm interested in the ${category.name} gift set.`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Order This Gift
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+              Gifting with Intention
+            </h2>
+            <div className="prose prose-lg max-w-none text-muted-foreground">
+              <p className="mb-4">
+                In the tradition of Ayurveda, giving is considered a sacred act—one that 
+                nurtures both the giver and the receiver. When you gift wellness, you 
+                share something far more valuable than material goods: you share the 
+                wish for health, balance, and vitality.
+              </p>
+              <p className="mb-4">
+                Our gift collections are thoughtfully curated to create meaningful 
+                experiences. Each box tells a story of botanical treasures, time-honoured 
+                formulations, and the care that goes into every Earthy Concepts product.
+              </p>
+              <p>
+                Whether celebrating a milestone, expressing gratitude, or simply showing 
+                someone you care, a wellness gift speaks to the heart while nourishing 
+                the body.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -183,43 +108,98 @@ const Gifting = () => {
       {/* Occasions */}
       <section className="py-16 bg-muted/30">
         <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Perfect for Every Occasion</h2>
-            <p className="text-muted-foreground mb-8">
-              Our wellness gifts are perfect for celebrating life's special moments.
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Gifting for Every Occasion</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              From intimate personal celebrations to large-scale corporate events, 
+              our wellness gifts are crafted to make every moment memorable.
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {occasions.map((occasion) => (
-                <Badge 
-                  key={occasion} 
-                  variant="outline" 
-                  className="py-2 px-4 text-sm"
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {giftingOccasions.map((occasion) => (
+              <Card key={occasion.title} className="border-none shadow-md text-center">
+                <CardContent className="p-8">
+                  <occasion.icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">{occasion.title}</h3>
+                  <p className="text-muted-foreground">{occasion.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ritual Boxes */}
+      <section className="py-16">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Ritual Box Inspirations</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our ritual boxes are designed around wellness themes, bringing together 
+                complementary products that create complete self-care experiences.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {ritualBoxExamples.map((box) => (
+                <div 
+                  key={box.title} 
+                  className="p-6 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5"
                 >
-                  {occasion}
-                </Badge>
+                  <Sparkles className="h-8 w-8 text-primary mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">{box.title}</h3>
+                  <p className="text-muted-foreground">{box.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Corporate Gifting CTA */}
+      {/* Sustainable Packaging */}
+      <section className="py-16 bg-muted/30">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <Leaf className="h-12 w-12 text-primary mx-auto mb-6" />
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              Wrapped in Sustainability
+            </h2>
+            <p className="text-muted-foreground mb-4">
+              Every Earthy Concepts gift arrives in eco-conscious packaging that 
+              honours our commitment to the environment. We use recyclable materials, 
+              minimal plastics, and natural elements to create presentations that 
+              are as beautiful as they are responsible.
+            </p>
+            <p className="text-muted-foreground">
+              When you gift from Earthy Concepts, you gift with a clear conscience—knowing 
+              that your gesture of care extends to the planet we all share.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <section className="py-16">
         <div className="container px-4 md:px-6">
-          <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Corporate Gifting Solutions</h2>
-            <p className="text-muted-foreground mb-6">
-              Looking for bulk gifting for your team or clients? We offer special corporate 
-              packages with custom branding, volume discounts, and dedicated account support.
+          <div className="max-w-2xl mx-auto text-center">
+            <Heart className="h-12 w-12 text-primary mx-auto mb-6" />
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              Create Your Perfect Gift
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Every gift is unique. Share your vision with us, and we'll help you 
+              craft a wellness gift that speaks to your occasion and your recipient.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <Link to="/corporate-wellness">
-                  Explore Corporate Gifting
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
+            <Button size="lg" className="gap-2" asChild>
+              <a
+                href={`https://wa.me/971XXXXXXXXX?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="h-5 w-5" />
+                Order on WhatsApp
+              </a>
+            </Button>
           </div>
         </div>
       </section>
