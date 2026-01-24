@@ -17,6 +17,7 @@ import { ProductGrid } from '@/components/ProductGrid';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { ParallaxBanner } from '@/components/ParallaxBanner';
 import { BenefitsStrip } from '@/components/BenefitsStrip';
+import { VideoHeroBanner } from '@/components/VideoHeroBanner';
 import { CategoryCard } from '@/components/CategoryCard';
 import { ProductCard } from '@/components/ProductCard';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
@@ -215,6 +216,9 @@ const Index = () => {
 
       {/* Stats Section */}
       <StatsSection />
+
+      {/* Video Hero Banner */}
+      <VideoHeroBanner />
 
       {/* Lifestyle Gallery */}
       <LifestyleGallery />
