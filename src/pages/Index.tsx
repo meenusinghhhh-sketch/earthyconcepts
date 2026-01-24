@@ -66,12 +66,14 @@ const Index = () => {
       <Hero />
 
       {/* Trust Badges - Certification Strip */}
-      <section className="py-6 bg-primary/5 border-y border-primary/10">
+      <section className="py-6 bg-gradient-to-r from-primary/5 via-emerald-50/50 to-accent/5 border-y border-primary/10">
         <div className="container px-4 md:px-6">
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
             {trustBadges.map((badge) => (
-              <div key={badge.name} className="flex items-center gap-2 text-muted-foreground">
-                <badge.icon className="h-4 w-4 text-primary" />
+              <div key={badge.name} className="flex items-center gap-2 text-muted-foreground group">
+                <div className="p-1.5 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <badge.icon className="h-3.5 w-3.5 text-primary" />
+                </div>
                 <span className="text-sm font-medium">{badge.name}</span>
               </div>
             ))}
@@ -110,26 +112,30 @@ const Index = () => {
               </Button>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 via-emerald-100/50 to-accent/20 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-tr from-amber-100/30 to-transparent" />
                 <img 
                   src={logo} 
                   alt="Earthy Concepts" 
-                  className="w-2/3 h-auto object-contain"
+                  className="relative w-2/3 h-auto object-contain drop-shadow-lg"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-lg">
-                <p className="text-2xl font-bold">62+</p>
-                <p className="text-sm opacity-90">Natural Products</p>
-              </div>
+              {/* Decorative corner accents */}
+              <div className="absolute -top-3 -left-3 w-12 h-12 border-t-4 border-l-4 border-primary/30 rounded-tl-xl" />
+              <div className="absolute -bottom-3 -right-3 w-12 h-12 border-b-4 border-r-4 border-accent/30 rounded-br-xl" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Core Categories Section - From Brochure Pages 4-5 */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-background to-muted/20">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              <Sparkles className="h-3.5 w-3.5" />
+              What We Offer
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Core Categories
             </h2>
@@ -139,21 +145,39 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreCategories.map((category) => (
-              <Card key={category.title} className="border-none shadow-md hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <category.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">{category.title}</h3>
-                  <p className="text-sm text-muted-foreground">{category.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {coreCategories.map((category, index) => {
+              const colors = [
+                'from-emerald-500/10 to-teal-500/5 hover:from-emerald-500/15 hover:to-teal-500/10 border-emerald-200/50',
+                'from-amber-500/10 to-orange-500/5 hover:from-amber-500/15 hover:to-orange-500/10 border-amber-200/50',
+                'from-rose-500/10 to-pink-500/5 hover:from-rose-500/15 hover:to-pink-500/10 border-rose-200/50',
+                'from-violet-500/10 to-purple-500/5 hover:from-violet-500/15 hover:to-purple-500/10 border-violet-200/50',
+                'from-cyan-500/10 to-blue-500/5 hover:from-cyan-500/15 hover:to-blue-500/10 border-cyan-200/50',
+                'from-lime-500/10 to-green-500/5 hover:from-lime-500/15 hover:to-green-500/10 border-lime-200/50',
+              ];
+              const iconColors = [
+                'bg-emerald-500/20 text-emerald-600',
+                'bg-amber-500/20 text-amber-600',
+                'bg-rose-500/20 text-rose-600',
+                'bg-violet-500/20 text-violet-600',
+                'bg-cyan-500/20 text-cyan-600',
+                'bg-lime-500/20 text-lime-600',
+              ];
+              return (
+                <Card key={category.title} className={`border bg-gradient-to-br ${colors[index]} shadow-md hover:shadow-xl transition-all duration-300 group`}>
+                  <CardContent className="p-6">
+                    <div className={`w-12 h-12 rounded-xl ${iconColors[index]} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <category.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2">{category.title}</h3>
+                    <p className="text-sm text-muted-foreground">{category.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
 
           <div className="text-center mt-10">
-            <Button asChild variant="outline" className="gap-2">
+            <Button asChild variant="outline" className="gap-2 border-2">
               <Link to="/global-presence">
                 <Globe className="h-4 w-4" />
                 Explore Global Presence
@@ -164,25 +188,31 @@ const Index = () => {
       </section>
 
       {/* Who We Serve - From Brochure Page 8 */}
-      <section className="py-16 bg-primary/5">
+      <section className="py-16 bg-gradient-to-r from-emerald-50/50 via-primary/5 to-teal-50/50">
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-3">
-              <Users className="h-10 w-10 text-primary mx-auto" />
+            <div className="space-y-3 p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-primary/10">
+              <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center">
+                <Users className="h-8 w-8 text-emerald-600" />
+              </div>
               <h3 className="font-semibold text-lg">For Individuals</h3>
               <p className="text-sm text-muted-foreground">
                 Pure daily wellness, holistic skin & body health, nature-inspired essentials
               </p>
             </div>
-            <div className="space-y-3">
-              <Package className="h-10 w-10 text-primary mx-auto" />
+            <div className="space-y-3 p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-accent/10">
+              <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center">
+                <Package className="h-8 w-8 text-amber-600" />
+              </div>
               <h3 className="font-semibold text-lg">For Businesses</h3>
               <p className="text-sm text-muted-foreground">
                 Retail, Spa, Clinic partnerships with customised formulations
               </p>
             </div>
-            <div className="space-y-3">
-              <Heart className="h-10 w-10 text-primary mx-auto" />
+            <div className="space-y-3 p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-rose-200/30">
+              <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 flex items-center justify-center">
+                <Heart className="h-8 w-8 text-rose-600" />
+              </div>
               <h3 className="font-semibold text-lg">For Institutions</h3>
               <p className="text-sm text-muted-foreground">
                 Wellness campaigns, gifting programs, hospital & clinic kits
@@ -193,10 +223,14 @@ const Index = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-gradient-to-b from-muted/30 via-background to-muted/20">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
             <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-3">
+                <Package className="h-3.5 w-3.5" />
+                Shop by Category
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-2">
                 Explore Our Categories
               </h2>
@@ -204,7 +238,7 @@ const Index = () => {
                 Discover wellness solutions crafted for your every need
               </p>
             </div>
-            <Button asChild variant="outline" className="mt-4 md:mt-0 gap-2">
+            <Button asChild variant="outline" className="mt-4 md:mt-0 gap-2 border-2">
               <Link to="/products">
                 View All Products
                 <ArrowRight className="h-4 w-4" />
@@ -227,9 +261,13 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-background to-amber-50/30">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-600 text-sm font-medium mb-4">
+              <Heart className="h-3.5 w-3.5" />
+              Bestsellers
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Featured Products
             </h2>
@@ -245,7 +283,7 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
+            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-emerald-600 hover:from-primary/90 hover:to-emerald-600/90 text-primary-foreground gap-2 shadow-lg shadow-primary/25 px-8">
               <Link to="/products">
                 <Leaf className="h-5 w-5" />
                 Explore All Products
@@ -256,22 +294,31 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">
+      <section className="py-24 bg-gradient-to-br from-primary via-emerald-600 to-teal-600 text-primary-foreground relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-white/3 rounded-full blur-2xl" />
+        
+        <div className="container px-4 md:px-6 relative">
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium">
+              <Sparkles className="h-4 w-4" />
+              Begin Your Wellness Journey
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold">
               Embrace Rituals Rooted in Nature
             </h2>
-            <p className="text-lg opacity-90">
+            <p className="text-xl opacity-90">
               Choose a Life of Clarity, Balance, & Purpose.<br />
-              Live Consciously. Live Authentically.
+              <span className="font-medium">Live Consciously. Live Authentically.</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button 
                 asChild 
                 size="lg" 
                 variant="secondary"
-                className="gap-2"
+                className="gap-2 shadow-lg px-8"
               >
                 <a 
                   href="https://wa.me/971XXXXXXXXX?text=Hello%20Earthy%20Concepts%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products"
@@ -282,7 +329,7 @@ const Index = () => {
                   Order on WhatsApp
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button asChild size="lg" variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 px-8">
                 <Link to="/contact">
                   Contact Us
                 </Link>
