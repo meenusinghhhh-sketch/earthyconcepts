@@ -10,7 +10,6 @@ const navLinks = [
   { name: 'Products', href: '/products' },
   { name: 'Find Your Concept', href: '/learn' },
   { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
 ];
 
 export const Header = () => {
