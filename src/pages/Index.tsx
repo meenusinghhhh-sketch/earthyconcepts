@@ -214,14 +214,14 @@ const Index = () => {
       {/* Ingredients Showcase */}
       <IngredientsShowcase />
 
-      {/* Stats Section */}
-      <StatsSection />
-
       {/* Video Hero Banner */}
       <VideoHeroBanner />
 
       {/* Lifestyle Gallery */}
       <LifestyleGallery />
+
+      {/* Stats Section */}
+      <StatsSection />
 
       {/* Core Categories Section */}
       <section className="py-24 bg-gradient-to-b from-muted/50 via-background to-muted/30 relative overflow-hidden">

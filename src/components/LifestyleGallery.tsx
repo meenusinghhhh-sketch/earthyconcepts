@@ -15,10 +15,10 @@ const galleryImages = [
 
 export const LifestyleGallery = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/30 via-background to-muted/50 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#c9b99a' }}>
       {/* Background decoration */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-200/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#a68f5d]/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#8b7355]/15 rounded-full blur-3xl" />
       
       <div className="container px-4 md:px-6 relative">
         <motion.div 
@@ -27,10 +27,10 @@ export const LifestyleGallery = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Embrace the <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Earthy Lifestyle</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#2d3a2e]">
+            Embrace the <span className="text-[#3d4f3e]">Earthy Lifestyle</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-[#4a5a4b] text-lg">
             Experience wellness through nature's finest offerings
           </p>
         </motion.div>
