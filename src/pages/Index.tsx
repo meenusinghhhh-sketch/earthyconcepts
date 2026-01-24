@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby, MessageCircle } from 'lucide-react';
+import { Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Hero } from '@/components/Hero';
@@ -9,21 +9,17 @@ import { LifestyleGallery } from '@/components/LifestyleGallery';
 import { TestimonialCarousel } from '@/components/TestimonialCarousel';
 import { BlogSection } from '@/components/BlogSection';
 import { IngredientsShowcase } from '@/components/IngredientsShowcase';
-import { ProductShowcase } from '@/components/ProductShowcase';
 import { ProcessSteps } from '@/components/ProcessSteps';
 import { VisualBanner } from '@/components/VisualBanner';
 import { StatsSection } from '@/components/StatsSection';
-import { ProductGrid } from '@/components/ProductGrid';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
-import { ParallaxBanner } from '@/components/ParallaxBanner';
 import { BenefitsStrip } from '@/components/BenefitsStrip';
 import { VideoHeroBanner } from '@/components/VideoHeroBanner';
-import { CategoryCard } from '@/components/CategoryCard';
 import { ProductCard } from '@/components/ProductCard';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { categories, products, getProductsByCategory } from '@/data/products';
+import { products } from '@/data/products';
 
 const coreCategories = [
   {
@@ -141,75 +137,6 @@ const Index = () => {
       {/* Visual Collection Banners */}
       <VisualBanner />
 
-      {/* Featured Products Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
-        
-        <div className="container px-4 md:px-6 relative">
-          <motion.div 
-            className="text-center max-w-2xl mx-auto mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              <Package className="h-4 w-4" />
-              Natural Wellness Products
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Herbal Health & Beauty Essentials
-            </h2>
-            <p className="text-muted-foreground">
-              From immunity-boosting capsules to nourishing body oils — discover our range of 100% natural formulations
-            </p>
-          </motion.div>
-
-          {/* Product Showcase Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-10">
-            {featuredProducts.map((product, index) => (
-              product && (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group"
-                >
-                  <Link to={`/products/${product.id}`}>
-                    <div className="relative bg-gradient-to-br from-muted/50 to-muted rounded-2xl p-4 md:p-6 aspect-square flex items-center justify-center overflow-hidden border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <img 
-                        src={product.image} 
-                        alt={product.name}
-                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="mt-3 text-center">
-                      <p className="font-medium text-sm md:text-base group-hover:text-primary transition-colors line-clamp-1">{product.name}</p>
-                      <p className="text-xs text-muted-foreground capitalize">{product.category.replace('-', ' ')}</p>
-                    </div>
-                  </Link>
-                </motion.div>
-              )
-            ))}
-          </div>
-
-          <motion.div 
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Button asChild className="gap-2">
-              <Link to="/products">
-                Explore All Products
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Ingredients Showcase */}
       <IngredientsShowcase />
@@ -344,68 +271,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="py-24 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        
-        <div className="container px-4 md:px-6 relative">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
-                <Package className="h-4 w-4" />
-                Shop by Category
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-3">
-                Explore Our <span className="bg-gradient-to-r from-accent to-orange-500 bg-clip-text text-transparent">Collections</span>
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Discover wellness solutions crafted for your every need
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <Button asChild variant="outline" className="mt-6 md:mt-0 gap-2 border-2 px-6">
-                <Link to="/products">
-                  View All Products
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </motion.div>
-          </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.slice(0, 8).map((category, index) => (
-              <CategoryCard
-                key={category.id}
-                id={category.id}
-                name={category.name}
-                description={category.description}
-                productCount={getProductsByCategory(category.id).length}
-                index={index}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Us */}
       <WhyChooseUs />
 
-      {/* Parallax Banner */}
-      <ParallaxBanner />
-
-      {/* Product Grid Animation */}
-      <ProductGrid />
-
-      {/* Product Showcase */}
-      <ProductShowcase />
 
       {/* Best Sellers Grid */}
       <section className="py-24 bg-gradient-to-b from-amber-50/50 via-white to-rose-50/30 relative overflow-hidden">
