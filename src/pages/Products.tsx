@@ -113,20 +113,16 @@ const Products = () => {
               </div>
               
               <div className="flex flex-wrap lg:flex-col gap-2">
-                {categories.map((category) => {
-                  const count = getProductsByCategory(category.id).length;
-                  return (
-                    <Badge
-                      key={category.id}
-                      variant={selectedCategory === category.id ? 'default' : 'outline'}
-                      className="cursor-pointer justify-between py-2 px-3"
-                      onClick={() => handleCategoryClick(category.id)}
-                    >
-                      <span>{category.name}</span>
-                      <span className="ml-2 opacity-70">{count}</span>
-                    </Badge>
-                  );
-                })}
+                {categories.map((category) => (
+                  <Badge
+                    key={category.id}
+                    variant={selectedCategory === category.id ? 'default' : 'outline'}
+                    className="cursor-pointer py-2 px-3"
+                    onClick={() => handleCategoryClick(category.id)}
+                  >
+                    <span>{category.name}</span>
+                  </Badge>
+                ))}
               </div>
             </div>
           </aside>
