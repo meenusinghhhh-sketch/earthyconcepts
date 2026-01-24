@@ -79,10 +79,10 @@ const Contact = () => {
                         For detailed inquiries and business partnerships
                       </p>
                       <a 
-                        href="mailto:info@earthyconcepts.com"
+                        href="mailto:connect@earthyconcepts.com"
                         className="text-primary hover:underline font-medium"
                       >
-                        info@earthyconcepts.com
+                        connect@earthyconcepts.com
                       </a>
                     </div>
                   </div>
