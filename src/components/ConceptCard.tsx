@@ -82,9 +82,6 @@ export const ConceptCard = ({ concept }: ConceptCardProps) => {
             </p>
           </div>
 
-          <Badge variant="secondary" className="text-xs">
-            {validProducts.length} Products
-          </Badge>
         </CardContent>
       </Card>
     </Link>
