@@ -1,13 +1,56 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Leaf, Shield, Heart, Sparkles } from 'lucide-react';
+import { ArrowRight, Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Hero } from '@/components/Hero';
 import { CategoryCard } from '@/components/CategoryCard';
 import { ProductCard } from '@/components/ProductCard';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import { categories, products, getProductsByCategory } from '@/data/products';
 import logo from '@/assets/logo.jpeg';
+
+const coreCategories = [
+  {
+    icon: Leaf,
+    title: 'Retail-Ready Lines',
+    description: 'Clean-Label Health Capsules & Teas for Immunity, Digestion, Detox, Heart Health, and Everyday Wellness',
+  },
+  {
+    icon: Sparkles,
+    title: 'Pure Skincare',
+    description: 'Face Masks, Glow Powders, Herbal Soaps, Facial Serums, Hair & Body Oils for Everyday Skincare',
+  },
+  {
+    icon: Package,
+    title: 'Gifting Editions',
+    description: 'Healthcare On-The-Go, Chakra Packs, Health Kits & Organic Home Care',
+  },
+  {
+    icon: Heart,
+    title: 'Herbal Products',
+    description: 'Formulated for Mind & Body Rituals - Traditional Health and Wellness',
+  },
+  {
+    icon: Home,
+    title: 'Spa & Hospitality',
+    description: 'Natural & Organic Products for Hotels, Spas, Retreats & Wellness Centers',
+  },
+  {
+    icon: Baby,
+    title: 'Family Wellness',
+    description: 'Gentle Products for Kids & Parents, Clean skincare for the whole family',
+  },
+];
+
+const trustBadges = [
+  { name: 'GMP Certified', icon: Award },
+  { name: 'ISO Certified', icon: Shield },
+  { name: 'HACCP Certified', icon: Shield },
+  { name: 'FDA Compliant', icon: Award },
+  { name: 'Lab Tested', icon: Shield },
+  { name: 'Eco-Conscious', icon: Leaf },
+];
 
 const Index = () => {
   // Get featured products (first 4 from different categories)
@@ -21,6 +64,20 @@ const Index = () => {
   return (
     <Layout>
       <Hero />
+
+      {/* Trust Badges - Certification Strip */}
+      <section className="py-6 bg-primary/5 border-y border-primary/10">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+            {trustBadges.map((badge) => (
+              <div key={badge.name} className="flex items-center gap-2 text-muted-foreground">
+                <badge.icon className="h-4 w-4 text-primary" />
+                <span className="text-sm font-medium">{badge.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* About Section */}
       <section className="py-20 bg-muted/30">
@@ -69,45 +126,66 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Core Categories Section - From Brochure Pages 4-5 */}
       <section className="py-20">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Rooted in Tradition, Built for the World
+              Core Categories
             </h2>
             <p className="text-muted-foreground">
-              Our production partners enable Earthy Concepts to curate safe, ethical, 
-              and premium products — ready for the world.
+              A comprehensive range of natural wellness solutions for every aspect of life
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 rounded-xl bg-muted/50">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                <Shield className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="font-semibold text-lg mb-2">Certified Quality</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {coreCategories.map((category) => (
+              <Card key={category.title} className="border-none shadow-md hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <category.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">{category.title}</h3>
+                  <p className="text-sm text-muted-foreground">{category.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Button asChild variant="outline" className="gap-2">
+              <Link to="/global-presence">
+                <Globe className="h-4 w-4" />
+                Explore Global Presence
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Serve - From Brochure Page 8 */}
+      <section className="py-16 bg-primary/5">
+        <div className="container px-4 md:px-6">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="space-y-3">
+              <Users className="h-10 w-10 text-primary mx-auto" />
+              <h3 className="font-semibold text-lg">For Individuals</h3>
               <p className="text-sm text-muted-foreground">
-                GMP, ISO, HACCP-Certified Facilities with FDA-Compliant Manufacturing
+                Pure daily wellness, holistic skin & body health, nature-inspired essentials
               </p>
             </div>
-            <div className="text-center p-6 rounded-xl bg-muted/50">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                <Heart className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="font-semibold text-lg mb-2">Conscious Selection</h3>
+            <div className="space-y-3">
+              <Package className="h-10 w-10 text-primary mx-auto" />
+              <h3 className="font-semibold text-lg">For Businesses</h3>
               <p className="text-sm text-muted-foreground">
-                Formulations crafted for efficacy & purity, lab-tested for your safety
+                Retail, Spa, Clinic partnerships with customised formulations
               </p>
             </div>
-            <div className="text-center p-6 rounded-xl bg-muted/50">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                <Sparkles className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="font-semibold text-lg mb-2">Eco-Conscious</h3>
+            <div className="space-y-3">
+              <Heart className="h-10 w-10 text-primary mx-auto" />
+              <h3 className="font-semibold text-lg">For Institutions</h3>
               <p className="text-sm text-muted-foreground">
-                Sustainable packaging and responsible sourcing for a better planet
+                Wellness campaigns, gifting programs, hospital & clinic kits
               </p>
             </div>
           </div>
