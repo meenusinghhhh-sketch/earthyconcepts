@@ -1,0 +1,207 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight, Leaf, Shield, Heart, Sparkles, Globe, Users, Award } from 'lucide-react';
+import { Layout } from '@/components/Layout';
+import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { Button } from '@/components/ui/button';
+import logo from '@/assets/logo.jpeg';
+
+const About = () => {
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="py-20 bg-muted/30">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <img 
+              src={logo} 
+              alt="Earthy Concepts" 
+              className="h-24 w-auto object-contain mx-auto mb-8"
+            />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Our Story
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Earthy Concepts was born in Dubai, UAE, at the intersection of ancient wisdom 
+              and contemporary living.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Story */}
+      <section className="py-20">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <p className="text-lg leading-relaxed">
+              Created from a deep need to be responsible—to ourselves, to our communities, 
+              and to the planet—Earthy Concepts stands for all things natural, intentional, 
+              and conscious.
+            </p>
+            <p className="text-lg leading-relaxed">
+              Rooted in time-honored traditions and reimagined through modern innovation, 
+              we draw exclusively from the earth's natural resources to create thoughtful 
+              solutions for health, skincare, clothing, home, and everyday living. Each offering 
+              reflects a harmonious blend of indigenous knowledge systems and mindful design, 
+              supporting a lifestyle that is cleaner, more balanced, and deeply connected to nature.
+            </p>
+            <p className="text-lg leading-relaxed">
+              At Earthy Concepts, we believe that the choices we make every day shape the world 
+              we live in. Our purpose-driven approach to clean beauty, holistic wellness, and 
+              conscious lifestyle essentials goes beyond products—they are tools for living with 
+              awareness, integrity, and intention. Designed for modern lives in a fast-moving, 
+              often frugal world, our creations empower you to care for yourself while honoring 
+              the earth.
+            </p>
+            <blockquote className="border-l-4 border-primary pl-6 py-4 my-12">
+              <p className="text-2xl font-display italic text-foreground">
+                "We invite you to be part of a movement that values authenticity over excess, 
+                mindfulness over convenience, and sustainability over compromise."
+              </p>
+            </blockquote>
+            <p className="text-lg leading-relaxed text-primary font-medium">
+              Together, as conscious citizens, we can create a future that respects Mother Earth, 
+              nurtures wellbeing, and uplifts the human spirit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 bg-muted/30">
+        <div className="container px-4 md:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Responsible Sourcing
+            </h2>
+            <p className="text-muted-foreground">
+              Our production partners enable Earthy Concepts to curate safe, ethical, 
+              and premium products — ready for the world.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-background p-6 rounded-xl shadow-sm">
+              <Shield className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">GMP, ISO, HACCP Certified</h3>
+              <p className="text-sm text-muted-foreground">
+                All facilities meet international quality standards
+              </p>
+            </div>
+            <div className="bg-background p-6 rounded-xl shadow-sm">
+              <Award className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">FDA-Compliant Manufacturing</h3>
+              <p className="text-sm text-muted-foreground">
+                Registered formulations approved by Dubai Authorities
+              </p>
+            </div>
+            <div className="bg-background p-6 rounded-xl shadow-sm">
+              <Leaf className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">Eco-Conscious Packaging</h3>
+              <p className="text-sm text-muted-foreground">
+                Sustainable materials that respect the environment
+              </p>
+            </div>
+            <div className="bg-background p-6 rounded-xl shadow-sm">
+              <Sparkles className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">Lab-Tested Purity</h3>
+              <p className="text-sm text-muted-foreground">
+                Every product tested for efficacy and safety
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Presence */}
+      <section className="py-20">
+        <div className="container px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Building A Global Presence
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                With capabilities to support multi-country distribution and product categories 
+                designed for worldwide appeal, we're preparing to be launch-ready on global platforms.
+              </p>
+              <h3 className="font-semibold mb-4">Suitable for:</h3>
+              <ul className="space-y-3">
+                {['Wellness Centers', 'Clinics', 'Pharmacies', 'Resorts', 'Retreats & Spas'].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-muted/50 p-8 rounded-2xl">
+              <h3 className="font-semibold text-lg mb-6">We Serve:</h3>
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <Users className="h-8 w-8 text-primary shrink-0" />
+                  <div>
+                    <h4 className="font-medium">For Individuals</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Pure daily wellness, holistic skin & body health, nature-inspired essentials
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <Globe className="h-8 w-8 text-primary shrink-0" />
+                  <div>
+                    <h4 className="font-medium">For Businesses</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Product knowledge development, minimum order flexibility, customized formulations
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <Heart className="h-8 w-8 text-primary shrink-0" />
+                  <div>
+                    <h4 className="font-medium">For Institutions</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Product lines for wellness campaigns, gifting packs, hospital wellness kits
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Embrace Rituals Rooted in Nature
+            </h2>
+            <p className="text-lg opacity-90">
+              Choose a Life of Clarity, Balance, & Purpose.<br />
+              Live Consciously. Live Authentically.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button asChild size="lg" variant="secondary" className="gap-2">
+                <Link to="/products">
+                  <Leaf className="h-5 w-5" />
+                  Explore Products
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                <Link to="/contact">
+                  Contact Us
+                  <ArrowRight className="h-4 w-4 ml-2" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <WhatsAppButton variant="floating" />
+    </Layout>
+  );
+};
+
+export default About;
