@@ -3,17 +3,8 @@ import { Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Hero } from '@/components/Hero';
-import { MarqueeStrip } from '@/components/MarqueeStrip';
-import { ValuePropsGrid } from '@/components/ValuePropsGrid';
 import { LifestyleGallery } from '@/components/LifestyleGallery';
 import { TestimonialCarousel } from '@/components/TestimonialCarousel';
-import { BlogSection } from '@/components/BlogSection';
-import { IngredientsShowcase } from '@/components/IngredientsShowcase';
-import { ProcessSteps } from '@/components/ProcessSteps';
-import { VisualBanner } from '@/components/VisualBanner';
-import { StatsSection } from '@/components/StatsSection';
-import { WhyChooseUs } from '@/components/WhyChooseUs';
-import { BenefitsStrip } from '@/components/BenefitsStrip';
 import { VideoHeroBanner } from '@/components/VideoHeroBanner';
 import { ProductCard } from '@/components/ProductCard';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
@@ -76,16 +67,9 @@ const trustBadges = [
 ];
 
 const Index = () => {
-  // Get featured products - specific products with verified images
-  const featuredProducts = [
-    products.find(p => p.id === 'golden-curcumin'),
-    products.find(p => p.id === 'immune-tea'),
-    products.find(p => p.id === 'rose-bliss'),
-    products.find(p => p.id === 'illuma-mask'),
-  ].filter(Boolean);
-
-  // Get more best sellers for the product showcase
+  // Get best sellers for the product showcase
   const bestSellers = [
+    products.find(p => p.id === 'golden-curcumin'),
     products.find(p => p.id === 'rejuve-daily'),
     products.find(p => p.id === 'serene-tea'),
     products.find(p => p.id === 'hydra-mist'),
@@ -93,21 +77,18 @@ const Index = () => {
     products.find(p => p.id === 'saffron-rituals'),
     products.find(p => p.id === 'pure-glow'),
     products.find(p => p.id === 'amla-shield'),
-    products.find(p => p.id === 'golden-curcumin'),
   ].filter(Boolean);
 
   return (
     <Layout>
+      {/* 1. HERO - Brand Introduction */}
       <Hero />
-      
-      {/* Animated Marquee Strip */}
-      <MarqueeStrip />
 
-      {/* Trust Badges - Certification Strip */}
-      <section className="py-8 bg-gradient-to-r from-emerald-50 via-white to-amber-50 border-y border-primary/10">
+      {/* 2. TRUST STRIP - Immediate Credibility */}
+      <section className="py-6 bg-gradient-to-r from-emerald-50 via-white to-amber-50 border-y border-primary/10">
         <div className="container px-4 md:px-6">
           <motion.div 
-            className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
+            className="flex flex-wrap justify-center items-center gap-6 md:gap-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -115,15 +96,13 @@ const Index = () => {
             {trustBadges.map((badge, index) => (
               <motion.div 
                 key={badge.name} 
-                className="flex items-center gap-2 text-muted-foreground group"
+                className="flex items-center gap-2 text-muted-foreground"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
               >
-                <div className="p-2 rounded-full bg-gradient-to-br from-primary/10 to-emerald-500/10 group-hover:from-primary/20 group-hover:to-emerald-500/20 transition-colors">
-                  <badge.icon className="h-4 w-4 text-primary" />
-                </div>
+                <badge.icon className="h-4 w-4 text-primary" />
                 <span className="text-sm font-medium">{badge.name}</span>
               </motion.div>
             ))}
@@ -131,155 +110,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Value Props Grid */}
-      <ValuePropsGrid />
-
-      {/* Visual Collection Banners */}
-      <VisualBanner />
-
-
-      {/* Ingredients Showcase */}
-      <IngredientsShowcase />
-
-      {/* Video Hero Banner */}
+      {/* 3. VIDEO BANNER - Emotional Connection */}
       <VideoHeroBanner />
 
-      {/* Lifestyle Gallery */}
+      {/* 4. LIFESTYLE GALLERY - Visual Brand Immersion */}
       <LifestyleGallery />
 
-      {/* Stats Section */}
-      <StatsSection />
-
-      {/* Core Categories Section */}
-      <section className="py-24 bg-gradient-to-b from-muted/50 via-background to-muted/30 relative overflow-hidden">
+      {/* 5. CORE CATEGORIES - What We Offer */}
+      <section className="py-20 bg-gradient-to-b from-background via-muted/30 to-background relative overflow-hidden">
         <div className="absolute top-1/4 left-0 w-72 h-72 bg-emerald-100/50 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-amber-100/50 rounded-full blur-3xl" />
-        
-        <div className="container px-4 md:px-6 relative">
-          <motion.div 
-            className="text-center max-w-2xl mx-auto mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-emerald-500/10 text-primary text-sm font-medium mb-6">
-              <Sparkles className="h-4 w-4" />
-              What We Offer
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Core <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Categories</span>
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              A comprehensive range of natural wellness solutions for every aspect of life
-            </p>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreCategories.map((category, index) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className={`group border-0 bg-gradient-to-br ${category.bg} hover:shadow-xl transition-all duration-500 h-full overflow-hidden relative`}>
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/30 rounded-full blur-2xl transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500" />
-                  <CardContent className="p-6 relative">
-                    <motion.div 
-                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-5 shadow-lg`}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                    >
-                      <category.icon className="h-7 w-7 text-white" />
-                    </motion.div>
-                    <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">{category.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{category.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Button asChild variant="outline" className="gap-2 border-2 px-8">
-              <Link to="/global-presence">
-                <Globe className="h-4 w-4" />
-                Explore Global Presence
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <TestimonialCarousel />
-
-      {/* Benefits Strip */}
-      <BenefitsStrip />
-
-      {/* Process Steps */}
-      <ProcessSteps />
-
-      {/* Who We Serve */}
-      <section className="py-20 bg-gradient-to-r from-emerald-50/80 via-white to-amber-50/80 relative">
-        <div className="container px-4 md:px-6">
-          <motion.div 
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Who We <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Serve</span>
-            </h2>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: Users, title: 'For Individuals', desc: 'Pure daily wellness, holistic skin & body health, nature-inspired essentials', color: 'from-emerald-500 to-teal-500', bg: 'from-emerald-50 to-teal-50' },
-              { icon: Package, title: 'For Businesses', desc: 'Retail, Spa, Clinic partnerships with customised formulations', color: 'from-amber-500 to-orange-500', bg: 'from-amber-50 to-orange-50' },
-              { icon: Heart, title: 'For Institutions', desc: 'Wellness campaigns, gifting programs, hospital & clinic kits', color: 'from-rose-500 to-pink-500', bg: 'from-rose-50 to-pink-50' },
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                whileHover={{ y: -8 }}
-                className={`relative p-8 rounded-3xl bg-gradient-to-br ${item.bg} border border-white/50 shadow-lg text-center group`}
-              >
-                <div className="absolute inset-0 rounded-3xl bg-white/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative">
-                  <motion.div 
-                    className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 shadow-xl`}
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <item.icon className="h-10 w-10 text-white" />
-                  </motion.div>
-                  <h3 className="font-bold text-xl mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* Why Choose Us */}
-      <WhyChooseUs />
-
-
-      {/* Best Sellers Grid */}
-      <section className="py-24 bg-gradient-to-b from-amber-50/50 via-white to-rose-50/30 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-rose-200/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl" />
         
         <div className="container px-4 md:px-6 relative">
           <motion.div 
@@ -288,19 +128,60 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 text-rose-600 text-sm font-medium mb-6">
-              <Heart className="h-4 w-4" />
-              Bestsellers
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Customer <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">Favorites</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              What We <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Offer</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-muted-foreground">
+              A comprehensive range of natural wellness solutions for every aspect of life
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {coreCategories.map((category, index) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.08 }}
+              >
+                <Card className={`group border-0 bg-gradient-to-br ${category.bg} hover:shadow-xl transition-all duration-500 h-full`}>
+                  <CardContent className="p-6">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-4 shadow-lg`}>
+                      <category.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">{category.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{category.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. BESTSELLERS - Products with CTA */}
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#f8f5f0' }}>
+        <div className="container px-4 md:px-6 relative">
+          <motion.div 
+            className="text-center max-w-2xl mx-auto mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              <Leaf className="h-4 w-4" />
+              Nature's Bestsellers
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Community <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Favorites</span>
+            </h2>
+            <p className="text-muted-foreground">
               Handpicked wellness essentials loved by our community
             </p>
           </motion.div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {bestSellers.slice(0, 8).map((product, index) => product && (
               <motion.div
                 key={product.id}
@@ -315,12 +196,12 @@ const Index = () => {
           </div>
 
           <motion.div 
-            className="text-center mt-14"
+            className="text-center mt-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-emerald-600 hover:from-primary/90 hover:to-emerald-600/90 text-primary-foreground gap-2 shadow-xl shadow-primary/25 px-10">
+            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-emerald-600 hover:from-primary/90 hover:to-emerald-600/90 text-primary-foreground gap-2 shadow-lg px-8">
               <Link to="/products">
                 <Leaf className="h-5 w-5" />
                 Explore All Products
@@ -330,59 +211,82 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Blog Section */}
-      <BlogSection />
+      {/* 7. WHO WE SERVE - Audience Segments */}
+      <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+        <div className="container px-4 md:px-6">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Who We <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Serve</span>
+            </h2>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { icon: Users, title: 'For Individuals', desc: 'Pure daily wellness, holistic skin & body health, nature-inspired essentials', color: 'from-emerald-500 to-teal-500', bg: 'from-emerald-50 to-teal-50' },
+              { icon: Package, title: 'For Businesses', desc: 'Retail, Spa, Clinic partnerships with customised formulations', color: 'from-amber-500 to-orange-500', bg: 'from-amber-50 to-orange-50' },
+              { icon: Heart, title: 'For Institutions', desc: 'Wellness campaigns, gifting programs, hospital & clinic kits', color: 'from-rose-500 to-pink-500', bg: 'from-rose-50 to-pink-50' },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className={`p-8 rounded-2xl bg-gradient-to-br ${item.bg} border border-white/50 shadow-md text-center`}
+              >
+                <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-5 shadow-lg`}>
+                  <item.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-xl mb-3">{item.title}</h3>
+                <p className="text-muted-foreground text-sm">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* CTA Section */}
-      <section className="py-28 bg-gradient-to-br from-primary via-emerald-600 to-teal-600 text-primary-foreground relative overflow-hidden">
-        {/* Decorative elements */}
+      {/* 8. TESTIMONIALS - Social Proof */}
+      <TestimonialCarousel />
+
+      {/* 9. FINAL CTA - Conversion */}
+      <section className="py-24 bg-gradient-to-br from-primary via-emerald-600 to-teal-600 text-primary-foreground relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-white/5 rounded-full blur-2xl" />
-        
-        {/* Pattern overlay */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
         
         <div className="container px-4 md:px-6 relative">
           <motion.div 
-            className="max-w-4xl mx-auto text-center space-y-8"
+            className="max-w-3xl mx-auto text-center space-y-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <motion.div 
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-sm text-sm font-medium"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <Sparkles className="h-4 w-4" />
-              Begin Your Wellness Journey
-            </motion.div>
-            <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
               Embrace Rituals
               <br />
               <span className="text-white/90">Rooted in Nature</span>
             </h2>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+            <p className="text-lg opacity-90 max-w-xl mx-auto">
               Choose a Life of Clarity, Balance, & Purpose.
               <br />
               <span className="font-semibold">Live Consciously. Live Authentically.</span>
             </p>
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center pt-6"
+              className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.3 }}
             >
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-white text-primary hover:bg-white/90 gap-2 shadow-xl px-10"
+                className="bg-white text-primary hover:bg-white/90 gap-2 shadow-xl px-8"
               >
                 <a 
                   href="https://wa.me/971XXXXXXXXX?text=Hello%20Earthy%20Concepts%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products"
@@ -393,7 +297,7 @@ const Index = () => {
                   Order on WhatsApp
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-2 border-white/40 text-white hover:bg-white/10 px-10">
+              <Button asChild size="lg" variant="outline" className="border-2 border-white/40 text-white hover:bg-white/10 px-8">
                 <Link to="/contact">
                   Contact Us
                 </Link>
