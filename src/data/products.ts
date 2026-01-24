@@ -117,7 +117,7 @@ export const products: Product[] = [
     ingredients: ['Saffron', 'Fuller\'s Earth', 'Rubia cordifolia', 'Symplocos', 'Rose Petals', 'Licorice'],
     size: '100 GM | FACEPACK POWDER',
     shelfLife: '36 months',
-    image: '/products/ubtans/RadianceMask-100gm.png',
+    image: '/products/ubtans/IllumaMask-100gm.png',
   },
   {
     id: 'detoxmask',
@@ -129,7 +129,7 @@ export const products: Product[] = [
     ingredients: ['Fuller\'s Earth', 'Neem (Azadirachta indica)', 'Holy Basil', 'Curcuma longa'],
     size: '100 GM | FACEPACK POWDER',
     shelfLife: '36 months',
-    image: '/products/ubtans/RadianceMask-100gm.png',
+    image: '/products/ubtans/DetoxMask-100gm.png',
   },
   {
     id: 'ubtanaamask',
@@ -141,7 +141,7 @@ export const products: Product[] = [
     ingredients: ['Gram Flour', 'Curcuma longa', 'Rose Petals', 'Fennel'],
     size: '100 GM | FACEPACK POWDER',
     shelfLife: '36 months',
-    image: '/products/ubtans/RadianceMask-100gm.png',
+    image: '/products/ubtans/UbtanaMask-100gm.png',
   },
   {
     id: 'radiancemask',
