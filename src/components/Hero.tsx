@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Leaf, Sparkles, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import logo from '@/assets/logo.jpeg';
+import logo from '@/assets/logo.png';
 import heroWellness from '@/assets/lifestyle/hero-wellness.jpg';
 import skincareRitual from '@/assets/lifestyle/skincare-ritual.jpg';
 import herbalTea from '@/assets/lifestyle/herbal-tea-moment.jpg';

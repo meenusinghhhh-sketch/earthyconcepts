@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Leaf } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import logo from '@/assets/logo.jpeg';
+import logo from '@/assets/logo.png';
 
 const navLinks = [
   { name: 'Home', href: '/' },
