@@ -3,24 +3,28 @@ import { ArrowRight, Leaf, Sparkles, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import logo from '@/assets/logo.jpeg';
-
-// Sample product images for the hero showcase
-const heroProducts = [
-  '/products/formulations/GoldenCurcumin.png',
-  '/products/body-oils/SaffronRituals-30ml.png',
-  '/products/herbal-teas/SereneTea-100gm.png',
-  '/products/ubtans/IllumaMask-100gm.png',
-];
+import heroWellness from '@/assets/lifestyle/hero-wellness.jpg';
+import skincareRitual from '@/assets/lifestyle/skincare-ritual.jpg';
+import herbalTea from '@/assets/lifestyle/herbal-tea-moment.jpg';
+import spaBotanicals from '@/assets/lifestyle/spa-botanicals.jpg';
 
 export const Hero = () => {
   return (
     <section className="relative min-h-[95vh] flex items-center overflow-hidden">
-      {/* Rich gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-emerald-50/60 to-rose-50/40" />
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroWellness} 
+          alt="Wellness lifestyle" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+      </div>
       
       {/* Animated decorative orbs */}
       <motion.div 
-        className="absolute top-20 left-[5%] w-80 h-80 bg-gradient-to-br from-emerald-300/30 to-teal-400/20 rounded-full blur-3xl"
+        className="absolute top-20 left-[5%] w-64 h-64 bg-gradient-to-br from-primary/30 to-emerald-400/20 rounded-full blur-3xl"
         animate={{ 
           scale: [1, 1.1, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -28,26 +32,13 @@ export const Hero = () => {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div 
-        className="absolute bottom-20 right-[5%] w-96 h-96 bg-gradient-to-tl from-amber-300/30 to-orange-300/20 rounded-full blur-3xl"
+        className="absolute bottom-32 right-[30%] w-48 h-48 bg-gradient-to-tl from-amber-300/30 to-orange-300/20 rounded-full blur-2xl"
         animate={{ 
           scale: [1.1, 1, 1.1],
           opacity: [0.4, 0.6, 0.4],
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div 
-        className="absolute top-1/3 right-[20%] w-64 h-64 bg-gradient-to-br from-rose-300/25 to-pink-300/15 rounded-full blur-2xl"
-        animate={{ 
-          y: [0, -20, 0],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      />
-      
-      {/* Subtle leaf pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23228B22' fill-opacity='1'%3E%3Cpath d='M40 40c0-11.046-8.954-20-20-20S0 28.954 0 40s8.954 20 20 20c2.5 0 4.9-.46 7.1-1.3C18.3 54.9 12 46.2 12 36c0-15.464 12.536-28 28-28v32z'/%3E%3C/g%3E%3C/svg%3E")`,
-      }} />
 
       <div className="container relative px-4 md:px-6 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -60,7 +51,7 @@ export const Hero = () => {
           >
             {/* Badge */}
             <motion.div 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/15 to-emerald-500/10 border border-primary/20 text-primary text-sm font-medium"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary text-sm font-medium shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -126,7 +117,7 @@ export const Hero = () => {
                   Explore Products
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="gap-2 border-2 border-primary/30 hover:border-primary/50 hover:bg-primary/5">
+              <Button asChild size="lg" variant="outline" className="gap-2 border-2 bg-white/50 backdrop-blur-sm border-primary/30 hover:border-primary/50 hover:bg-white/70">
                 <Link to="/learn">
                   Find Your Concept
                   <ArrowRight className="h-4 w-4" />
@@ -150,45 +141,68 @@ export const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right side - Product showcase */}
+          {/* Right side - Lifestyle image showcase */}
           <motion.div 
             className="relative hidden lg:block"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            {/* Main product grid */}
+            {/* Lifestyle images grid */}
             <div className="relative">
-              {/* Background decorative card */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl" />
-              
-              {/* Product grid */}
-              <div className="relative grid grid-cols-2 gap-4">
-                {heroProducts.map((img, index) => (
-                  <motion.div
-                    key={index}
-                    className={`relative rounded-2xl overflow-hidden shadow-xl ${
-                      index === 0 ? 'col-span-1 row-span-1' : ''
-                    }`}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 + index * 0.15 }}
-                    whileHover={{ scale: 1.03, y: -5 }}
-                  >
-                    <div className={`${index === 1 ? 'aspect-[3/4]' : 'aspect-square'} bg-gradient-to-br from-amber-50 to-emerald-50`}>
-                      <img 
-                        src={img} 
-                        alt="Product" 
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = '/placeholder.svg';
-                        }}
-                      />
-                    </div>
+              <div className="grid grid-cols-2 gap-4">
+                {/* Large image */}
+                <motion.div
+                  className="col-span-2 rounded-3xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="aspect-[16/9] relative">
+                    <img 
+                      src={spaBotanicals} 
+                      alt="Spa botanicals" 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  </div>
+                </motion.div>
+
+                {/* Smaller images */}
+                <motion.div
+                  className="rounded-2xl overflow-hidden shadow-xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                >
+                  <div className="aspect-square relative">
+                    <img 
+                      src={herbalTea} 
+                      alt="Herbal tea moment" 
+                      className="w-full h-full object-cover"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  </motion.div>
-                ))}
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="rounded-2xl overflow-hidden shadow-xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                >
+                  <div className="aspect-square relative">
+                    <img 
+                      src={skincareRitual} 
+                      alt="Skincare ritual" 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+                </motion.div>
               </div>
 
               {/* Floating badge */}
