@@ -11,8 +11,31 @@ import spaBotanicals from '@/assets/lifestyle/spa-botanicals.jpg';
 export const Hero = () => {
   return (
     <section className="relative min-h-[95vh] flex items-center overflow-hidden">
+      {/* Warm beige/sand leaf watermark pattern - homepage only */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {/* Base warm gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/80 via-background to-emerald-50/30" />
+        
+        {/* Beige leaf watermark pattern */}
+        <div className="absolute inset-0 opacity-[0.12]" 
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b8a07a'%3E%3Cpath d='M90 10 Q120 50 90 100 Q60 50 90 10 Z'/%3E%3Cpath d='M40 60 Q60 90 40 130 Q20 90 40 60 Z' transform='rotate(-20 40 95)'/%3E%3Cpath d='M140 60 Q160 90 140 130 Q120 90 140 60 Z' transform='rotate(20 140 95)'/%3E%3Cpath d='M90 120 Q105 145 90 175 Q75 145 90 120 Z' opacity='0.6'/%3E%3Cellipse cx='30' cy='150' rx='12' ry='25' transform='rotate(-30 30 150)' opacity='0.5'/%3E%3Cellipse cx='150' cy='150' rx='12' ry='25' transform='rotate(30 150 150)' opacity='0.5'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '180px 180px',
+          }}
+        />
+        
+        {/* Additional scattered leaf shapes for variety */}
+        <div className="absolute inset-0 opacity-[0.08]" 
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a89070'%3E%3Cpath d='M150 20 Q190 80 150 150 Q110 80 150 20 Z' transform='rotate(15 150 85)'/%3E%3Cpath d='M60 100 Q90 150 60 210 Q30 150 60 100 Z' transform='rotate(-10 60 155)'/%3E%3Cpath d='M240 100 Q270 150 240 210 Q210 150 240 100 Z' transform='rotate(10 240 155)'/%3E%3Cpath d='M100 200 Q120 240 100 285 Q80 240 100 200 Z' opacity='0.7'/%3E%3Cpath d='M200 200 Q220 240 200 285 Q180 240 200 200 Z' opacity='0.7'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '300px 300px',
+            backgroundPosition: '50px 50px',
+          }}
+        />
+      </div>
+      
       {/* Background image with overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-[1]">
         <img 
           src={heroWellness} 
           alt="Wellness lifestyle" 
@@ -24,7 +47,7 @@ export const Hero = () => {
       
       {/* Animated decorative orbs */}
       <motion.div 
-        className="absolute top-20 left-[5%] w-64 h-64 bg-gradient-to-br from-primary/30 to-emerald-400/20 rounded-full blur-3xl"
+        className="absolute top-20 left-[5%] w-64 h-64 bg-gradient-to-br from-primary/30 to-emerald-400/20 rounded-full blur-3xl z-[2]"
         animate={{ 
           scale: [1, 1.1, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -32,7 +55,7 @@ export const Hero = () => {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div 
-        className="absolute bottom-32 right-[30%] w-48 h-48 bg-gradient-to-tl from-amber-300/30 to-orange-300/20 rounded-full blur-2xl"
+        className="absolute bottom-32 right-[30%] w-48 h-48 bg-gradient-to-tl from-amber-300/30 to-orange-300/20 rounded-full blur-2xl z-[2]"
         animate={{ 
           scale: [1.1, 1, 1.1],
           opacity: [0.4, 0.6, 0.4],
@@ -40,7 +63,7 @@ export const Hero = () => {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container relative px-4 md:px-6 py-8 pt-4">
+      <div className="container relative px-4 md:px-6 py-8 pt-4 z-[3]">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left content */}
           <motion.div 
