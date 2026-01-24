@@ -56,7 +56,7 @@ const Subscription = () => {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
               <Sparkles className="h-4 w-4" />
-              <span className="text-sm font-medium">Earthy Rituals</span>
+              <span className="text-sm font-medium">Earthy Concepts</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
               Wellness as a Ritual
