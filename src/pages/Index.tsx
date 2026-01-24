@@ -77,13 +77,13 @@ const highlights = [
 ];
 
 const Index = () => {
-  // Get featured products (first 4 from different categories)
+  // Get featured products - specific products with verified images
   const featuredProducts = [
-    products.find(p => p.category === 'formulations'),
-    products.find(p => p.category === 'herbal-teas'),
-    products.find(p => p.category === 'body-oils'),
-    products.find(p => p.category === 'ubtans'),
-  ].filter(Boolean).slice(0, 4);
+    products.find(p => p.id === 'golden-curcumin'),
+    products.find(p => p.id === 'immune-tea'),
+    products.find(p => p.id === 'rose-bliss'),
+    products.find(p => p.id === 'illuma-mask'),
+  ].filter(Boolean);
 
   return (
     <Layout>
