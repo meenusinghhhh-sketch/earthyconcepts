@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import logo from '@/assets/logo.jpeg';
-
+import { NewsletterSignup } from './NewsletterSignup';
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg 
     className={className} 
@@ -125,30 +125,8 @@ export const Footer = () => {
             </nav>
           </div>
 
-          {/* Contact */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Contact Us</h3>
-            <div className="flex flex-col gap-3">
-              <a 
-                href="mailto:connect@earthyconcepts.com" 
-                className="flex items-center gap-2 text-sm text-background/70 hover:text-background transition-colors"
-              >
-                <Mail className="h-4 w-4" />
-                connect@earthyconcepts.com
-              </a>
-              <a 
-                href="tel:+971XXXXXXXXX" 
-                className="flex items-center gap-2 text-sm text-background/70 hover:text-background transition-colors"
-              >
-                <Phone className="h-4 w-4" />
-                +971 XX XXX XXXX
-              </a>
-              <div className="flex items-start gap-2 text-sm text-background/70">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>Dubai, United Arab Emirates</span>
-              </div>
-            </div>
-          </div>
+          {/* Newsletter */}
+          <NewsletterSignup />
         </div>
 
         <div className="mt-12 pt-8 border-t border-background/10">
