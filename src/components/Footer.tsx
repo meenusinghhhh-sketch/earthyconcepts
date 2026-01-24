@@ -48,8 +48,30 @@ export const Footer = () => {
               <Link to="/products" className="text-sm text-background/70 hover:text-background transition-colors">
                 Products
               </Link>
+              <Link to="/learn" className="text-sm text-background/70 hover:text-background transition-colors">
+                Find Your Concept
+              </Link>
               <Link to="/contact" className="text-sm text-background/70 hover:text-background transition-colors">
                 Contact
+              </Link>
+            </nav>
+          </div>
+
+          {/* Services */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Services</h3>
+            <nav className="flex flex-col gap-2">
+              <Link to="/subscription" className="text-sm text-background/70 hover:text-background transition-colors">
+                Subscriptions
+              </Link>
+              <Link to="/corporate-wellness" className="text-sm text-background/70 hover:text-background transition-colors">
+                Corporate Wellness
+              </Link>
+              <Link to="/gifting" className="text-sm text-background/70 hover:text-background transition-colors">
+                Gifting
+              </Link>
+              <Link to="/global-presence" className="text-sm text-background/70 hover:text-background transition-colors">
+                Global Presence
               </Link>
             </nav>
           </div>
