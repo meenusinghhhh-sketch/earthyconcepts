@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { NatureWatermark } from '@/components/NatureWatermark';
 
 const testimonials = [
   {
@@ -41,6 +42,9 @@ export const TestimonialCarousel = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-emerald-50/50 relative overflow-hidden">
+      {/* Nature Watermark */}
+      <NatureWatermark opacity={0.06} />
+      
       {/* Decorative elements */}
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-amber-200/20 rounded-full blur-3xl" />
