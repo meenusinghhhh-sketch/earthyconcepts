@@ -17,7 +17,7 @@ export const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
       <div className="container px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="space-y-4">
             <img 
@@ -123,31 +123,6 @@ export const Footer = () => {
                 Body Cleanse
               </Link>
             </nav>
-          </div>
-
-          {/* Contact */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Contact Us</h3>
-            <div className="flex flex-col gap-3">
-              <a 
-                href="mailto:connect@earthyconcepts.com" 
-                className="flex items-center gap-2 text-sm text-background/70 hover:text-background transition-colors"
-              >
-                <Mail className="h-4 w-4" />
-                connect@earthyconcepts.com
-              </a>
-              <a 
-                href="tel:+971XXXXXXXXX" 
-                className="flex items-center gap-2 text-sm text-background/70 hover:text-background transition-colors"
-              >
-                <Phone className="h-4 w-4" />
-                +971 XX XXX XXXX
-              </a>
-              <div className="flex items-start gap-2 text-sm text-background/70">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>Dubai, United Arab Emirates</span>
-              </div>
-            </div>
           </div>
 
           {/* Newsletter */}
