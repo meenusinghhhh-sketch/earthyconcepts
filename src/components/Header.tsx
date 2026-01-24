@@ -26,7 +26,7 @@ export const Header = () => {
           <img 
             src={logo} 
             alt="Earthy Concepts" 
-            className="h-20 w-auto object-contain drop-shadow-md"
+            className="h-20 w-auto object-contain drop-shadow-md mix-blend-multiply"
           />
         </Link>
 
@@ -78,7 +78,7 @@ export const Header = () => {
                 <img 
                   src={logo} 
                   alt="Earthy Concepts" 
-                  className="h-16 w-auto object-contain"
+                  className="h-16 w-auto object-contain mix-blend-multiply"
                 />
               </Link>
               <nav className="flex flex-col gap-4">
