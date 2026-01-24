@@ -85,26 +85,26 @@ export const Layout = ({ children }: LayoutProps) => {
         </svg>
         
         {/* Subtle nature watermark pattern - repeating across entire page */}
-        <div className="absolute inset-0 opacity-[0.04]" 
+        <div className="absolute inset-0 opacity-[0.08]" 
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2322543d'%3E%3Cpath d='M60 5 Q75 30 60 55 Q45 30 60 5 Z'/%3E%3Cpath d='M25 40 Q35 55 25 75 Q15 55 25 40 Z' opacity='0.6'/%3E%3Cpath d='M95 40 Q105 55 95 75 Q85 55 95 40 Z' opacity='0.6'/%3E%3Cpath d='M60 70 Q70 85 60 105 Q50 85 60 70 Z' opacity='0.5'/%3E%3Ccircle cx='40' cy='95' r='3' opacity='0.4'/%3E%3Ccircle cx='80' cy='95' r='3' opacity='0.4'/%3E%3Ccircle cx='60' cy='30' r='2' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2316a34a'%3E%3Cpath d='M60 5 Q75 30 60 55 Q45 30 60 5 Z'/%3E%3Cpath d='M25 40 Q35 55 25 75 Q15 55 25 40 Z' opacity='0.7'/%3E%3Cpath d='M95 40 Q105 55 95 75 Q85 55 95 40 Z' opacity='0.7'/%3E%3Cpath d='M60 70 Q70 85 60 105 Q50 85 60 70 Z' opacity='0.6'/%3E%3Ccircle cx='40' cy='95' r='3' opacity='0.5'/%3E%3Ccircle cx='80' cy='95' r='3' opacity='0.5'/%3E%3Ccircle cx='60' cy='30' r='2' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E")`,
             backgroundSize: '120px 120px',
           }}
         />
         
-        {/* Secondary botanical watermark layer */}
-        <div className="absolute inset-0 opacity-[0.025]" 
+        {/* Secondary botanical watermark layer - larger leaves */}
+        <div className="absolute inset-0 opacity-[0.06]" 
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23166534'%3E%3Cpath d='M100 10 Q130 50 100 100 Q70 50 100 10 Z'/%3E%3Cpath d='M50 60 Q70 90 50 130 Q30 90 50 60 Z' transform='rotate(-20 50 95)'/%3E%3Cpath d='M150 60 Q170 90 150 130 Q130 90 150 60 Z' transform='rotate(20 150 95)'/%3E%3Cpath d='M30 150 Q45 170 30 195 Q15 170 30 150 Z' opacity='0.5'/%3E%3Cpath d='M170 150 Q185 170 170 195 Q155 170 170 150 Z' opacity='0.5'/%3E%3Cellipse cx='100' cy='160' rx='15' ry='30' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2322c55e'%3E%3Cpath d='M100 10 Q130 50 100 100 Q70 50 100 10 Z'/%3E%3Cpath d='M50 60 Q70 90 50 130 Q30 90 50 60 Z' transform='rotate(-20 50 95)'/%3E%3Cpath d='M150 60 Q170 90 150 130 Q130 90 150 60 Z' transform='rotate(20 150 95)'/%3E%3Cpath d='M30 150 Q45 170 30 195 Q15 170 30 150 Z' opacity='0.6'/%3E%3Cpath d='M170 150 Q185 170 170 195 Q155 170 170 150 Z' opacity='0.6'/%3E%3Cellipse cx='100' cy='160' rx='15' ry='30' opacity='0.5'/%3E%3C/g%3E%3C/svg%3E")`,
             backgroundSize: '200px 200px',
           }}
         />
         
         {/* Fine leaf vein texture */}
-        <div className="absolute inset-0 opacity-[0.02]" 
+        <div className="absolute inset-0 opacity-[0.05]" 
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%2322543d' fill='none' stroke-width='0.5'%3E%3Cpath d='M30 5 L30 55 M30 15 L20 25 M30 15 L40 25 M30 30 L15 40 M30 30 L45 40 M30 45 L22 52 M30 45 L38 52'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px',
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2315803d'%3E%3Cpath d='M40 8 Q52 25 40 45 Q28 25 40 8 Z'/%3E%3Cpath d='M20 45 Q28 55 20 68 Q12 55 20 45 Z' opacity='0.7'/%3E%3Cpath d='M60 45 Q68 55 60 68 Q52 55 60 45 Z' opacity='0.7'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '80px 80px',
           }}
         />
       </div>
