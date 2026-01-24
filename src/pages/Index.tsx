@@ -8,6 +8,10 @@ import { ValuePropsGrid } from '@/components/ValuePropsGrid';
 import { LifestyleGallery } from '@/components/LifestyleGallery';
 import { TestimonialCarousel } from '@/components/TestimonialCarousel';
 import { BlogSection } from '@/components/BlogSection';
+import { IngredientsShowcase } from '@/components/IngredientsShowcase';
+import { ProductShowcase } from '@/components/ProductShowcase';
+import { ProcessSteps } from '@/components/ProcessSteps';
+import { VisualBanner } from '@/components/VisualBanner';
 import { CategoryCard } from '@/components/CategoryCard';
 import { ProductCard } from '@/components/ProductCard';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
@@ -128,6 +132,9 @@ const Index = () => {
       {/* Value Props Grid */}
       <ValuePropsGrid />
 
+      {/* Visual Collection Banners */}
+      <VisualBanner />
+
       {/* Featured Products Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
@@ -197,6 +204,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Ingredients Showcase */}
+      <IngredientsShowcase />
 
       {/* Lifestyle Gallery */}
       <LifestyleGallery />
@@ -269,6 +279,9 @@ const Index = () => {
 
       {/* Testimonials */}
       <TestimonialCarousel />
+
+      {/* Process Steps */}
+      <ProcessSteps />
 
       {/* Who We Serve */}
       <section className="py-20 bg-gradient-to-r from-emerald-50/80 via-white to-amber-50/80 relative">
@@ -366,6 +379,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Product Showcase */}
+      <ProductShowcase />
 
       {/* Best Sellers Grid */}
       <section className="py-24 bg-gradient-to-b from-amber-50/50 via-white to-rose-50/30 relative overflow-hidden">
