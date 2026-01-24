@@ -242,8 +242,8 @@ export const products: Product[] = [
     image: '/products/body-oils/ShapeTone-100ml.png',
   },
   {
-    id: 'saffronrituals',
-    name: 'SAFFRON RITUALS',
+  id: 'saffronbloom',
+    name: 'SAFFRONBLOOM',
     category: 'body-oils',
     subcategory: 'Face Oil',
     tagline: 'Radiance, Refined by Tradition for Luminous Skin',
