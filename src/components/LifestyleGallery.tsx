@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
-import botanicalsHands from '@/assets/lifestyle/botanicals-hands.jpg';
-import skincareRitual from '@/assets/lifestyle/skincare-ritual.jpg';
-import herbalTea from '@/assets/lifestyle/herbal-tea-moment.jpg';
-import naturalBeauty from '@/assets/lifestyle/natural-beauty.jpg';
-import spaBotanicals from '@/assets/lifestyle/spa-botanicals.jpg';
+import herbalPreparation from '@/assets/lifestyle/herbal-preparation.jpg';
+import morningMeditation from '@/assets/lifestyle/morning-meditation.jpg';
+import aromatherapyRitual from '@/assets/lifestyle/aromatherapy-ritual.jpg';
+import wellnessBreakfast from '@/assets/lifestyle/wellness-breakfast.jpg';
+import bodyCareRitual from '@/assets/lifestyle/body-care-ritual.jpg';
 
 const galleryImages = [
-  { src: botanicalsHands, alt: 'Natural botanicals', label: 'Pure Botanicals' },
-  { src: skincareRitual, alt: 'Skincare ritual', label: 'Daily Rituals' },
-  { src: herbalTea, alt: 'Herbal tea moment', label: 'Herbal Wellness' },
-  { src: naturalBeauty, alt: 'Natural beauty', label: 'Natural Beauty' },
-  { src: spaBotanicals, alt: 'Spa experience', label: 'Holistic Care' },
+  { src: herbalPreparation, alt: 'Herbal preparation', label: 'Pure Botanicals' },
+  { src: morningMeditation, alt: 'Morning meditation', label: 'Mindful Living' },
+  { src: aromatherapyRitual, alt: 'Aromatherapy ritual', label: 'Herbal Wellness' },
+  { src: wellnessBreakfast, alt: 'Wellness breakfast', label: 'Nourishing Rituals' },
+  { src: bodyCareRitual, alt: 'Body care ritual', label: 'Holistic Care' },
 ];
 
 export const LifestyleGallery = () => {
