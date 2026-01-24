@@ -66,106 +66,81 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Our Pillars */}
       <section className="py-20 bg-muted/30">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Responsible Sourcing
+              Our Guiding Pillars
             </h2>
             <p className="text-muted-foreground">
-              Our production partners enable Earthy Concepts to curate safe, ethical, 
-              and premium products — ready for the world.
+              The principles that shape every decision we make.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-background p-6 rounded-xl shadow-sm">
-              <Shield className="h-10 w-10 text-primary mb-4" />
-              <h3 className="font-semibold mb-2">GMP, ISO, HACCP Certified</h3>
-              <p className="text-sm text-muted-foreground">
-                All facilities meet international quality standards
-              </p>
-            </div>
-            <div className="bg-background p-6 rounded-xl shadow-sm">
-              <Award className="h-10 w-10 text-primary mb-4" />
-              <h3 className="font-semibold mb-2">FDA-Compliant Manufacturing</h3>
-              <p className="text-sm text-muted-foreground">
-                Registered formulations approved by Dubai Authorities
-              </p>
-            </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div className="bg-background p-6 rounded-xl shadow-sm">
               <Leaf className="h-10 w-10 text-primary mb-4" />
-              <h3 className="font-semibold mb-2">Eco-Conscious Packaging</h3>
+              <h3 className="font-semibold mb-2">Purity First</h3>
               <p className="text-sm text-muted-foreground">
-                Sustainable materials that respect the environment
+                Only the highest quality ingredients, free from synthetic additives, fillers, or harmful chemicals.
+              </p>
+            </div>
+            <div className="bg-background p-6 rounded-xl shadow-sm">
+              <Heart className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">Rooted in Tradition</h3>
+              <p className="text-sm text-muted-foreground">
+                Formulations inspired by centuries-old Ayurvedic texts, adapted for contemporary wellness.
+              </p>
+            </div>
+            <div className="bg-background p-6 rounded-xl shadow-sm">
+              <Globe className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">Sustainable Sourcing</h3>
+              <p className="text-sm text-muted-foreground">
+                Partnering with ethical farmers committed to environmental stewardship and fair trade.
               </p>
             </div>
             <div className="bg-background p-6 rounded-xl shadow-sm">
               <Sparkles className="h-10 w-10 text-primary mb-4" />
-              <h3 className="font-semibold mb-2">Lab-Tested Purity</h3>
+              <h3 className="font-semibold mb-2">Full Transparency</h3>
               <p className="text-sm text-muted-foreground">
-                Every product tested for efficacy and safety
+                From origins to manufacturing, you deserve to know exactly what goes in your body.
+              </p>
+            </div>
+            <div className="bg-background p-6 rounded-xl shadow-sm">
+              <Shield className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">Science-Backed Efficacy</h3>
+              <p className="text-sm text-muted-foreground">
+                Embracing modern research to validate benefits and ensure optimal bioavailability.
+              </p>
+            </div>
+            <div className="bg-background p-6 rounded-xl shadow-sm">
+              <Users className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">Holistic Wellness</h3>
+              <p className="text-sm text-muted-foreground">
+                Addressing internal health, external beauty, and emotional balance for complete well-being.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Global Presence */}
+      {/* Philosophy */}
       <section className="py-20">
         <div className="container px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Building A Global Presence
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                With capabilities to support multi-country distribution and product categories 
-                designed for worldwide appeal, we're preparing to be launch-ready on global platforms.
-              </p>
-              <h3 className="font-semibold mb-4">Suitable for:</h3>
-              <ul className="space-y-3">
-                {['Wellness Centers', 'Clinics', 'Pharmacies', 'Resorts', 'Retreats & Spas'].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-muted/50 p-8 rounded-2xl">
-              <h3 className="font-semibold text-lg mb-6">We Serve:</h3>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <Users className="h-8 w-8 text-primary shrink-0" />
-                  <div>
-                    <h4 className="font-medium">For Individuals</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Pure daily wellness, holistic skin & body health, nature-inspired essentials
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <Globe className="h-8 w-8 text-primary shrink-0" />
-                  <div>
-                    <h4 className="font-medium">For Businesses</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Product knowledge development, minimum order flexibility, customized formulations
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <Heart className="h-8 w-8 text-primary shrink-0" />
-                  <div>
-                    <h4 className="font-medium">For Institutions</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Product lines for wellness campaigns, gifting packs, hospital wellness kits
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Living With Intention
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              At Earthy Concepts, we believe that the choices we make every day shape the world 
+              we live in. Our purpose-driven approach goes beyond products—they are tools for 
+              living with awareness, integrity, and intention.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Designed for modern lives in a fast-moving world, our creations empower you 
+              to care for yourself while honoring the earth.
+            </p>
           </div>
         </div>
       </section>
