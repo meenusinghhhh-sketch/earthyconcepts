@@ -83,7 +83,7 @@ const ProductDetail = () => {
             {/* Product Image */}
             <div className="aspect-square rounded-2xl overflow-hidden bg-muted">
               <img
-                src={product.image}
+                src={`${product.image}?v=1`}
                 alt={product.name}
                 className="w-full h-full object-cover"
                 onError={(e) => {
