@@ -210,16 +210,6 @@ export const Hero = () => {
                 </div>
               </motion.div>
 
-              {/* Floating certification badge */}
-              <motion.div 
-                className="absolute -top-2 right-4 bg-gradient-to-br from-amber-500 to-orange-500 text-white rounded-2xl shadow-2xl px-5 py-3"
-                initial={{ opacity: 0, scale: 0.8, y: -20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: 1.4 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <p className="text-sm font-semibold">GMP & ISO Certified</p>
-              </motion.div>
             </div>
           </motion.div>
         </div>
