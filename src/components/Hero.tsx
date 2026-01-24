@@ -3,7 +3,7 @@ import { ArrowRight, Leaf, Sparkles, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import logo from '@/assets/logo-transparent.png';
-import heroWellness from '@/assets/lifestyle/hero-wellness.jpg';
+import botanicalsHands from '@/assets/lifestyle/botanicals-hands.jpg';
 import skincareRitual from '@/assets/lifestyle/skincare-ritual.jpg';
 import herbalTea from '@/assets/lifestyle/herbal-tea-moment.jpg';
 import spaBotanicals from '@/assets/lifestyle/spa-botanicals.jpg';
@@ -37,8 +37,8 @@ export const Hero = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-[1]">
         <img 
-          src={heroWellness} 
-          alt="Wellness lifestyle" 
+          src={botanicalsHands} 
+          alt="Botanical wellness ritual" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
