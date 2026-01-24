@@ -125,20 +125,6 @@ export const Hero = () => {
               </Button>
             </motion.div>
 
-            {/* Trust indicators */}
-            <motion.div 
-              className="flex items-center gap-6 pt-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-            >
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <span className="text-sm text-muted-foreground">Trusted by thousands across UAE & beyond</span>
-            </motion.div>
           </motion.div>
 
           {/* Right side - Lifestyle image showcase */}
