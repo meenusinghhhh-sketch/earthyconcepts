@@ -5,8 +5,6 @@ import morningMeditation from '@/assets/lifestyle/morning-meditation.jpg';
 import aromatherapyRitual from '@/assets/lifestyle/aromatherapy-ritual.jpg';
 import wellnessBreakfast from '@/assets/lifestyle/wellness-breakfast.jpg';
 import holisticSpa from '@/assets/lifestyle/holistic-spa.jpg';
-import ayurvedicSpices from '@/assets/lifestyle/ayurvedic-spices.jpg';
-import outdoorYoga from '@/assets/lifestyle/outdoor-yoga.jpg';
 import freshHerbs from '@/assets/lifestyle/fresh-herbs.jpg';
 
 const galleryImages = [
@@ -15,8 +13,6 @@ const galleryImages = [
   { src: aromatherapyRitual, alt: 'Aromatherapy ritual', label: 'Herbal Wellness' },
   { src: wellnessBreakfast, alt: 'Wellness breakfast', label: 'Nourishing Rituals' },
   { src: holisticSpa, alt: 'Holistic spa', label: 'Holistic Care' },
-  { src: ayurvedicSpices, alt: 'Ayurvedic spices', label: 'Ancient Wisdom' },
-  { src: outdoorYoga, alt: 'Outdoor yoga', label: 'Mind & Body' },
   { src: freshHerbs, alt: 'Fresh herbs', label: 'Natural Purity' },
 ];
 
