@@ -61,9 +61,11 @@ export const LifestyleGallery = () => {
                 alt={galleryImages[0].alt}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <p className="text-white font-medium text-lg">{galleryImages[0].label}</p>
+              {/* Subtle gradient overlay - always visible */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              {/* Always visible label */}
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="text-white/90 font-light text-base tracking-wide">{galleryImages[0].label}</p>
               </div>
             </div>
           </motion.div>
@@ -85,9 +87,11 @@ export const LifestyleGallery = () => {
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white font-medium text-sm">{image.label}</p>
+                {/* Subtle gradient overlay - always visible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                {/* Always visible label */}
+                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+                  <p className="text-white/90 font-light text-xs md:text-sm tracking-wide">{image.label}</p>
                 </div>
               </div>
             </motion.div>
