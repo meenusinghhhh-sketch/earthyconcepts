@@ -10,15 +10,15 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-12 bg-muted/30">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <img 
               src={logo} 
               alt="Earthy Concepts" 
-              className="h-36 md:h-48 w-auto object-contain mx-auto mb-8"
+              className="h-32 md:h-40 w-auto object-contain mx-auto mb-6"
             />
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Our Story
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
@@ -30,9 +30,9 @@ const About = () => {
       </section>
 
       {/* Story */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto space-y-8">
+          <div className="max-w-3xl mx-auto space-y-5">
             <p className="text-lg leading-relaxed">
               Created from a deep need to be responsible—to ourselves, to our communities, 
               and to the planet—Earthy Concepts stands for all things natural, intentional, 
@@ -53,7 +53,7 @@ const About = () => {
               often frugal world, our creations empower you to care for yourself while honoring 
               the earth.
             </p>
-            <blockquote className="border-l-4 border-primary pl-6 py-4 my-12">
+            <blockquote className="border-l-4 border-primary pl-6 py-3 my-6">
               <p className="text-2xl font-display italic text-foreground">
                 "We invite you to be part of a movement that values authenticity over excess, 
                 mindfulness over convenience, and sustainability over compromise."
@@ -68,24 +68,24 @@ const About = () => {
       </section>
 
       {/* Brand Promise */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-10 bg-muted/30">
         <div className="container px-4 md:px-6">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">Our Promise</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">Our Promise</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">
               Nature's Promise. Formulated for Life.
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-muted-foreground">
               Dedicated to bringing the ancient wisdom of Ayurveda into modern wellness, 
               we craft herbal formulations rooted in nature and science.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 max-w-5xl mx-auto">
             {qualityPromises.map((promise, index) => (
-              <div key={index} className="text-center p-4 bg-background rounded-xl">
-                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <CheckCircle className="h-5 w-5 text-primary" />
+              <div key={index} className="text-center p-3 bg-background rounded-xl">
+                <div className="h-9 w-9 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
                 </div>
                 <h5 className="font-medium text-sm mb-1">{promise.title}</h5>
                 <p className="text-xs text-muted-foreground">{promise.description}</p>
@@ -95,12 +95,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Pillars */}
-      <section className="py-20">
+      {/* Core Values */}
+      <section className="py-12">
         <div className="container px-4 md:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Guiding Pillars
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">
+              Core Values
             </h2>
             <p className="text-muted-foreground">
               The principles that shape every decision we make.
@@ -155,7 +155,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-12 bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">
