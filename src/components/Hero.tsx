@@ -120,10 +120,9 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              Rooted in time-honored Ayurvedic traditions and reimagined for modern living. 
-              Premium herbal formulations for <span className="text-primary font-medium">health</span>, 
-              <span className="text-accent font-medium"> skincare</span>, and 
-              <span className="text-primary font-medium"> holistic wellness</span>.
+              Natural Herbs & Ayurvedic Formulations for <span className="text-primary font-medium">Daily Balance</span>, 
+              <span className="text-accent font-medium"> Immunity</span> & 
+              <span className="text-primary font-medium"> Mindful Living</span>.
             </motion.p>
 
             {/* CTA Buttons */}

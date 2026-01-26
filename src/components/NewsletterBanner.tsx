@@ -132,7 +132,7 @@ export const NewsletterBanner = () => {
           </motion.span>
           
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-3">
-            Get 10% Off Your First Order
+            Get 10% Off Your First Wellness Purchase
           </h2>
           
           <p className="text-muted-foreground mb-8 max-w-lg mx-auto">

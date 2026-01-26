@@ -4,15 +4,12 @@ import herbalPreparation from '@/assets/lifestyle/herbal-preparation.jpg';
 import morningMeditation from '@/assets/lifestyle/morning-meditation.jpg';
 import aromatherapyRitual from '@/assets/lifestyle/aromatherapy-ritual.jpg';
 import wellnessBreakfast from '@/assets/lifestyle/wellness-breakfast.jpg';
-import holisticSpa from '@/assets/lifestyle/holistic-spa.jpg';
-
 
 const galleryImages = [
   { src: herbalPreparation, alt: 'Herbal preparation', label: 'Pure Botanicals' },
   { src: morningMeditation, alt: 'Morning meditation', label: 'Mindful Living' },
-  { src: aromatherapyRitual, alt: 'Aromatherapy ritual', label: 'Herbal Wellness' },
   { src: wellnessBreakfast, alt: 'Wellness breakfast', label: 'Nourishing Rituals' },
-  { src: holisticSpa, alt: 'Holistic spa', label: 'Holistic Care' },
+  { src: aromatherapyRitual, alt: 'Aromatherapy ritual', label: 'Herbal Wellness' },
 ];
 
 export const LifestyleGallery = () => {
