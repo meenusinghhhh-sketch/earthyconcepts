@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Leaf, Shield, Heart, Sparkles, Globe, Users, Award } from 'lucide-react';
+import { ArrowRight, Leaf, Shield, Heart, Sparkles, Globe, Users, Award, CheckCircle } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
+import { qualityPromises } from '@/data/brand';
 import logo from '@/assets/logo.jpeg';
 
 const About = () => {
@@ -66,8 +67,36 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Pillars */}
+      {/* Brand Promise */}
       <section className="py-20 bg-muted/30">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">Our Promise</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Nature's Promise. Formulated for Life.
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Dedicated to bringing the ancient wisdom of Ayurveda into modern wellness, 
+              we craft herbal formulations rooted in nature and science.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+            {qualityPromises.map((promise, index) => (
+              <div key={index} className="text-center p-4 bg-background rounded-xl">
+                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                </div>
+                <h5 className="font-medium text-sm mb-1">{promise.title}</h5>
+                <p className="text-xs text-muted-foreground">{promise.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Pillars */}
+      <section className="py-20">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -121,20 +150,6 @@ const About = () => {
                 Addressing internal health, external beauty, and emotional balance for complete well-being.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy */}
-      <section className="py-20">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Living With Intention
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Every choice shapes our world. Our purpose-driven creations empower mindful living—caring for yourself while honoring the earth.
-            </p>
           </div>
         </div>
       </section>
