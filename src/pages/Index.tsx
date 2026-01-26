@@ -26,6 +26,13 @@ const coreCategories = [
     bg: 'from-emerald-500/10 to-teal-500/5',
   },
   {
+    icon: Heart,
+    title: 'Herbal Products',
+    description: 'Formulated for Mind & Body Rituals - Traditional Health and Wellness',
+    color: 'from-violet-500 to-purple-500',
+    bg: 'from-violet-500/10 to-purple-500/5',
+  },
+  {
     icon: Sparkles,
     title: 'Pure Skincare',
     description: 'Face Masks, Glow Powders, Herbal Soaps, Facial Serums, Hair & Body Oils for Everyday Skincare',
@@ -38,13 +45,6 @@ const coreCategories = [
     description: 'Healthcare On-The-Go, Chakra Packs, Health Kits & Organic Home Care',
     color: 'from-rose-500 to-pink-500',
     bg: 'from-rose-500/10 to-pink-500/5',
-  },
-  {
-    icon: Heart,
-    title: 'Herbal Products',
-    description: 'Formulated for Mind & Body Rituals - Traditional Health and Wellness',
-    color: 'from-violet-500 to-purple-500',
-    bg: 'from-violet-500/10 to-purple-500/5',
   },
   {
     icon: Home,
@@ -396,7 +396,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: Users, title: 'Individuals', desc: 'Pure daily wellness, holistic skin & body health, nature-inspired essentials', color: 'from-emerald-500 to-teal-500', bg: 'from-emerald-50 to-teal-50' },
-              { icon: Package, title: 'Businesses', desc: 'Retail, Spa, Clinic partnerships with customised formulations', color: 'from-amber-500 to-orange-500', bg: 'from-amber-50 to-orange-50' },
+              { icon: Package, title: 'Businesses', desc: 'Retailers, distributors & wellness partners', color: 'from-amber-500 to-orange-500', bg: 'from-amber-50 to-orange-50' },
               { icon: Heart, title: 'Institutions', desc: 'Wellness campaigns, gifting programs, hospital & clinic kits', color: 'from-rose-500 to-pink-500', bg: 'from-rose-50 to-pink-50' },
             ].map((item, index) => (
               <motion.div

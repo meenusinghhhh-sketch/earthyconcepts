@@ -132,14 +132,8 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Living With Intention
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              At Earthy Concepts, we believe that the choices we make every day shape the world 
-              we live in. Our purpose-driven approach goes beyond products—they are tools for 
-              living with awareness, integrity, and intention.
-            </p>
             <p className="text-lg text-muted-foreground">
-              Designed for modern lives in a fast-moving world, our creations empower you 
-              to care for yourself while honoring the earth.
+              Every choice shapes our world. Our purpose-driven creations empower mindful living—caring for yourself while honoring the earth.
             </p>
           </div>
         </div>
