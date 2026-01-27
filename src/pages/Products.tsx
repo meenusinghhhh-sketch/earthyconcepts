@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { categories, products, getProductsByCategory } from '@/data/products';
-import logo from '@/assets/logo.jpeg';
+
 
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -55,25 +55,18 @@ const Products = () => {
 
   return (
     <Layout>
-      {/* Header with Logo */}
-      <section className="py-12 bg-muted/30">
+      {/* Header */}
+      <section className="py-8 bg-muted/30">
         <div className="container px-4 md:px-6">
-          <div className="flex items-center gap-6 mb-6">
-            <img 
-              src={logo} 
-              alt="Earthy Concepts" 
-              className="h-28 md:h-36 w-auto object-contain"
-            />
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold">
-                {selectedCategoryData ? selectedCategoryData.name : 'All Products'}
-              </h1>
-              <p className="text-muted-foreground mt-1">
-                {selectedCategoryData 
-                  ? selectedCategoryData.description 
-                  : 'Discover our complete collection of natural wellness products'}
-              </p>
-            </div>
+          <div className="mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold">
+              {selectedCategoryData ? selectedCategoryData.name : 'All Products'}
+            </h1>
+            <p className="text-muted-foreground mt-1">
+              {selectedCategoryData 
+                ? selectedCategoryData.description 
+                : 'Discover our complete collection of natural wellness products'}
+            </p>
           </div>
 
           {/* Search */}

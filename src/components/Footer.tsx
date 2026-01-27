@@ -79,7 +79,7 @@ export const Footer = () => {
             <h3 className="font-semibold text-lg">Services</h3>
             <nav className="flex flex-col gap-2">
               <Link to="/subscription" className="text-sm text-background/70 hover:text-background transition-colors">
-                Earthy Rituals
+                Monthly Rituals
               </Link>
               <Link to="/corporate-wellness" className="text-sm text-background/70 hover:text-background transition-colors">
                 Corporate Wellness

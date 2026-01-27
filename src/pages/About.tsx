@@ -4,20 +4,14 @@ import { Layout } from '@/components/Layout';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { qualityPromises } from '@/data/brand';
-import logo from '@/assets/logo.jpeg';
 
 const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 bg-muted/30">
+      <section className="py-8 bg-muted/30">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <img 
-              src={logo} 
-              alt="Earthy Concepts" 
-              className="h-32 md:h-40 w-auto object-contain mx-auto mb-6"
-            />
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Our Story
             </h1>
@@ -100,7 +94,7 @@ const About = () => {
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">
-              Core Values
+              Our Core Values
             </h2>
             <p className="text-muted-foreground">
               The principles that shape every decision we make.

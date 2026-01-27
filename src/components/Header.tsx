@@ -9,7 +9,7 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
   { name: 'Find Your Concept', href: '/learn' },
-  { name: 'About', href: '/about' },
+  { name: 'About Us', href: '/about' },
 ];
 
 export const Header = () => {
