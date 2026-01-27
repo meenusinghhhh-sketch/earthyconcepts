@@ -6,7 +6,6 @@ import { WellnessQuiz } from '@/components/WellnessQuiz';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { wellnessConcepts } from '@/data/brand';
 import { Sparkles, GraduationCap } from 'lucide-react';
-import logo from '@/assets/logo.jpeg';
 
 const Learn = () => {
   const [activeTab, setActiveTab] = useState('concepts');
@@ -14,20 +13,13 @@ const Learn = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-b from-primary/5 to-background">
+      <section className="py-12 bg-gradient-to-b from-primary/5 to-background">
         <div className="container px-4 md:px-6">
-          <div className="flex items-center gap-6 mb-8">
-            <img
-              src={logo}
-              alt="Earthy Concepts"
-              className="h-28 md:h-36 w-auto object-contain"
-            />
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold">Learn & Discover</h1>
-              <p className="text-muted-foreground mt-1">
-                Explore wellness concepts and find products tailored to your needs
-              </p>
-            </div>
+          <div className="mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold">Learn & Discover</h1>
+            <p className="text-muted-foreground mt-1">
+              Explore wellness concepts and find products tailored to your needs
+            </p>
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
