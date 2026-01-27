@@ -45,7 +45,7 @@ const idealFor = [
 
 const Subscription = () => {
   const whatsappMessage = encodeURIComponent(
-    "Hello Earthy Concepts, I'm interested in your Wellness Subscription options. Please share more details."
+    "Hello Earthy Concepts, I'm interested in your Monthly Rituals options. Please share more details."
   );
 
   return (
@@ -56,7 +56,7 @@ const Subscription = () => {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
               <Sparkles className="h-4 w-4" />
-              <span className="text-sm font-medium">Earthy Concepts</span>
+              <span className="text-sm font-medium">Monthly Rituals</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
               Wellness as a Ritual
@@ -79,8 +79,8 @@ const Subscription = () => {
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground">
               <p className="mb-4">
-                Our subscription programs are designed to support your wellness journey with 
-                regularity and intention. Rather than sporadic purchases, subscriptions allow 
+                Our monthly wellness rituals are designed to support your wellness journey with 
+                regularity and intention. Rather than sporadic purchases, ongoing rituals allow 
                 you to integrate Ayurvedic practices seamlessly into your daily life.
               </p>
               <p>
@@ -94,14 +94,14 @@ const Subscription = () => {
         </div>
       </section>
 
-      {/* Subscription Types */}
+      {/* Ritual Types */}
       <section className="py-16 bg-muted/30">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ways to Subscribe</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ways to Begin Your Ritual</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Choose the rhythm that suits your lifestyle. Each subscription is tailored 
-              to support your unique wellness needs.
+              Choose the rhythm that suits your lifestyle. Each ritual is thoughtfully 
+              designed to support your unique wellness journey.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -125,7 +125,7 @@ const Subscription = () => {
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-6">Who It's For</h2>
               <p className="text-muted-foreground mb-8">
-                Our subscription programs are crafted for those who understand that wellness 
+                Our monthly wellness rituals are crafted for those who understand that wellness 
                 is a journey, not a quick fix. They're for the mindful, the curious, and 
                 those ready to embrace nature's healing traditions.
               </p>
@@ -202,7 +202,7 @@ const Subscription = () => {
               </a>
             </Button>
             <p className="text-sm text-muted-foreground mt-4">
-              Subscription options are shared via WhatsApp
+              Ritual options are shared via WhatsApp
             </p>
           </div>
         </div>
