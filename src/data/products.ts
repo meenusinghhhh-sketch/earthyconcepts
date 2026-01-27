@@ -166,7 +166,7 @@ export const products: Product[] = [
     ingredients: ['Azadirachta indica', 'Rubia cordifolia', 'Fuller\'s Earth', 'Curcuma longa'],
     size: '100 ML | FACIAL MIST',
     shelfLife: '24 months',
-    image: '/placeholder.svg',
+    image: '/products/face-mists/HydraMist.png',
   },
   {
     id: 'rosemist',
@@ -177,7 +177,7 @@ export const products: Product[] = [
     benefits: ['Deep Refreshing Hydration', 'Restores Smooth Texture', 'Soothing Floral Aroma'],
     size: '100 ML | FACIAL MIST',
     shelfLife: '24 months',
-    image: '/placeholder.svg',
+    image: '/products/face-mists/RoseMist.png',
   },
 
   // ========== BODY OILS ==========
@@ -203,7 +203,7 @@ export const products: Product[] = [
     ingredients: ['Vetiver', 'Ashwagandha', 'Jasmine', 'Sweet Almond Oil'],
     size: '100 ML',
     shelfLife: '24 months',
-    image: '/placeholder.svg',
+    image: '/products/body-oils/MorningJasmine-100ml.png',
   },
   {
     id: 'rosebliss',
@@ -278,7 +278,7 @@ export const products: Product[] = [
     ingredients: ['Coconut Oil', 'Almond Oil', 'Hibiscus', 'Aloe Vera'],
     size: '100 ML',
     shelfLife: '24 months',
-    image: '/products/hair-oils/RootLuxe-100ml.png',
+    image: '/products/hair-oils/RootStrong-100ml.png',
   },
 
   // ========== BODY CLEANSE ==========
@@ -292,7 +292,7 @@ export const products: Product[] = [
     ingredients: ['Sapindus mukorossi', 'Acacia concinna', 'Eclipta alba', 'Hibiscus'],
     size: '100 GM | HAIR PACK POWDER',
     shelfLife: '36 months',
-    image: '/placeholder.svg',
+    image: '/products/body-cleanse/ScalpCleanse-100gm.png',
   },
   {
     id: 'bodycleanse',
@@ -304,7 +304,7 @@ export const products: Product[] = [
     ingredients: ['Azadirachta indica', 'Rubia cordifolia', 'Fuller\'s Earth', 'Curcuma longa'],
     size: '100 GM | BODY CLEANSING POWDER',
     shelfLife: '36 months',
-    image: '/placeholder.svg',
+    image: '/products/body-cleanse/BodyCleanse-100gm.png',
   },
 
   // ========== SINGLE HERB CAPSULES ==========
