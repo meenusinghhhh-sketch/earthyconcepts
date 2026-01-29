@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
@@ -10,7 +11,8 @@ import {
   MessageCircle,
   Sun,
   Users,
-  Building2
+  Building2,
+  ArrowRight
 } from 'lucide-react';
 
 const giftingOccasions = [
@@ -105,7 +107,7 @@ const Gifting = () => {
         </div>
       </section>
 
-      {/* Occasions */}
+      {/* Occasions - with Explore Products button per request #24 */}
       <section className="py-16 bg-muted/30">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
@@ -121,7 +123,13 @@ const Gifting = () => {
                 <CardContent className="p-8">
                   <occasion.icon className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">{occasion.title}</h3>
-                  <p className="text-muted-foreground">{occasion.description}</p>
+                  <p className="text-muted-foreground mb-4">{occasion.description}</p>
+                  <Button asChild variant="outline" size="sm" className="gap-2">
+                    <Link to="/products">
+                      Explore Products
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -129,7 +137,7 @@ const Gifting = () => {
         </div>
       </section>
 
-      {/* Ritual Boxes */}
+      {/* Ritual Boxes - with Explore Products button per request #24 */}
       <section className="py-16">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
@@ -148,7 +156,13 @@ const Gifting = () => {
                 >
                   <Sparkles className="h-8 w-8 text-primary mb-4" />
                   <h3 className="text-lg font-semibold mb-2">{box.title}</h3>
-                  <p className="text-muted-foreground">{box.description}</p>
+                  <p className="text-muted-foreground mb-4">{box.description}</p>
+                  <Button asChild variant="outline" size="sm" className="gap-2">
+                    <Link to="/products">
+                      Explore Products
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
                 </div>
               ))}
             </div>

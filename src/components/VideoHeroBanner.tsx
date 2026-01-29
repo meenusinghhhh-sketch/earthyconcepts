@@ -58,25 +58,13 @@ export const VideoHeroBanner = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          {/* Badge */}
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-primary/20 text-primary text-sm font-medium shadow-lg"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Wellness for the Whole Family
-          </motion.div>
-
           {/* Heading */}
           <motion.h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.3 }}
           >
             <span className="text-foreground">Nature's Care for</span>
             <br />
@@ -91,7 +79,7 @@ export const VideoHeroBanner = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.4 }}
           >
             From grandparents to grandchildren, our herbal formulations bring 
             time-tested Ayurvedic wisdom to your entire family's wellness journey.
@@ -103,7 +91,7 @@ export const VideoHeroBanner = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.5 }}
           >
             {[
               { value: '3+', label: 'Generations Trust Us' },
@@ -119,8 +107,17 @@ export const VideoHeroBanner = () => {
         </motion.div>
       </div>
 
-      {/* Video Controls */}
-      <div className="absolute bottom-6 right-6 flex gap-2">
+      {/* Video Controls with Wellness for the Whole Family label */}
+      <div className="absolute bottom-6 right-6 flex items-center gap-3 z-[3]">
+        <motion.div
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-primary/20 text-primary text-xs font-medium shadow-lg"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6 }}
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+          Wellness for the Whole Family
+        </motion.div>
         <Button
           variant="outline"
           size="icon"

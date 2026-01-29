@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
@@ -9,7 +10,8 @@ import {
   Sparkles,
   Heart,
   RefreshCw,
-  MessageCircle
+  MessageCircle,
+  ArrowRight
 } from 'lucide-react';
 
 const subscriptionTypes = [
@@ -94,7 +96,7 @@ const Subscription = () => {
         </div>
       </section>
 
-      {/* Ritual Types */}
+      {/* Ritual Types - with Explore Products button per request #19 */}
       <section className="py-16 bg-muted/30">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
@@ -110,7 +112,13 @@ const Subscription = () => {
                 <CardContent className="p-6">
                   <type.icon className="h-10 w-10 text-primary mb-4" />
                   <h3 className="text-xl font-semibold mb-3">{type.title}</h3>
-                  <p className="text-muted-foreground">{type.description}</p>
+                  <p className="text-muted-foreground mb-4">{type.description}</p>
+                  <Button asChild variant="outline" size="sm" className="gap-2">
+                    <Link to="/products">
+                      Explore Products
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -159,7 +167,7 @@ const Subscription = () => {
                   <div>
                     <h4 className="font-medium mb-1">Receive Recommendations</h4>
                     <p className="text-sm text-muted-foreground">
-                      We curate a personalized subscription plan based on your needs.
+                      We curate a personalized ritual plan based on your needs.
                     </p>
                   </div>
                 </div>
@@ -189,7 +197,7 @@ const Subscription = () => {
             </h2>
             <p className="text-muted-foreground mb-8">
               Ready to embrace consistent wellness? Connect with us to explore 
-              subscription options tailored to your journey.
+              ritual options tailored to your journey.
             </p>
             <Button size="lg" className="gap-2" asChild>
               <a

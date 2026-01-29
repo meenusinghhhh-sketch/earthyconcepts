@@ -7,13 +7,7 @@ import {
   Globe, 
   Shield, 
   Award,
-  Building2,
-  Users,
-  Heart,
-  CheckCircle,
   MessageCircle,
-  Leaf,
-  FlaskConical
 } from 'lucide-react';
 
 const certifications = [
@@ -25,47 +19,6 @@ const certifications = [
   { name: 'Lab Tested', description: 'Verified efficacy & purity' },
 ];
 
-const marketSegments = [
-  {
-    icon: Users,
-    title: 'For Individuals',
-    points: [
-      'Pure daily wellness essentials',
-      'Holistic skin & body health',
-      'Nature-inspired health solutions',
-    ],
-  },
-  {
-    icon: Building2,
-    title: 'For Businesses',
-    subtitle: 'Retail, Spa, Clinic',
-    points: [
-      'Product knowledge development',
-      'Minimum order flexibility for boutique stores',
-      'Customised formulations',
-    ],
-  },
-  {
-    icon: Heart,
-    title: 'For Institutions',
-    subtitle: 'Authorities & Organizations',
-    points: [
-      'Product lines for wellness campaigns',
-      'Gifting packs for seasonal programs',
-      'Hospital & clinic wellness kits',
-    ],
-  },
-];
-
-const globalCapabilities = [
-  'Multi-country distribution capabilities',
-  'Launch-ready on global e-commerce platforms',
-  'Product categories designed for worldwide appeal',
-  'International market compliant formulations',
-  'Eco-conscious packaging for global shipping',
-  'Documentation ready for export requirements',
-];
-
 const GlobalPresence = () => {
   const whatsappMessage = encodeURIComponent(
     "Hello Earthy Concepts, I'm interested in partnering or distributing your products internationally. Please share more details."
@@ -74,7 +27,7 @@ const GlobalPresence = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-primary/10 to-background">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
@@ -85,7 +38,6 @@ const GlobalPresence = () => {
               Rooted in Tradition, Built for the World
             </h1>
             <p className="text-lg text-muted-foreground">
-              A symphony between ancient science and modern wellness lifestyle. 
               Earthy Concepts brings Ayurvedic wisdom to global markets with 
               internationally compliant, ethically sourced wellness solutions.
             </p>
@@ -94,9 +46,9 @@ const GlobalPresence = () => {
       </section>
 
       {/* Certifications Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-12 bg-muted/30">
         <div className="container px-4 md:px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 mb-4">
               <Shield className="h-6 w-6 text-primary" />
               <h2 className="text-2xl md:text-3xl font-bold">Responsible Sourcing</h2>
@@ -120,85 +72,8 @@ const GlobalPresence = () => {
         </div>
       </section>
 
-      {/* Market Segments */}
-      <section className="py-16">
-        <div className="container px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              International Market Ready
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Whether you're an individual seeking wellness, a business looking to stock 
-              natural products, or an institution planning health programs—we're ready to serve.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {marketSegments.map((segment) => (
-              <Card key={segment.title} className="border-none shadow-md">
-                <CardContent className="p-6">
-                  <segment.icon className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-1">{segment.title}</h3>
-                  {segment.subtitle && (
-                    <p className="text-sm text-muted-foreground mb-4">{segment.subtitle}</p>
-                  )}
-                  <ul className="space-y-3 mt-4">
-                    {segment.points.map((point) => (
-                      <li key={point} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                        <span className="text-sm text-muted-foreground">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Global Capabilities */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                Building a Global Presence
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                From our roots in Dubai, UAE, we are expanding to serve wellness seekers 
-                across continents. Our infrastructure, certifications, and product range 
-                are designed to meet international standards while preserving the authenticity 
-                of traditional Ayurvedic formulations.
-              </p>
-              <ul className="space-y-4">
-                {globalCapabilities.map((capability) => (
-                  <li key={capability} className="flex items-start gap-3">
-                    <Leaf className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-muted-foreground">{capability}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 lg:p-10">
-              <FlaskConical className="h-12 w-12 text-primary mb-6" />
-              <h3 className="text-xl font-bold mb-4">Quality Without Compromise</h3>
-              <p className="text-muted-foreground mb-6">
-                Every product that carries the Earthy Concepts name undergoes rigorous 
-                testing for efficacy and purity. Our commitment to conscious sourcing 
-                ensures that what reaches you is as nature intended—pure, potent, and purposeful.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">Eco-Conscious</Badge>
-                <Badge variant="secondary">Ethically Sourced</Badge>
-                <Badge variant="secondary">Lab Verified</Badge>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Target Markets */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Markets We Serve</h2>
@@ -218,7 +93,7 @@ const GlobalPresence = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-12 bg-muted/30">
         <div className="container px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center">
             <Globe className="h-12 w-12 text-primary mx-auto mb-6" />

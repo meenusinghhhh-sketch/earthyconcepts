@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Search, Filter, X } from 'lucide-react';
+import { Search, Filter, X, Leaf, Heart, Sun, Moon, Zap, Shield } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { ProductCard } from '@/components/ProductCard';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
@@ -9,6 +10,15 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { categories, products, getProductsByCategory } from '@/data/products';
 
+// Benefits strip data (moved from homepage)
+const benefits = [
+  { icon: Leaf, text: 'Immunity Boost', color: 'bg-emerald-500' },
+  { icon: Heart, text: 'Heart Health', color: 'bg-rose-500' },
+  { icon: Sun, text: 'Natural Energy', color: 'bg-amber-500' },
+  { icon: Moon, text: 'Better Sleep', color: 'bg-violet-500' },
+  { icon: Zap, text: 'Mental Clarity', color: 'bg-cyan-500' },
+  { icon: Shield, text: 'Stress Relief', color: 'bg-teal-500' },
+];
 
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -55,22 +65,46 @@ const Products = () => {
 
   return (
     <Layout>
-      {/* Header */}
+      {/* Benefits Strip (moved from homepage per request #7) */}
+      <section className="py-8 bg-gradient-to-r from-muted/50 via-background to-muted/50 overflow-hidden border-b border-primary/10">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-wrap justify-center gap-4">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.text}
+                className="flex items-center gap-3 px-5 py-3 bg-white rounded-full shadow-md border border-border/50 hover:shadow-lg transition-shadow"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -3 }}
+              >
+                <div className={`w-8 h-8 rounded-full ${benefit.color} flex items-center justify-center`}>
+                  <benefit.icon className="h-4 w-4 text-white" />
+                </div>
+                <span className="font-medium text-sm">{benefit.text}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Header - Centered per request #17 */}
       <section className="py-8 bg-muted/30">
         <div className="container px-4 md:px-6">
-          <div className="mb-6">
+          <div className="text-center mb-6">
             <h1 className="text-3xl md:text-4xl font-bold">
               {selectedCategoryData ? selectedCategoryData.name : 'All Products'}
             </h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-muted-foreground mt-2">
               {selectedCategoryData 
                 ? selectedCategoryData.description 
                 : 'Discover our complete collection of natural wellness products'}
             </p>
           </div>
 
-          {/* Search */}
-          <div className="relative max-w-md">
+          {/* Search - Centered */}
+          <div className="relative max-w-md mx-auto">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder="Search products..."

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Leaf, Shield, Heart, Sparkles, Globe, Users, Award, CheckCircle } from 'lucide-react';
+import { ArrowRight, Leaf, Shield, Heart, Sparkles, Globe, Users } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { qualityPromises } from '@/data/brand';
+import { CheckCircle } from 'lucide-react';
 
 const About = () => {
   return (
@@ -16,8 +17,9 @@ const About = () => {
               Our Story
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Earthy Concepts was born in Dubai, UAE, at the intersection of ancient wisdom 
-              and contemporary living.
+              Created from a deep need to be responsible—to ourselves, to our communities, 
+              and to the planet—Earthy Concepts stands for all things natural, intentional, 
+              and conscious.
             </p>
           </div>
         </div>
@@ -27,11 +29,6 @@ const About = () => {
       <section className="py-10">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto space-y-5">
-            <p className="text-lg leading-relaxed">
-              Created from a deep need to be responsible—to ourselves, to our communities, 
-              and to the planet—Earthy Concepts stands for all things natural, intentional, 
-              and conscious.
-            </p>
             <p className="text-lg leading-relaxed">
               Rooted in time-honored traditions and reimagined through modern innovation, 
               we draw exclusively from the earth's natural resources to create thoughtful 
@@ -65,7 +62,6 @@ const About = () => {
       <section className="py-10 bg-muted/30">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center mb-8">
-            <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">Our Promise</p>
             <h2 className="text-2xl md:text-3xl font-bold mb-3">
               Nature's Promise. Formulated for Life.
             </h2>
