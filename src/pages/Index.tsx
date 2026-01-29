@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Leaf, Shield, Heart, Sparkles, Award, Globe, Users, Package, Home, Baby, MessageCircle, Star, ArrowRight } from 'lucide-react';
+import { Leaf, Shield, Heart, Sparkles, Award, Users, Package, Home, Baby, MessageCircle, Star, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { Hero } from '@/components/Hero';
@@ -17,50 +17,6 @@ import { products } from '@/data/products';
 import botanicalsHands from '@/assets/lifestyle/botanicals-hands.jpg';
 import dailyRitualMoment from '@/assets/lifestyle/daily-ritual-moment.jpg';
 import naturalBeauty from '@/assets/lifestyle/natural-beauty.jpg';
-const coreCategories = [
-  {
-    icon: Leaf,
-    title: 'Retail-Ready Lines',
-    description: 'Clean-Label Health Capsules & Teas for Immunity, Digestion, Detox, Heart Health, and Everyday Wellness',
-    color: 'from-emerald-500 to-teal-500',
-    bg: 'from-emerald-500/10 to-teal-500/5',
-  },
-  {
-    icon: Heart,
-    title: 'Herbal Products',
-    description: 'Formulated for Mind & Body Rituals - Traditional Health and Wellness',
-    color: 'from-violet-500 to-purple-500',
-    bg: 'from-violet-500/10 to-purple-500/5',
-  },
-  {
-    icon: Sparkles,
-    title: 'Pure Skincare',
-    description: 'Face Masks, Glow Powders, Herbal Soaps, Facial Serums, Hair & Body Oils for Everyday Skincare',
-    color: 'from-amber-500 to-orange-500',
-    bg: 'from-amber-500/10 to-orange-500/5',
-  },
-  {
-    icon: Package,
-    title: 'Gifting Editions',
-    description: 'Healthcare On-The-Go, Chakra Packs, Health Kits & Organic Home Care',
-    color: 'from-rose-500 to-pink-500',
-    bg: 'from-rose-500/10 to-pink-500/5',
-  },
-  {
-    icon: Home,
-    title: 'Spa & Hospitality',
-    description: 'Natural & Organic Products for Hotels, Spas, Retreats & Wellness Centers',
-    color: 'from-cyan-500 to-blue-500',
-    bg: 'from-cyan-500/10 to-blue-500/5',
-  },
-  {
-    icon: Baby,
-    title: 'Family Wellness',
-    description: 'Gentle Products for Kids & Parents, Clean skincare for the whole family',
-    color: 'from-lime-500 to-green-500',
-    bg: 'from-lime-500/10 to-green-500/5',
-  },
-];
 
 const trustBadges = [
   { name: 'GMP Certified', icon: Award },
@@ -68,22 +24,23 @@ const trustBadges = [
   { name: 'HACCP Certified', icon: Shield },
   { name: 'FDA Compliant', icon: Award },
   { name: 'Lab Tested', icon: Shield },
-  { name: 'Eco-Conscious', icon: Leaf },
 ];
 
 const Index = () => {
-  // Get best sellers for the product showcase - using correct product IDs from data
+  // Get best sellers for the product showcase - using specific product IDs from document
   const bestSellers = [
-    products.find(p => p.id === 'serenetea'),
-    products.find(p => p.id === 'illumamask'),
-    products.find(p => p.id === 'rootluxe'),
-    products.find(p => p.id === 'rosebliss'),
-    products.find(p => p.id === 'lavendercalm'),
-    products.find(p => p.id === 'dailyimmunity'),
-    products.find(p => p.id === 'mindboost'),
-    products.find(p => p.id === 'amlashield'),
     products.find(p => p.id === 'imunetea'),
-    products.find(p => p.id === 'skin-glow'),
+    products.find(p => p.id === 'diabetea'),
+    products.find(p => p.id === 'radiancemask'),
+    products.find(p => p.id === 'detoxmask'),
+    products.find(p => p.id === 'scalpcleanse'),
+    products.find(p => p.id === 'bodycleanse'),
+    products.find(p => p.id === 'lavendercalm'), // Relax Oil equivalent
+    products.find(p => p.id === 'rosebliss'), // Glow Oil equivalent
+    products.find(p => p.id === 'stressbalance'),
+    products.find(p => p.id === 'immunesafe'),
+    products.find(p => p.id === 'rejuvedaily'),
+    products.find(p => p.id === 'gutclear'),
   ].filter(Boolean);
 
   return (
@@ -91,7 +48,7 @@ const Index = () => {
       {/* 1. HERO - Brand Introduction */}
       <Hero />
 
-      {/* 2. TRUST STRIP - Immediate Credibility */}
+      {/* 2. TRUST STRIP - Immediate Credibility (removed Eco-Conscious per request #7) */}
       <section className="py-6 bg-gradient-to-r from-emerald-50 via-white to-amber-50 border-y border-primary/10 relative overflow-hidden">
         <NatureWatermark opacity={0.05} size="sm" />
         <div className="container px-4 md:px-6">
@@ -124,52 +81,7 @@ const Index = () => {
       {/* 4. LIFESTYLE GALLERY - Visual Brand Immersion */}
       <LifestyleGallery />
 
-      {/* 5. CORE CATEGORIES - What We Offer */}
-      <section className="py-20 bg-gradient-to-b from-background via-muted/30 to-background relative overflow-hidden">
-        <NatureWatermark opacity={0.06} />
-        <div className="absolute top-1/4 left-0 w-72 h-72 bg-emerald-100/50 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-amber-100/50 rounded-full blur-3xl" />
-        
-        <div className="container px-4 md:px-6 relative">
-          <motion.div 
-            className="text-center max-w-2xl mx-auto mb-14"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What We <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Offer</span>
-            </h2>
-            <p className="text-muted-foreground">
-              A comprehensive range of natural wellness solutions for every aspect of life
-            </p>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {coreCategories.map((category, index) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.08 }}
-              >
-                <Card className={`group border-0 bg-gradient-to-br ${category.bg} hover:shadow-xl transition-all duration-500 h-full`}>
-                  <CardContent className="p-6">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-4 shadow-lg`}>
-                      <category.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">{category.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{category.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. BESTSELLERS - Products with CTA */}
+      {/* 5. BESTSELLERS - Products with CTA (removed What We Offer section) */}
       <section className="py-20 relative overflow-hidden bg-gradient-to-b from-amber-50/50 via-background to-emerald-50/30">
         <NatureWatermark opacity={0.07} size="lg" />
         {/* Decorative elements */}
@@ -192,7 +104,7 @@ const Index = () => {
               Community <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Favorites</span>
             </h2>
             <p className="text-muted-foreground">
-              Handpicked wellness essentials loved by our community
+              Natural Products for all ages
             </p>
           </motion.div>
           
@@ -218,7 +130,7 @@ const Index = () => {
               </div>
             </motion.div>
 
-            {/* Product cards */}
+            {/* Product cards - no Bestseller badge per request #12 */}
             {bestSellers.slice(0, 4).map((product, index) => product && (
               <motion.div
                 key={product.id}
@@ -241,9 +153,6 @@ const Index = () => {
                             target.src = '/placeholder.svg';
                           }}
                         />
-                        <Badge className="absolute top-2 right-2 bg-primary/90 text-primary-foreground border-0 text-xs">
-                          Bestseller
-                        </Badge>
                       </div>
                       <div className="p-3 bg-white">
                         <h4 className="font-semibold text-sm line-clamp-1 group-hover:text-primary transition-colors">{product.name}</h4>
@@ -327,8 +236,8 @@ const Index = () => {
               </div>
             </motion.div>
 
-            {/* Additional product cards after the girl image */}
-            {bestSellers.slice(8, 10).map((product, index) => product && (
+            {/* Additional product cards */}
+            {bestSellers.slice(8, 12).map((product, index) => product && (
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -378,7 +287,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 7. CRAFTED FOR - Audience Segments */}
+      {/* 6. CRAFTED FOR - Audience Segments (now includes What We Offer content) */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
         <NatureWatermark opacity={0.06} />
         <div className="container px-4 md:px-6">
@@ -391,13 +300,16 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold">
               Crafted <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">For</span>
             </h2>
+            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+              A comprehensive range of natural wellness solutions for every aspect of life
+            </p>
           </motion.div>
           
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: Users, title: 'Individuals', desc: 'Pure daily wellness, holistic skin & body health, nature-inspired essentials', color: 'from-emerald-500 to-teal-500', bg: 'from-emerald-50 to-teal-50' },
-              { icon: Package, title: 'Businesses', desc: 'Retailers, distributors & wellness partners', color: 'from-amber-500 to-orange-500', bg: 'from-amber-50 to-orange-50' },
-              { icon: Heart, title: 'Institutions', desc: 'Wellness campaigns, gifting programs, hospital & clinic kits', color: 'from-rose-500 to-pink-500', bg: 'from-rose-50 to-pink-50' },
+              { icon: Users, title: 'Individuals', desc: 'Pure daily wellness essentials, holistic skin & body health, nature-inspired solutions for immunity, digestion, detox, and everyday wellness', color: 'from-emerald-500 to-teal-500', bg: 'from-emerald-50 to-teal-50' },
+              { icon: Package, title: 'Businesses', desc: 'Retailers, distributors & wellness partners. Healthcare on-the-go, Chakra packs, health kits, spa & hospitality solutions', color: 'from-amber-500 to-orange-500', bg: 'from-amber-50 to-orange-50' },
+              { icon: Heart, title: 'Institutions', desc: 'Wellness campaigns, gifting programs, hospital & clinic kits. Products for retreats & wellness centers', color: 'from-rose-500 to-pink-500', bg: 'from-rose-50 to-pink-50' },
             ].map((item, index) => (
               <motion.div
                 key={item.title}
@@ -416,13 +328,40 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Comprehensive Wellness row (formerly Family Wellness) */}
+          <motion.div 
+            className="mt-8 grid md:grid-cols-3 gap-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            {[
+              { icon: Sparkles, title: 'Pure Skincare', desc: 'Face Masks, Glow Powders, Herbal Soaps, Facial Serums, Hair & Body Oils', color: 'from-violet-500 to-purple-500', bg: 'from-violet-50 to-purple-50' },
+              { icon: Home, title: 'Spa & Hospitality', desc: 'Natural & Organic Products for Hotels, Spas, Retreats & Wellness Centers', color: 'from-cyan-500 to-blue-500', bg: 'from-cyan-50 to-blue-50' },
+              { icon: Baby, title: 'Comprehensive Wellness', desc: 'Gentle Products for Kids & Parents, Clean skincare for the whole family', color: 'from-lime-500 to-green-500', bg: 'from-lime-50 to-green-50' },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                whileHover={{ y: -5 }}
+                className={`p-8 rounded-2xl bg-gradient-to-br ${item.bg} border border-white/50 shadow-md text-center`}
+              >
+                <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-5 shadow-lg`}>
+                  <item.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-xl mb-3">{item.title}</h3>
+                <p className="text-muted-foreground text-sm">{item.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* 8. TESTIMONIALS - Social Proof */}
+      {/* 7. TESTIMONIALS - Social Proof */}
       <TestimonialCarousel />
 
-      {/* 9. FINAL CTA - Conversion */}
+      {/* 8. FINAL CTA - Conversion */}
       <section className="py-24 bg-gradient-to-br from-primary via-emerald-600 to-teal-600 text-primary-foreground relative overflow-hidden">
         <NatureWatermark opacity={0.1} size="lg" />
         <div className="absolute top-0 left-0 w-80 h-80 bg-white/10 rounded-full blur-3xl" />

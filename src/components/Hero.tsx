@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Leaf, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, Leaf, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import logo from '@/assets/logo-transparent.png';
@@ -10,7 +10,7 @@ import spaBotanicals from '@/assets/lifestyle/spa-botanicals.jpg';
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[95vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Warm beige/sand leaf watermark pattern - homepage only */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {/* Base warm gradient */}
@@ -63,46 +63,35 @@ export const Hero = () => {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container relative px-4 md:px-6 py-8 pt-4 z-[3]">
+      <div className="container relative px-4 md:px-6 py-4 z-[3]">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left content */}
           <motion.div 
-            className="space-y-6"
+            className="space-y-4"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Badge */}
-            <motion.div 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary text-sm font-medium shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <Sparkles className="h-4 w-4" />
-              Handcrafted with Nature's Finest
-            </motion.div>
-
             {/* Logo - MAXIMUM SIZE & BOLD */}
             <motion.div 
-              className="relative w-full max-w-3xl -mt-4"
+              className="relative w-full max-w-3xl"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.2 }}
             >
               <img 
                 src={logo} 
                 alt="Earthy Concepts" 
-                className="relative w-full h-auto min-h-[300px] md:min-h-[380px] lg:min-h-[450px] object-contain drop-shadow-2xl"
+                className="relative w-full h-auto min-h-[280px] md:min-h-[350px] lg:min-h-[420px] object-contain drop-shadow-2xl"
               />
             </motion.div>
 
-            {/* Headline */}
+            {/* Headline - Natural & Conscious Wellness aligned under logo */}
             <motion.h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.3 }}
             >
               <span className="text-foreground">Natural</span>
               {' '}
@@ -118,19 +107,19 @@ export const Hero = () => {
               className="text-lg text-muted-foreground max-w-xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.4 }}
             >
               Natural Herbs & Ayurvedic Formulations for <span className="text-primary font-medium">Daily Balance</span>, 
               <span className="text-accent font-medium"> Immunity</span> & 
               <span className="text-primary font-medium"> Mindful Living</span>.
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Centered */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 pt-2"
+              className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.5 }}
             >
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-emerald-600 hover:from-primary/90 hover:to-emerald-600/90 text-primary-foreground gap-2 shadow-lg shadow-primary/25 px-8">
                 <Link to="/products">
@@ -158,9 +147,9 @@ export const Hero = () => {
             {/* Lifestyle images grid */}
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
-                {/* Large image */}
+                {/* Large image with overlay text */}
                 <motion.div
-                  className="col-span-2 rounded-3xl overflow-hidden shadow-2xl"
+                  className="col-span-2 rounded-3xl overflow-hidden shadow-2xl relative"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
@@ -172,7 +161,19 @@ export const Hero = () => {
                       alt="Spa botanicals" 
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    {/* Handcrafted with Nature's Finest overlay text */}
+                    <motion.div 
+                      className="absolute bottom-4 left-4 right-4"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.8 }}
+                    >
+                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-primary/20 text-primary text-sm font-medium shadow-lg">
+                        <Sparkles className="h-4 w-4" />
+                        Handcrafted with Nature's Finest
+                      </div>
+                    </motion.div>
                   </div>
                 </motion.div>
 
@@ -195,7 +196,7 @@ export const Hero = () => {
                 </motion.div>
 
                 <motion.div
-                  className="rounded-2xl overflow-hidden shadow-xl"
+                  className="rounded-2xl overflow-hidden shadow-xl relative"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
@@ -207,26 +208,38 @@ export const Hero = () => {
                       alt="Skincare ritual" 
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    {/* Eco Conscious badge on right-side image */}
+                    <motion.div 
+                      className="absolute top-3 right-3"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1.0 }}
+                    >
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-sm border border-emerald-200 text-emerald-700 text-xs font-medium shadow-md">
+                        <Leaf className="h-3 w-3" />
+                        Eco Conscious
+                      </div>
+                    </motion.div>
                   </div>
                 </motion.div>
               </div>
 
-              {/* Floating badge */}
+              {/* Floating badge - smaller and lighter */}
               <motion.div 
-                className="absolute -bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-5 border border-primary/20"
+                className="absolute -bottom-3 left-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-3 border border-primary/20"
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 1.2 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-emerald-500 flex items-center justify-center shadow-lg">
-                    <Leaf className="h-7 w-7 text-white" />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-emerald-500 flex items-center justify-center shadow-md">
+                    <Leaf className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-bold text-xl text-foreground">100% Natural</p>
-                    <p className="text-sm text-muted-foreground">Pure Ingredients</p>
+                    <p className="font-semibold text-sm text-foreground">100% Natural</p>
+                    <p className="text-xs text-muted-foreground">Pure Ingredients</p>
                   </div>
                 </div>
               </motion.div>
