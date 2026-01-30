@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Search, Filter, X, Leaf, Heart, Sun, Moon, Zap, Shield } from 'lucide-react';
+import { Search, Filter, X, Award, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import { ProductCard } from '@/components/ProductCard';
@@ -10,14 +10,13 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { categories, products, getProductsByCategory } from '@/data/products';
 
-// Benefits strip data (moved from homepage)
-const benefits = [
-  { icon: Leaf, text: 'Immunity Boost', color: 'bg-emerald-500' },
-  { icon: Heart, text: 'Heart Health', color: 'bg-rose-500' },
-  { icon: Sun, text: 'Natural Energy', color: 'bg-amber-500' },
-  { icon: Moon, text: 'Better Sleep', color: 'bg-violet-500' },
-  { icon: Zap, text: 'Mental Clarity', color: 'bg-cyan-500' },
-  { icon: Shield, text: 'Stress Relief', color: 'bg-teal-500' },
+// Certifications strip (moved from homepage)
+const certifications = [
+  { name: 'GMP Certified', icon: Award },
+  { name: 'ISO Certified', icon: Shield },
+  { name: 'HACCP Certified', icon: Shield },
+  { name: 'FDA Compliant', icon: Award },
+  { name: 'Lab Tested', icon: Shield },
 ];
 
 const Products = () => {
@@ -65,27 +64,29 @@ const Products = () => {
 
   return (
     <Layout>
-      {/* Benefits Strip (moved from homepage per request #7) */}
-      <section className="py-8 bg-gradient-to-r from-muted/50 via-background to-muted/50 overflow-hidden border-b border-primary/10">
+      {/* Certifications Strip (moved from homepage per request #5 & #11) */}
+      <section className="py-6 bg-gradient-to-r from-emerald-50 via-white to-amber-50 border-b border-primary/10 relative overflow-hidden">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-wrap justify-center gap-4">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.text}
-                className="flex items-center gap-3 px-5 py-3 bg-white rounded-full shadow-md border border-border/50 hover:shadow-lg transition-shadow"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+          <motion.div 
+            className="flex flex-wrap justify-center items-center gap-6 md:gap-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            {certifications.map((cert, index) => (
+              <motion.div 
+                key={cert.name} 
+                className="flex items-center gap-2 text-muted-foreground"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -3 }}
+                transition={{ delay: index * 0.05 }}
               >
-                <div className={`w-8 h-8 rounded-full ${benefit.color} flex items-center justify-center`}>
-                  <benefit.icon className="h-4 w-4 text-white" />
-                </div>
-                <span className="font-medium text-sm">{benefit.text}</span>
+                <cert.icon className="h-4 w-4 text-primary" />
+                <span className="text-sm font-medium">{cert.name}</span>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

@@ -86,9 +86,9 @@ export const Hero = () => {
               />
             </motion.div>
 
-            {/* Headline - Natural & Conscious Wellness aligned under logo */}
+            {/* Headline - Natural & Conscious Wellness centered under logo */}
             <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-center lg:text-left"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -104,7 +104,7 @@ export const Hero = () => {
 
             {/* Description */}
             <motion.p 
-              className="text-lg text-muted-foreground max-w-xl leading-relaxed"
+              className="text-lg text-muted-foreground max-w-xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -116,7 +116,7 @@ export const Hero = () => {
 
             {/* CTA Buttons - Centered */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 pt-2 justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -147,7 +147,7 @@ export const Hero = () => {
             {/* Lifestyle images grid */}
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
-                {/* Large image with overlay text */}
+                {/* Large image with overlay text at bottom */}
                 <motion.div
                   className="col-span-2 rounded-3xl overflow-hidden shadow-2xl relative"
                   initial={{ opacity: 0, y: 30 }}
@@ -162,15 +162,15 @@ export const Hero = () => {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    {/* Handcrafted with Nature's Finest overlay text */}
+                    {/* Handcrafted with Nature's Finest overlay text - at bottom of image */}
                     <motion.div 
-                      className="absolute bottom-4 left-4 right-4"
+                      className="absolute bottom-3 left-3"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.8 }}
                     >
-                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-primary/20 text-primary text-sm font-medium shadow-lg">
-                        <Sparkles className="h-4 w-4" />
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-primary/20 text-primary text-xs font-medium shadow-lg">
+                        <Sparkles className="h-3 w-3" />
                         Handcrafted with Nature's Finest
                       </div>
                     </motion.div>
@@ -209,9 +209,9 @@ export const Hero = () => {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                    {/* Eco Conscious badge on right-side image */}
+                    {/* Eco Conscious badge on right-side image - at bottom */}
                     <motion.div 
-                      className="absolute top-3 right-3"
+                      className="absolute bottom-3 right-3"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 1.0 }}
@@ -225,21 +225,21 @@ export const Hero = () => {
                 </motion.div>
               </div>
 
-              {/* Floating badge - smaller and lighter */}
+              {/* Floating badge - 100% Natural, smaller and at bottom */}
               <motion.div 
-                className="absolute -bottom-3 left-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-3 border border-primary/20"
+                className="absolute -bottom-3 left-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-2 border border-primary/20"
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 1.2 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-emerald-500 flex items-center justify-center shadow-md">
-                    <Leaf className="h-5 w-5 text-white" />
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-emerald-500 flex items-center justify-center shadow-sm">
+                    <Leaf className="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-sm text-foreground">100% Natural</p>
-                    <p className="text-xs text-muted-foreground">Pure Ingredients</p>
+                    <p className="font-semibold text-xs text-foreground">100% Natural</p>
+                    <p className="text-[10px] text-muted-foreground">Pure Ingredients</p>
                   </div>
                 </div>
               </motion.div>
