@@ -18,14 +18,6 @@ import botanicalsHands from '@/assets/lifestyle/botanicals-hands.jpg';
 import dailyRitualMoment from '@/assets/lifestyle/daily-ritual-moment.jpg';
 import naturalBeauty from '@/assets/lifestyle/natural-beauty.jpg';
 
-const trustBadges = [
-  { name: 'GMP Certified', icon: Award },
-  { name: 'ISO Certified', icon: Shield },
-  { name: 'HACCP Certified', icon: Shield },
-  { name: 'FDA Compliant', icon: Award },
-  { name: 'Lab Tested', icon: Shield },
-];
-
 const Index = () => {
   // Get best sellers for the product showcase - using specific product IDs from document
   const bestSellers = [
@@ -45,43 +37,16 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* 1. HERO - Brand Introduction */}
+      {/* 1. HERO - Brand Introduction (no top spacing) */}
       <Hero />
 
-      {/* 2. TRUST STRIP - Immediate Credibility (removed Eco-Conscious per request #7) */}
-      <section className="py-6 bg-gradient-to-r from-emerald-50 via-white to-amber-50 border-y border-primary/10 relative overflow-hidden">
-        <NatureWatermark opacity={0.05} size="sm" />
-        <div className="container px-4 md:px-6">
-          <motion.div 
-            className="flex flex-wrap justify-center items-center gap-6 md:gap-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            {trustBadges.map((badge, index) => (
-              <motion.div 
-                key={badge.name} 
-                className="flex items-center gap-2 text-muted-foreground"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <badge.icon className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium">{badge.name}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 3. VIDEO BANNER - Emotional Connection */}
+      {/* 2. VIDEO BANNER - Emotional Connection (trust strip removed from homepage) */}
       <VideoHeroBanner />
 
-      {/* 4. LIFESTYLE GALLERY - Visual Brand Immersion */}
+      {/* 3. LIFESTYLE GALLERY - Visual Brand Immersion */}
       <LifestyleGallery />
 
-      {/* 5. BESTSELLERS - Products with CTA (removed What We Offer section) */}
+      {/* 4. BESTSELLERS - Products with CTA */}
       <section className="py-20 relative overflow-hidden bg-gradient-to-b from-amber-50/50 via-background to-emerald-50/30">
         <NatureWatermark opacity={0.07} size="lg" />
         {/* Decorative elements */}
@@ -101,18 +66,18 @@ const Index = () => {
               Nature's Bestsellers
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Community <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Favorites</span>
+              <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Nature's Bestsellers</span>
             </h2>
             <p className="text-muted-foreground">
               Natural Products for all ages
             </p>
           </motion.div>
           
-          {/* Bento-style Product Grid with Lifestyle Images */}
-          <div className="grid md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-[200px]">
+          {/* Bento-style Product Grid with Lifestyle Images - even layout */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-[200px]">
             {/* Featured lifestyle image - large */}
             <motion.div
-              className="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden shadow-xl group"
+              className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden shadow-xl group"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -130,7 +95,7 @@ const Index = () => {
               </div>
             </motion.div>
 
-            {/* Product cards - no Bestseller badge per request #12 */}
+            {/* Product cards - evenly distributed */}
             {bestSellers.slice(0, 4).map((product, index) => product && (
               <motion.div
                 key={product.id}
@@ -138,7 +103,6 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="md:col-span-2 lg:col-span-1"
               >
                 <Link to={`/products/${product.id}`} className="block h-full">
                   <Card className="group h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden">
@@ -166,7 +130,7 @@ const Index = () => {
 
             {/* Second lifestyle image */}
             <motion.div
-              className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-xl group"
+              className="col-span-2 relative rounded-2xl overflow-hidden shadow-xl group"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -191,7 +155,6 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + index * 0.08 }}
-                className="md:col-span-2 lg:col-span-1"
               >
                 <Link to={`/products/${product.id}`} className="block h-full">
                   <Card className="group h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden">
@@ -219,7 +182,7 @@ const Index = () => {
 
             {/* Third lifestyle image */}
             <motion.div
-              className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-xl group"
+              className="col-span-2 relative rounded-2xl overflow-hidden shadow-xl group"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -244,7 +207,6 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 + index * 0.08 }}
-                className="md:col-span-2 lg:col-span-1"
               >
                 <Link to={`/products/${product.id}`} className="block h-full">
                   <Card className="group h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white overflow-hidden">
@@ -287,7 +249,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 6. CRAFTED FOR - Audience Segments (now includes What We Offer content) */}
+      {/* 5. CRAFTED FOR - Audience Segments */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
         <NatureWatermark opacity={0.06} />
         <div className="container px-4 md:px-6">
@@ -329,7 +291,7 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Comprehensive Wellness row (formerly Family Wellness) */}
+          {/* Comprehensive Wellness row */}
           <motion.div 
             className="mt-8 grid md:grid-cols-3 gap-6"
             initial={{ opacity: 0, y: 30 }}
@@ -358,64 +320,47 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 7. TESTIMONIALS - Social Proof */}
+      {/* 6. TESTIMONIALS */}
       <TestimonialCarousel />
 
-      {/* 8. FINAL CTA - Conversion */}
-      <section className="py-24 bg-gradient-to-br from-primary via-emerald-600 to-teal-600 text-primary-foreground relative overflow-hidden">
-        <NatureWatermark opacity={0.1} size="lg" />
-        <div className="absolute top-0 left-0 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        
-        <div className="container px-4 md:px-6 relative">
+      {/* 7. NEWSLETTER CTA BANNER */}
+      <section className="py-16 bg-gradient-to-r from-primary/10 via-emerald-100/30 to-amber-100/30 relative overflow-hidden">
+        <NatureWatermark opacity={0.06} />
+        <div className="container px-4 md:px-6">
           <motion.div 
             className="max-w-3xl mx-auto text-center space-y-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-              Embrace Rituals
-              <br />
-              <span className="text-white/90">Rooted in Nature</span>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Join the <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Earthy Wellness</span> Journey
             </h2>
-            <p className="text-lg opacity-90 max-w-xl mx-auto">
-              Choose a Life of Clarity, Balance, & Purpose.
-              <br />
-              <span className="font-semibold">Live Consciously. Live Authentically.</span>
+            <p className="text-muted-foreground text-lg">
+              Subscribe for exclusive offers, wellness tips, newsletters and early access to new products.
             </p>
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-white text-primary hover:bg-white/90 gap-2 shadow-xl px-8"
-              >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-emerald-600 hover:from-primary/90 hover:to-emerald-600/90 text-primary-foreground gap-2 shadow-lg px-8">
                 <a 
-                  href="https://wa.me/971XXXXXXXXX?text=Hello%20Earthy%20Concepts%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products"
+                  href="https://wa.me/971XXXXXXXXX?text=Hello%20Earthy%20Concepts%2C%20I%20would%20like%20to%20subscribe%20to%20your%20newsletter"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  Order on WhatsApp
+                  Connect on WhatsApp
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-2 border-white/40 text-white hover:bg-white/10 px-8">
-                <Link to="/contact">
-                  Contact Us
+              <Button asChild size="lg" variant="outline" className="gap-2 border-2 border-primary/30 hover:border-primary/50">
+                <Link to="/products">
+                  <Leaf className="h-5 w-5" />
+                  Browse Products
                 </Link>
               </Button>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Floating WhatsApp Button */}
       <WhatsAppButton variant="floating" />
     </Layout>
   );
