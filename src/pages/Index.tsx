@@ -61,10 +61,6 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              <Star className="h-4 w-4 fill-primary" />
-              Nature's Bestsellers
-            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Nature's Bestsellers</span>
             </h2>
