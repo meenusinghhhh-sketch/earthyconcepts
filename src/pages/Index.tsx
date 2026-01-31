@@ -36,8 +36,8 @@ const Index = () => {
     products.find(p => p.id === 'rootluxe'), // Hair Oil
     products.find(p => p.id === 'pureglow'), // Formulation
     products.find(p => p.id === 'hydramist'), // Face Mist
-    products.find(p => p.id === 'goldencurcumin'), // Formulation
-    products.find(p => p.id === 'serenitea'), // Herbal Tea
+    products.find(p => p.id === 'golden-curcumin'), // Formulation
+    products.find(p => p.id === 'serenetea'), // Herbal Tea
   ].filter(Boolean);
 
   return (
