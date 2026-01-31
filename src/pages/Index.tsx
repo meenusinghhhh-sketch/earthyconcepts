@@ -33,6 +33,8 @@ const Index = () => {
     products.find(p => p.id === 'immunesafe'),
     products.find(p => p.id === 'rejuvedaily'),
     products.find(p => p.id === 'gutclear'),
+    products.find(p => p.id === 'rootluxe'), // Hair Oil
+    products.find(p => p.id === 'pureglow'), // Formulation
   ].filter(Boolean);
 
   return (
