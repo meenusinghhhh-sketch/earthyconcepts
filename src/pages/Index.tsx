@@ -37,6 +37,7 @@ const Index = () => {
     products.find(p => p.id === 'pureglow'), // Formulation
     products.find(p => p.id === 'hydramist'), // Face Mist
     products.find(p => p.id === 'goldencurcumin'), // Formulation
+    products.find(p => p.id === 'serenitea'), // Herbal Tea
   ].filter(Boolean);
 
   return (
@@ -200,7 +201,7 @@ const Index = () => {
             </motion.div>
 
             {/* Additional product cards */}
-            {bestSellers.slice(8, 16).map((product, index) => product && (
+            {bestSellers.slice(8, 17).map((product, index) => product && (
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
