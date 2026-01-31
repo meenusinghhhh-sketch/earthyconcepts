@@ -88,7 +88,7 @@ export const Hero = () => {
 
             {/* Headline - Natural & Conscious Wellness aligned under logo */}
             <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-left"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-left pl-4 md:pl-8 lg:pl-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -104,7 +104,7 @@ export const Hero = () => {
 
             {/* Description */}
             <motion.p 
-              className="text-lg text-muted-foreground max-w-xl leading-relaxed text-left"
+              className="text-lg text-muted-foreground max-w-xl leading-relaxed text-left pl-4 md:pl-8 lg:pl-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -116,7 +116,7 @@ export const Hero = () => {
 
             {/* CTA Buttons - Centered */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 pt-2 justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
