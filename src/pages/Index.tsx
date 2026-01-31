@@ -198,7 +198,7 @@ const Index = () => {
             </motion.div>
 
             {/* Additional product cards */}
-            {bestSellers.slice(8, 12).map((product, index) => product && (
+            {bestSellers.slice(8, 14).map((product, index) => product && (
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
