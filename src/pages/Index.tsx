@@ -37,7 +37,6 @@ const Index = () => {
     products.find(p => p.id === 'pureglow'), // Formulation
     products.find(p => p.id === 'hydramist'), // Face Mist
     products.find(p => p.id === 'golden-curcumin'), // Formulation
-    products.find(p => p.id === 'serenetea'), // Herbal Tea
   ].filter(Boolean);
 
   return (
@@ -66,12 +65,9 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold">
               <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Nature's Bestsellers</span>
             </h2>
-            <p className="text-muted-foreground">
-              Natural Products for all ages
-            </p>
           </motion.div>
           
           {/* Bento-style Product Grid with Lifestyle Images - even layout */}
@@ -303,7 +299,7 @@ const Index = () => {
             {[
               { icon: Sparkles, title: 'Pure Skincare', desc: 'Face Masks, Glow Powders, Herbal Soaps, Facial Serums, Hair & Body Oils', color: 'from-violet-500 to-purple-500', bg: 'from-violet-50 to-purple-50' },
               { icon: Home, title: 'Spa & Hospitality', desc: 'Natural & Organic Products for Hotels, Spas, Retreats & Wellness Centers', color: 'from-cyan-500 to-blue-500', bg: 'from-cyan-50 to-blue-50' },
-              { icon: Baby, title: 'Comprehensive Wellness', desc: 'Gentle Products for Kids & Parents, Clean skincare for the whole family', color: 'from-lime-500 to-green-500', bg: 'from-lime-50 to-green-50' },
+              { icon: Baby, title: 'Comprehensive Wellness', desc: 'Natural products for all ages', color: 'from-lime-500 to-green-500', bg: 'from-lime-50 to-green-50' },
             ].map((item, index) => (
               <motion.div
                 key={item.title}
