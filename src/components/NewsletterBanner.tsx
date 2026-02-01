@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { Leaf, Sparkles } from 'lucide-react';
@@ -12,21 +11,11 @@ const emailSchema = z.string().trim().email({ message: 'Please enter a valid ema
 
 export const NewsletterBanner = () => {
   const [email, setEmail] = useState('');
-  const [agreed, setAgreed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!agreed) {
-      toast({
-        title: "Consent required",
-        description: "Please agree to receive newsletters before subscribing.",
-        variant: "destructive",
-      });
-      return;
-    }
 
     const result = emailSchema.safeParse(email);
     if (!result.success) {
@@ -60,7 +49,6 @@ export const NewsletterBanner = () => {
           description: "You'll receive exclusive offers and wellness tips.",
         });
         setEmail('');
-        setAgreed(false);
       }
     } catch (error) {
       toast({
@@ -136,7 +124,7 @@ export const NewsletterBanner = () => {
           </h2>
           
           <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-            Subscribe for exclusive offers, wellness tips, and early access to new products.
+            Subscribe for exclusive offers, wellness tips, newsletters and early access to new products.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -156,21 +144,6 @@ export const NewsletterBanner = () => {
               >
                 {isLoading ? 'Subscribing...' : 'Subscribe'}
               </Button>
-            </div>
-            
-            <div className="flex items-center justify-center gap-2">
-              <Checkbox
-                id="newsletter-consent"
-                checked={agreed}
-                onCheckedChange={(checked) => setAgreed(checked === true)}
-                className="border-primary/30 data-[state=checked]:bg-primary"
-              />
-              <label 
-                htmlFor="newsletter-consent" 
-                className="text-xs text-muted-foreground cursor-pointer"
-              >
-                I agree to receive newsletters from Earthy Concepts
-              </label>
             </div>
           </form>
         </motion.div>
