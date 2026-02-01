@@ -324,43 +324,6 @@ const Index = () => {
       {/* 6. TESTIMONIALS */}
       <TestimonialCarousel />
 
-      {/* 7. NEWSLETTER CTA BANNER */}
-      <section className="py-16 bg-gradient-to-r from-primary/10 via-emerald-100/30 to-amber-100/30 relative overflow-hidden">
-        <NatureWatermark opacity={0.06} />
-        <div className="container px-4 md:px-6">
-          <motion.div 
-            className="max-w-3xl mx-auto text-center space-y-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Join the <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">Earthy Wellness</span> Journey
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Subscribe for exclusive offers, wellness tips, newsletters and early access to new products.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-emerald-600 hover:from-primary/90 hover:to-emerald-600/90 text-primary-foreground gap-2 shadow-lg px-8">
-                <a 
-                  href="https://wa.me/971XXXXXXXXX?text=Hello%20Earthy%20Concepts%2C%20I%20would%20like%20to%20subscribe%20to%20your%20newsletter"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="h-5 w-5" />
-                  Connect on WhatsApp
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="gap-2 border-2 border-primary/30 hover:border-primary/50">
-                <Link to="/products">
-                  <Leaf className="h-5 w-5" />
-                  Browse Products
-                </Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       <WhatsAppButton variant="floating" />
     </Layout>
