@@ -56,11 +56,11 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Quick Links</h3>
             <nav className="flex flex-col gap-2">
-              <Link to="/" className="text-sm text-background/70 hover:text-background transition-colors">
-                Home
-              </Link>
               <Link to="/about" className="text-sm text-background/70 hover:text-background transition-colors">
                 About Us
+              </Link>
+              <Link to="/" className="text-sm text-background/70 hover:text-background transition-colors">
+                Home
               </Link>
               <Link to="/products" className="text-sm text-background/70 hover:text-background transition-colors">
                 Products
@@ -70,6 +70,9 @@ export const Footer = () => {
               </Link>
               <Link to="/contact" className="text-sm text-background/70 hover:text-background transition-colors">
                 Contact
+              </Link>
+              <Link to="/services" className="text-sm text-background/70 hover:text-background transition-colors">
+                Services
               </Link>
             </nav>
           </div>

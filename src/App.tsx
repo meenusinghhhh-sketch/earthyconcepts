@@ -14,6 +14,7 @@ import CorporateWellness from "./pages/CorporateWellness";
 import Subscription from "./pages/Subscription";
 import Gifting from "./pages/Gifting";
 import GlobalPresence from "./pages/GlobalPresence";
+import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/subscription" element={<Subscription />} />
           <Route path="/gifting" element={<Gifting />} />
           <Route path="/global-presence" element={<GlobalPresence />} />
+          <Route path="/services" element={<Services />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
